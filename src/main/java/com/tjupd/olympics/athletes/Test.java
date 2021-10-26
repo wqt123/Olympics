@@ -1,7 +1,5 @@
 package com.tjupd.olympics.athletes;
 
-import java.util.List;
-
 /**
  * @author ShaoCHi
  * @version jdk1.8 Idea

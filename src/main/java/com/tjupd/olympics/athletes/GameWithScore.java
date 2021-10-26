@@ -15,9 +15,18 @@ import lombok.Data;
 
 @Data
 public class GameWithScore {
+  /**
+   * 比赛的种类
+   */
   private int type;
 
+  /**
+   * 该场比赛的分数
+   */
   private double score;
 
+  /**
+   * 该场比赛的排名
+   */
   private int rank;
 }

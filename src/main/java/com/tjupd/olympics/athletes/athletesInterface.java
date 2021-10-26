@@ -17,4 +17,6 @@ public interface athletesInterface {
     void updateAthletesBody(String name, double score);
     String addAthlete(String name, boolean sex,String country);
     void updateScores(GetScore score,boolean sex);
+    void updateHealthCode(String name,int code);
+    void deliverRoom(String name,String building,String roomNumber);
 }

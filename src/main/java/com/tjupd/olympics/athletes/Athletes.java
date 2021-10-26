@@ -18,7 +18,7 @@ public class Athletes  implements athletesInterface{
 
     /**
      * 运动员的初始生成接口
-     * @return List<Athlete></Athlete>
+     * @return List
      */
     @Override
     public List<Athlete> initialization() {
@@ -57,22 +57,22 @@ public class Athletes  implements athletesInterface{
 
     /**
      * 获取所有的运动员信息
-     * @return List<Athlete></Athlete>
+     * @return List
      */
     @Override
     public List<Athlete> getAll(){
-        return athletes;
+        return this.athletes;
     }
 
     /**
      * 根据性别来获取运动员
      * @param sex（boolean）
-     * @return List<Athlete></Athlete>
+     * @return List
      */
     @Override
     public List<Athlete> getAthletes(boolean sex) {
         List<Athlete> athletesWithSex=new LinkedList<>();
-        for (Athlete athlete : athletes) {
+        for (Athlete athlete : this.athletes) {
             if (athlete.isSex() == sex) {
                 athletesWithSex.add(athlete);
             }
@@ -87,7 +87,7 @@ public class Athletes  implements athletesInterface{
      */
     @Override
     public Athlete getAthlete(String name) {
-        for (Athlete athlete : athletes) {
+        for (Athlete athlete : this.athletes) {
             if (Objects.equals(athlete.getName(), name)) {
                 return athlete;
             }
@@ -102,7 +102,7 @@ public class Athletes  implements athletesInterface{
      */
     @Override
     public void updateAthletesBody(String name, double score) {
-        for(Athlete athlete:athletes){
+        for(Athlete athlete:this.athletes){
             if(Objects.equals(athlete.getName(), name)){
                 athlete.setBodyScore(athlete.getBodyScore()+score);
                 break;
@@ -120,13 +120,13 @@ public class Athletes  implements athletesInterface{
     @Override
     public String addAthlete(String name, boolean sex, String country) {
         String[] names={"Aaron","Bill","Carl","Dick","Evan","Ford","Taylor","Rose","Zoe","Mila","Ella","Judy"};
-        String[] countrys={"China","Japan","Korea","Russian"};
+        String[] countries={"China","Japan","Korea","Russian"};
         for (String s : names) {
             if (s.equals(name)) {
                 return "Your name already exists!Please try again!";
             }
         }
-        for(String s:countrys){
+        for(String s:countries){
             if(s.equals(country)){
                 Athlete athlete=new Athlete();
                 athlete.setName(name);
@@ -147,11 +147,11 @@ public class Athletes  implements athletesInterface{
      */
     @Override
     public void updateScores(GetScore score,boolean sex){
-        List<Athlete> athletesWithSex=getAthletes(sex);
+        List<Athlete> athletesWithSex=this.getAthletes(sex);
         for(NameWithScore nameWithScore:score.getScores()){
             GameWithScore gameWithScore=new GameWithScore();
             gameWithScore.setType(score.getType());
-            for(Athlete athlete:athletes){
+            for(Athlete athlete:athletesWithSex){
                 if(Objects.equals(athlete.getName(), nameWithScore.getName())){
                     gameWithScore.setScore(nameWithScore.getScore());
                     gameWithScore.setRank(nameWithScore.getRank());
@@ -162,4 +162,48 @@ public class Athletes  implements athletesInterface{
         }
     }
 
+    /**
+     * 用户更新自己的健康码
+     * @param name（String）
+     * @param code（int）
+     */
+    @Override
+    public void updateHealthCode(String name,int code){
+        String country=null;
+        for(Athlete athlete:this.athletes){
+            if(Objects.equals(athlete.getName(), name)){
+                athlete.setHealthCode(code);
+                if(code==2){
+                    athlete.setStatus(false);
+                }
+                country=athlete.getCountry();
+                break;
+            }
+        }
+        for(Athlete athlete:this.athletes){
+            if(Objects.equals(athlete.getCountry(), country)){
+                athlete.setHealthCode(code);
+                if(code==2){
+                    athlete.setStatus(false);
+                }
+            }
+        }
+    }
+
+    /**
+     * 更新运动员住户信息
+     * @param name（String）
+     * @param building（String）
+     * @param roomNumber（String）
+     */
+    @Override
+    public void deliverRoom(String name,String building,String roomNumber){
+        for(Athlete athlete:this.athletes){
+            if(Objects.equals(athlete.getName(), name)){
+                athlete.setBuilding(building);
+                athlete.setRoomNumber(roomNumber);
+                break;
+            }
+        }
+    }
 }
