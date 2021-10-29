@@ -3,6 +3,7 @@ package com.tjupd.olympics.athletes;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
+import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -13,9 +14,16 @@ import java.util.Objects;
  * 运动员的数据操作类
  */
 public class Athletes  implements athletesInterface{
+    private final List<Athlete> athletes;
 
-    private final List<Athlete> athletes=initialization();
+    private Multiplecommand mulcmd;
 
+    private static final Athletes athlete=new Athletes();
+
+    private Athletes(){
+        this.athletes=initialization();
+        this.mulcmd=new Multiplecommand();
+    }
     /**
      * 运动员的初始生成接口
      * @return List
@@ -59,9 +67,8 @@ public class Athletes  implements athletesInterface{
      * 获取所有的运动员信息
      * @return List
      */
-    @Override
-    public List<Athlete> getAll(){
-        return this.athletes;
+    public static Athletes getAll(){
+        return athlete;
     }
 
     /**
@@ -205,5 +212,36 @@ public class Athletes  implements athletesInterface{
                 break;
             }
         }
+    }
+
+    /**
+     * 饮食
+     * 命令模式
+     * @return（Multiplecommand）
+     */
+    @Override
+    public Multiplecommand getMulcmd() {
+        return mulcmd;
+    }
+
+    @Override
+    public void creatCommand(FoodType buyFoodType, int number) {
+        BuyCommand cmd=new BuyCommand(buyFoodType,number);
+        mulcmd.append(cmd);
+    }
+
+    @Override
+    public void doAllCommand() {
+        mulcmd.buy();
+    }
+
+    @Override
+    public void undoCommand() {
+        mulcmd.undo();
+    }
+
+    @Override
+    public void clearCommand() {
+        mulcmd.clear();
     }
 }

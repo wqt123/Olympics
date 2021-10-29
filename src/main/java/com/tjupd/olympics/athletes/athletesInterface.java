@@ -11,7 +11,6 @@ import java.util.List;
  */
 public interface athletesInterface {
     List<Athlete> initialization();
-    List<Athlete> getAll();
     List<Athlete> getAthletes(boolean sex);
     Athlete getAthlete(String name);
     void updateAthletesBody(String name, double score);
@@ -19,4 +18,14 @@ public interface athletesInterface {
     void updateScores(GetScore score,boolean sex);
     void updateHealthCode(String name,int code);
     void deliverRoom(String name,String building,String roomNumber);
+
+    /**
+     * 命令模式
+     * 饮食
+     */
+    Multiplecommand getMulcmd();
+    void creatCommand(FoodType buyFoodType,int number);
+    void doAllCommand();
+    void undoCommand();
+    void clearCommand();
 }
