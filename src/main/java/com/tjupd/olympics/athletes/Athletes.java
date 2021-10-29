@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Athletes implements athletesInterface {
 
   private final List<Athlete> athletes;
-//    private Multiplecommand mulcmd;
+    private Multiplecommand mulcmd;
 
   public List<Athlete> getAthletes() {
     return athletes;
@@ -30,7 +30,7 @@ public class Athletes implements athletesInterface {
 
   private Athletes() {
     this.athletes = initialization();
-//        this.mulcmd=new Multiplecommand();
+        this.mulcmd=new Multiplecommand();
   }
 
   /**
@@ -249,29 +249,29 @@ public class Athletes implements athletesInterface {
    * 命令模式
    * @return（Multiplecommand）
    */
-//    @Override
-//    public Multiplecommand getMulcmd() {
-//        return mulcmd;
-//    }
-//
-//    @Override
-//    public void creatCommand(FoodType buyFoodType, int number) {
-//        BuyCommand cmd=new BuyCommand(buyFoodType,number);
-//        mulcmd.append(cmd);
-//    }
-//
-//    @Override
-//    public void doAllCommand() {
-//        mulcmd.buy();
-//    }
-//
-//    @Override
-//    public void undoCommand() {
-//        mulcmd.undo();
-//    }
-//
-//    @Override
-//    public void clearCommand() {
-//        mulcmd.clear();
-//    }
+    @Override
+    public Multiplecommand getMulcmd() {
+        return mulcmd;
+    }
+
+    @Override
+    public void creatCommand(FoodType buyFoodType, int number) {
+        BuyCommand cmd=new BuyCommand(buyFoodType,number);
+        mulcmd.append(cmd);
+    }
+
+    @Override
+    public void doAllCommand() {
+        mulcmd.buy();
+    }
+
+    @Override
+    public void undoCommand() {
+        mulcmd.undo();
+    }
+
+    @Override
+    public void clearCommand() {
+        mulcmd.clear();
+    }
 }
