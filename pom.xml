@@ -3,6 +3,7 @@
   <groupId>com.tjudp</groupId>
   <artifactId>olympics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+
     <build>
         <plugins>
             <plugin>

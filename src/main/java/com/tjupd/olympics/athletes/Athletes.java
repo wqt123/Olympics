@@ -1,9 +1,11 @@
 package com.tjupd.olympics.athletes;
 
+import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.diet.CommandAndCompositePattern.BuyCommand;
+import com.tjupd.olympics.diet.CommandAndCompositePattern.MultipleCommand;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
-import java.awt.*;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -16,13 +18,13 @@ import java.util.Objects;
 public class Athletes  implements athletesInterface{
     private final List<Athlete> athletes;
 
-    private Multiplecommand mulcmd;
+    private MultipleCommand mulcmd;
 
     private static final Athletes athlete=new Athletes();
 
     private Athletes(){
         this.athletes=initialization();
-        this.mulcmd=new Multiplecommand();
+        this.mulcmd=new MultipleCommand();
     }
     /**
      * 运动员的初始生成接口
@@ -220,7 +222,7 @@ public class Athletes  implements athletesInterface{
      * @return（Multiplecommand）
      */
     @Override
-    public Multiplecommand getMulcmd() {
+    public MultipleCommand getMulcmd() {
         return mulcmd;
     }
 
