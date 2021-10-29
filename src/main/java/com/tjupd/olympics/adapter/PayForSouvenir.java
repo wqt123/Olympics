@@ -19,19 +19,19 @@ public class PayForSouvenir {
 			case 1: Pay target1 = new WeChatAdapter();
 		    target1.pay();
 		    audience.setMoney(audience.getMoney()-price);
-		    input.close ();
+//		    input.close ();
 		    return true;
 		    case 2: Pay target2 = new AlipaytAdapter();
 		    target2.pay();
-		    input.close ();
+//		   input.close ();
 		    return true;
 		    default: System.out.println("支付失败！");
-		    input.close ();
+//		    input.close ();
 		    return false;
 			}
 		}
 		else System.out.println("支付失败！");
-		input.close ();
+//		input.close ();
 		return false;
 	}
 }
