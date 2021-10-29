@@ -5,13 +5,13 @@ import com.tjupd.olympics.diet.BuilderPattern.director.Director;
 import com.tjupd.olympics.diet.BuilderPattern.food.Food;
 import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
 
-public class Buycommand implements Command{
+public class BuyCommand implements Command{
     //买的食物的种类和数量
     private FoodType buyfoottype;
     private int num;
 
     //构造
-    public Buycommand(FoodType buyfoottype,int num){
+    public BuyCommand(FoodType buyfoottype, int num){
         this.buyfoottype = buyfoottype;
         this.num = num;
     }

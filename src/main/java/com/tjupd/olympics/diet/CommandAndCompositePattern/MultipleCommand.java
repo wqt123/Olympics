@@ -3,7 +3,7 @@ package com.tjupd.olympics.diet.CommandAndCompositePattern;
 import java.util.Iterator;
 import java.util.Stack;
 
-public class Multiplecommand implements Command{
+public class MultipleCommand implements Command{
     private Stack commands = new Stack();
 
     public Stack getCommands() {

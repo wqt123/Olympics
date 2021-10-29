@@ -4,18 +4,18 @@ import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
 
 public class Athletes {
 
-    private Multiplecommand mulcmd;
+    private MultipleCommand mulcmd;
 
     public Athletes() {
-        mulcmd = new Multiplecommand();
+        mulcmd = new MultipleCommand();
     }
 
-    public Multiplecommand getMulcmd() {
+    public MultipleCommand getMulcmd() {
         return mulcmd;
     }
 
     public void createcommand(FoodType buyfoodtype,int num){
-        Buycommand cmd = new Buycommand(buyfoodtype,num);
+        BuyCommand cmd = new BuyCommand(buyfoodtype,num);
         mulcmd.append(cmd);
     }
 
