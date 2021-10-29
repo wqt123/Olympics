@@ -23,9 +23,9 @@ public interface athletesInterface {
      * 命令模式
      * 饮食
      */
-    Multiplecommand getMulcmd();
-    void creatCommand(FoodType buyFoodType,int number);
-    void doAllCommand();
-    void undoCommand();
-    void clearCommand();
+//    Multiplecommand getMulcmd();
+//    void creatCommand(FoodType buyFoodType,int number);
+//    void doAllCommand();
+//    void undoCommand();
+//    void clearCommand();
 }
