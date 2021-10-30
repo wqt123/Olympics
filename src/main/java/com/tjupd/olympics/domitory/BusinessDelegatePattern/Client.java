@@ -1,14 +1,19 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
+import com.tjupd.olympics.athletes.Athlete;
+
 //客户端
 public class Client {
-    DomitoryDelegate domitoryDelegate;
+    private DomitoryDelegate domitoryDelegate;
+    private Athlete athlete;
 
-    public Client(DomitoryDelegate domitoryDelegate){
+    public Client(DomitoryDelegate domitoryDelegate,Athlete athlete){
         this.domitoryDelegate=domitoryDelegate;
+        this.athlete=athlete;
     }
 
-    public void doTask(){
-        domitoryDelegate.doTask();
+    public void doTask(Athlete athlete){
+        domitoryDelegate.doTask(athlete);
+
     }
 }
