@@ -1,4 +1,4 @@
-package com.tjupd.olympics.races.Singleton_Template_FacadePatterns;
+package com.tjupd.olympics.Singleton_Template_FacadePatterns;
 
 public class RaceDemo {
 
