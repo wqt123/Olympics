@@ -1,4 +1,4 @@
-package com.tjupd.olympics.diet.CommandAndCompositePattern;
+package com.tjupd.olympics.CommandAndCompositePattern;
 
 import java.util.Iterator;
 import java.util.Stack;

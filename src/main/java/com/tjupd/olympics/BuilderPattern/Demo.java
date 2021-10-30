@@ -1,10 +1,10 @@
-package com.tjupd.olympics.diet.BuilderPattern;
+package com.tjupd.olympics.BuilderPattern;
 
 import java.util.Scanner;
 
-import com.tjupd.olympics.diet.BuilderPattern.builders.FoodBuilder;
-import com.tjupd.olympics.diet.BuilderPattern.director.Director;
-import com.tjupd.olympics.diet.BuilderPattern.food.Food;
+import com.tjupd.olympics.BuilderPattern.food.Food;
+import com.tjupd.olympics.BuilderPattern.builders.FoodBuilder;
+import com.tjupd.olympics.BuilderPattern.director.Director;
 
 public class Demo {
     public static void main(String[] args) {
@@ -42,12 +42,5 @@ public class Demo {
                 "\nVitamins "+food.getVitamins()+
                 "\nWater "+food.getWater()
         );
-
-
-//        CarManualBuilder manualBuilder = new CarManualBuilder();
-//        director.constructSportsCar(manualBuilder);
-//        Manual carManual = manualBuilder.getResult();
-//        System.out.println("\nCar manual built:\n" + carManual.print());
-
     }
 }

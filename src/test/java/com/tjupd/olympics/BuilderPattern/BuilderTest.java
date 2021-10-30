@@ -1,9 +1,7 @@
-package com.tjupd.olympics.diet.BuilderPattern;
+package com.tjupd.olympics.BuilderPattern;
 
-import com.tjupd.olympics.diet.BuilderPattern.*;
-import com.tjupd.olympics.diet.BuilderPattern.builders.FoodBuilder;
-import com.tjupd.olympics.diet.BuilderPattern.director.Director;
-import org.junit.Before;
+import com.tjupd.olympics.BuilderPattern.builders.FoodBuilder;
+import com.tjupd.olympics.BuilderPattern.director.Director;
 import org.junit.Test;
 
 public class BuilderTest {

@@ -1,7 +1,9 @@
-package com.tjupd.olympics.diet.CommandAndCompositePattern;
+package com.tjupd.olympics.CommandAndCompositePattern;
 
 
-import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.CommandAndCompositePattern.BuyCommand;
+import com.tjupd.olympics.CommandAndCompositePattern.MultipleCommand;
+import com.tjupd.olympics.BuilderPattern.food.FoodType;
 import org.junit.Test;
 
 public class CommandAndCompositeTest {

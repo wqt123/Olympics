@@ -1,4 +1,4 @@
-package com.tjupd.olympics.diet.BuilderPattern.food;
+package com.tjupd.olympics.BuilderPattern.food;
 
 public class Food {
     //食物类型

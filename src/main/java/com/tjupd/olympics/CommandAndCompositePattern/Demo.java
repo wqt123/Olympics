@@ -1,8 +1,7 @@
-package com.tjupd.olympics.diet.CommandAndCompositePattern;
+package com.tjupd.olympics.CommandAndCompositePattern;
 
-import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.BuilderPattern.food.FoodType;
 
-import static com.tjupd.olympics.diet.BuilderPattern.food.FoodType.*;
 //静态导入什么鬼来着？
 
 import java.util.Scanner;
@@ -24,11 +23,11 @@ public class Demo {
             String str = input.next();
             switch(str)
             {
-                case "1":foodType = Milk;break;
-                case "2":foodType = Egg;break;
-                case "3":foodType = Bread;break;
-                case "4":foodType = Bonbon;break;
-                case "5":foodType = Sausage;break;
+                case "1":foodType = FoodType.Milk;break;
+                case "2":foodType = FoodType.Egg;break;
+                case "3":foodType = FoodType.Bread;break;
+                case "4":foodType = FoodType.Bonbon;break;
+                case "5":foodType = FoodType.Sausage;break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + str);
             }

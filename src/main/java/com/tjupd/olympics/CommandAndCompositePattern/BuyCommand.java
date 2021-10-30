@@ -1,9 +1,9 @@
-package com.tjupd.olympics.diet.CommandAndCompositePattern;
+package com.tjupd.olympics.CommandAndCompositePattern;
 
-import com.tjupd.olympics.diet.BuilderPattern.builders.FoodBuilder;
-import com.tjupd.olympics.diet.BuilderPattern.director.Director;
-import com.tjupd.olympics.diet.BuilderPattern.food.Food;
-import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.BuilderPattern.builders.FoodBuilder;
+import com.tjupd.olympics.BuilderPattern.director.Director;
+import com.tjupd.olympics.BuilderPattern.food.Food;
+import com.tjupd.olympics.BuilderPattern.food.FoodType;
 
 public class BuyCommand implements Command{
     //买的食物的种类和数量

@@ -1,5 +1,8 @@
 package com.tjupd.olympics.athletes;
 
+import com.tjupd.olympics.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.CommandAndCompositePattern.BuyCommand;
+import com.tjupd.olympics.CommandAndCompositePattern.MultipleCommand;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
@@ -15,7 +18,7 @@ import java.util.Objects;
 public class Athletes implements athletesInterface {
 
   private final List<Athlete> athletes;
-    private Multiplecommand mulcmd;
+  private MultipleCommand mulcmd;
 
   public List<Athlete> getAthletes() {
     return athletes;
@@ -30,7 +33,7 @@ public class Athletes implements athletesInterface {
 
   private Athletes() {
     this.athletes = initialization();
-        this.mulcmd=new Multiplecommand();
+        this.mulcmd=new MultipleCommand();
   }
 
   /**
@@ -250,7 +253,7 @@ public class Athletes implements athletesInterface {
    * @return（Multiplecommand）
    */
     @Override
-    public Multiplecommand getMulcmd() {
+    public MultipleCommand getMulcmd() {
         return mulcmd;
     }
 

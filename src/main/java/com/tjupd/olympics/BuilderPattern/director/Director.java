@@ -1,7 +1,7 @@
-package com.tjupd.olympics.diet.BuilderPattern.director;
+package com.tjupd.olympics.BuilderPattern.director;
 
-import com.tjupd.olympics.diet.BuilderPattern.builders.Builder;
-import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.BuilderPattern.builders.Builder;
+import com.tjupd.olympics.BuilderPattern.food.FoodType;
 
 public class Director {
     //Milk, Egg, Bread, Bonbon, Sausage等食品的营养物质的数量

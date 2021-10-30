@@ -1,6 +1,6 @@
-package com.tjupd.olympics.diet.CommandAndCompositePattern;
+package com.tjupd.olympics.CommandAndCompositePattern;
 
-import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.BuilderPattern.food.FoodType;
 
 public class Athletes {
 

@@ -1,7 +1,7 @@
-package com.tjupd.olympics.diet.BuilderPattern.builders;
+package com.tjupd.olympics.BuilderPattern.builders;
 
-import com.tjupd.olympics.diet.BuilderPattern.food.Food;
-import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.BuilderPattern.food.Food;
+import com.tjupd.olympics.BuilderPattern.food.FoodType;
 
 public class FoodBuilder implements Builder{
     //食物类型
