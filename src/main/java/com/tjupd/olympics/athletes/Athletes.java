@@ -1,18 +1,14 @@
 package com.tjupd.olympics.athletes;
 
 import com.tjupd.olympics.BuilderPattern.food.FoodType;
-import com.tjupd.olympics.ChainOfResponsibility.ChainPatternDemo;
 import com.tjupd.olympics.CommandAndCompositePattern.BuyCommand;
 import com.tjupd.olympics.CommandAndCompositePattern.MultipleCommand;
-import com.tjupd.olympics.Observer.ObserverDemo;
-import com.tjupd.olympics.State.StateDemo;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Random;
 
 /**
  * @author ShaoCHi
@@ -21,30 +17,23 @@ import java.util.Random;
  */
 public class Athletes implements athletesInterface {
 
-  private static final Athletes athlete = new Athletes();
   private final List<Athlete> athletes;
   private MultipleCommand mulcmd;
 
-  private Athletes() {
-    this.athletes = initialization();
-    this.mulcmd = new MultipleCommand();
+  public List<Athlete> getAthletes() {
+    return athletes;
   }
 
   public static Athletes getAthlete() {
     return athlete;
   }
 
-  /**
-   * 获取所有的运动员信息
-   *
-   * @return List
-   */
-  public static Athletes getAll() {
-    return athlete;
-  }
 
-  public List<Athlete> getAthletes() {
-    return athletes;
+  private static final Athletes athlete = new Athletes();
+
+  private Athletes() {
+    this.athletes = initialization();
+        this.mulcmd=new MultipleCommand();
   }
 
   /**
@@ -73,7 +62,7 @@ public class Athletes implements athletesInterface {
     countryNames.add("China");
     countryNames.add("Japan");
     countryNames.add("Korea");
-    countryNames.add("Russia");
+    countryNames.add("Russian");
     for (int i = 0; i < 6; i++) {
       Athlete female = new Athlete();
       female.setSex(false);
@@ -98,6 +87,15 @@ public class Athletes implements athletesInterface {
       athletes.add(male);
     }
     return athletes;
+  }
+
+  /**
+   * 获取所有的运动员信息
+   *
+   * @return List
+   */
+  public static Athletes getAll() {
+    return athlete;
   }
 
   /**
@@ -252,76 +250,31 @@ public class Athletes implements athletesInterface {
   /**
    * 饮食
    * 命令模式
-   *
    * @return（Multiplecommand）
    */
-  @Override
-  public MultipleCommand getMulcmd() {
-    return mulcmd;
-  }
-
-  @Override
-  public void creatCommand(FoodType buyFoodType, int number) {
-    BuyCommand cmd = new BuyCommand(buyFoodType, number);
-    mulcmd.append(cmd);
-  }
-
-  @Override
-  public void doAllCommand() {
-    mulcmd.buy();
-  }
-
-  @Override
-  public void undoCommand() {
-    mulcmd.undo();
-  }
-
-  @Override
-  public void clearCommand() {
-    mulcmd.clear();
-  }
-
-
-  /**
-   * 参数为用户新建运动员
-   * @param athlete
-   */
-  @Override
-  public void runEpidemicCheck(Athlete athlete) {
-    int healthCode;
-    Random r = new Random();
-    int k=r.nextInt(101);
-    if(k>=0&&k<=15) {//15%
-      healthCode = 2;
+    @Override
+    public MultipleCommand getMulcmd() {
+        return mulcmd;
     }
-    else if(k>15&&k<=40) {//25%
-      healthCode = 1;
+
+    @Override
+    public void creatCommand(FoodType buyFoodType, int number) {
+        BuyCommand cmd=new BuyCommand(buyFoodType,number);
+        mulcmd.append(cmd);
     }
-    else {//60%
-      healthCode = 0;
+
+    @Override
+    public void doAllCommand() {
+        mulcmd.buy();
     }
-    //因为需要测试，设置一个国家，实际是自己输入的
-    athlete.setHealthCode(healthCode);
 
-    //运动员当前各项状态
-    System.out.println("运动员身体状态：");
-    System.out.println(athlete.getName() + "	"+ athlete.getCountry() +"	"+ athlete.getHealthCode());
+    @Override
+    public void undoCommand() {
+        mulcmd.undo();
+    }
 
-    //责任链模式
-    ChainPatternDemo chainPatternDemo = new ChainPatternDemo();
-    System.out.println("查找责任链中不同疫情健康码级别的记录器：");
-    chainPatternDemo.run(athlete);
-    System.out.println();
-
-    //状态模式
-    System.out.println("根据不同健康吗状态采取不同措施：");
-    StateDemo statedemo = new StateDemo();
-    statedemo.run(athlete);
-    System.out.println();
-
-    //观察者模式
-    System.out.println("其他运动员作为观察者更新其他运动员自己的健康码：");
-    ObserverDemo observerdemo = new ObserverDemo();
-    observerdemo.run(athlete, this);
-  }
+    @Override
+    public void clearCommand() {
+        mulcmd.clear();
+    }
 }
