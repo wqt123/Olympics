@@ -1,4 +1,4 @@
-package com.tjupd.olympics.testTicket;
+package testTicket;
 import static org.junit.Assert.*;
 
 import org.junit.Test;

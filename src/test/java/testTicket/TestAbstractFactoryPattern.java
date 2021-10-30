@@ -1,4 +1,4 @@
-package com.tjupd.olympics.testTicket;
+package testTicket;
 
 import org.junit.Test;
 import com.tjupd.olympics.abstractFactoryPattern.*;
