@@ -1,10 +1,12 @@
 package com.tjupd.olympics.FrontControllerPattern.AudienceFrontController;
 
+import com.tjupd.olympics.audience.Audience;
+
 public class AudienceFrontController {
     private  Dispatcher dispatcher;
 
-    public AudienceFrontController(){
-        dispatcher = new Dispatcher();
+    public AudienceFrontController(Audience aud){
+        dispatcher = new Dispatcher(aud);
     }
 
     private boolean isAuthenticUser(){

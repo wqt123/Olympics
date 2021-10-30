@@ -1,5 +1,7 @@
 package com.tjupd.olympics.FrontControllerPattern;
 
+import com.tjupd.olympics.audience.Audience;
+
 public class Dispatcher {
     private final AthleteView athleteView;
     private final AudienceView audienceView;

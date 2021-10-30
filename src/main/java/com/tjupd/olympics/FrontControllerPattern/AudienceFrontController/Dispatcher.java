@@ -1,9 +1,15 @@
 package com.tjupd.olympics.FrontControllerPattern.AudienceFrontController;
 
+import com.tjupd.olympics.audience.Audience;
+
 public class Dispatcher {
     private WatchGameView watchGameView;
-    public Dispatcher(){
+    private BuySouvenirView buySouvenirView;
+    private Audience audience;
+    public Dispatcher(Audience aud){
         watchGameView = new WatchGameView();
+        buySouvenirView = new BuySouvenirView();
+        audience = aud;
     }
 
     public void dispatch(String request){
@@ -11,6 +17,8 @@ public class Dispatcher {
             case "WatchGame":
                 watchGameView.show();
                 break;
+            case "BuySouvenir":
+                buySouvenirView.show(audience);
         }
     }
 }
