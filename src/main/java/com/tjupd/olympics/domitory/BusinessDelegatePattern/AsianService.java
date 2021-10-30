@@ -19,7 +19,7 @@ public class AsianService implements DomitoryService {
 
     @Override
     public String setRoomNumber(){
-        Random r=new Random(1);
+        Random r=new Random();
         int floor=r.nextInt(9); //一共八层楼
         int room=r.nextInt(9); //一层楼八个房间
         int temp=floor*100+room;
