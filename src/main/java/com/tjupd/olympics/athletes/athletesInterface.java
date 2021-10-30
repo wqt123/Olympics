@@ -1,5 +1,7 @@
 package com.tjupd.olympics.athletes;
 
+import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.diet.CommandAndCompositePattern.MultipleCommand;
 import com.tjupd.olympics.other.Game.GetScore;
 
 import java.util.List;
@@ -18,14 +20,13 @@ public interface athletesInterface {
     void updateScores(GetScore score,boolean sex);
     void updateHealthCode(String name,int code);
     void deliverRoom(String name,String building,String roomNumber);
-
     /**
      * 命令模式
      * 饮食
      */
-//    Multiplecommand getMulcmd();
-//    void creatCommand(FoodType buyFoodType,int number);
-//    void doAllCommand();
-//    void undoCommand();
-//    void clearCommand();
+    MultipleCommand getMulcmd();
+    void creatCommand(FoodType buyFoodType, int number);
+    void doAllCommand();
+    void undoCommand();
+    void clearCommand();
 }

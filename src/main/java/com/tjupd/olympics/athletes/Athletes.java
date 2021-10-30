@@ -1,5 +1,8 @@
 package com.tjupd.olympics.athletes;
 
+import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.diet.CommandAndCompositePattern.BuyCommand;
+import com.tjupd.olympics.diet.CommandAndCompositePattern.MultipleCommand;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
@@ -14,23 +17,30 @@ import java.util.Objects;
  */
 public class Athletes implements athletesInterface {
 
+  private static final Athletes athlete = new Athletes();
   private final List<Athlete> athletes;
-    private Multiplecommand mulcmd;
+  private MultipleCommand mulcmd;
 
-  public List<Athlete> getAthletes() {
-    return athletes;
+  private Athletes() {
+    this.athletes = initialization();
+    this.mulcmd = new MultipleCommand();
   }
 
   public static Athletes getAthlete() {
     return athlete;
   }
 
+  /**
+   * 获取所有的运动员信息
+   *
+   * @return List
+   */
+  public static Athletes getAll() {
+    return athlete;
+  }
 
-  private static final Athletes athlete = new Athletes();
-
-  private Athletes() {
-    this.athletes = initialization();
-        this.mulcmd=new Multiplecommand();
+  public List<Athlete> getAthletes() {
+    return athletes;
   }
 
   /**
@@ -84,15 +94,6 @@ public class Athletes implements athletesInterface {
       athletes.add(male);
     }
     return athletes;
-  }
-
-  /**
-   * 获取所有的运动员信息
-   *
-   * @return List
-   */
-  public static Athletes getAll() {
-    return athlete;
   }
 
   /**
@@ -247,31 +248,32 @@ public class Athletes implements athletesInterface {
   /**
    * 饮食
    * 命令模式
-   * @return（Multiplecommand）
+   *
+   * @return（MultipleCommand）
    */
-    @Override
-    public Multiplecommand getMulcmd() {
-        return mulcmd;
-    }
+  @Override
+  public MultipleCommand getMulcmd() {
+    return mulcmd;
+  }
 
-    @Override
-    public void creatCommand(FoodType buyFoodType, int number) {
-        BuyCommand cmd=new BuyCommand(buyFoodType,number);
-        mulcmd.append(cmd);
-    }
+  @Override
+  public void creatCommand(FoodType buyFoodType, int number) {
+    BuyCommand cmd = new BuyCommand(buyFoodType, number);
+    mulcmd.append(cmd);
+  }
 
-    @Override
-    public void doAllCommand() {
-        mulcmd.buy();
-    }
+  @Override
+  public void doAllCommand() {
+    mulcmd.buy();
+  }
 
-    @Override
-    public void undoCommand() {
-        mulcmd.undo();
-    }
+  @Override
+  public void undoCommand() {
+    mulcmd.undo();
+  }
 
-    @Override
-    public void clearCommand() {
-        mulcmd.clear();
-    }
+  @Override
+  public void clearCommand() {
+    mulcmd.clear();
+  }
 }
