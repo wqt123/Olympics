@@ -1,19 +1,14 @@
-package BusinessDelegatePattern;
+package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
-import BusinessDelegatePattern.AsianService;
-import BusinessDelegatePattern.DomitoryService;
-import BusinessDelegatePattern.EuropeanService;
-
+//业务查询服务
 public class DomitoryLookUp {
-    public DomitoryService getDomitoryService(String serviceType){
-        if (serviceType.equalsIgnoreCase("Asian")) {
-            return new AsianService();
+    public DomitoryService getDomitoryService(String country,String serviceType){
+        if (serviceType=="Asian") {
+            return new AsianService(country);
         }
-        else if (serviceType.equalsIgnoreCase("European")){
-            return new EuropeanService();
+        else {
+            return new EuropeanService(country);
         }
-        else{
-            return  new NorthAmericanService();
-        }
+        //因为只设置了亚洲和欧洲的国家，所以if-else语句只设置了两个分支，实际情况可以进行添加。
     }
 }
