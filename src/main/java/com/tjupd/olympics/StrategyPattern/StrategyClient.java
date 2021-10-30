@@ -1,4 +1,4 @@
-package com.tjupd.olympics.races.StrategyPattern;
+package com.tjupd.olympics.StrategyPattern;
 
 import java.util.Scanner;
 
