@@ -25,7 +25,6 @@ public class DomitoryDelegatePatternDemo {
         System.out.println("building:"+athletes.getAthlete("Ford").getBuilding());
         System.out.println("roomNumber:"+athletes.getAthlete("Ford").getRoomNumber());
 
-
     }
 }
 
