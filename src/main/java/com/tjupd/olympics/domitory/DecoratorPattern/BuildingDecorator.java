@@ -1,12 +1,15 @@
-import DecoratorPattern.Building;
+package com.tjupd.olympics.domitory.DecoratorPattern;
 
-public abstract class BuildingDecorator implements Building {
-    protected Building decoratedBuilding;
+//抽象装饰角色
+public abstract class BuildingDecorator extends Building {
+    private Building building=null;
 
-    public BuildingDecorator(Building decoratedBuilding){
-        this.decoratedBuilding=decoratedBuilding;
+    public BuildingDecorator(Building building){
+        this.building=building;
     }
-    public void setTeam(){
-        decoratedBuilding.setTeam();
+
+    @Override
+    public void setBuilding(){
+        this.building.setBuilding();
     }
 }

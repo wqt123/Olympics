@@ -1,5 +1,6 @@
-package DecoratorPattern;
+package com.tjupd.olympics.domitory.DecoratorPattern;
 
-public interface Building {
-    void setTeam();
+//抽象的Building
+public abstract class Building {
+    public abstract void setBuilding();
 }

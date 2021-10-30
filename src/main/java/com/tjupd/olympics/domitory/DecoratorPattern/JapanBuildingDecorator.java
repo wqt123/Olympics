@@ -1,19 +1,17 @@
-import DecoratorPattern.Building;
+package com.tjupd.olympics.domitory.DecoratorPattern;
 
 public class JapanBuildingDecorator extends BuildingDecorator{
 
-    public JapanBuildingDecorator(Building decoratedBuilding) {
-        super(decoratedBuilding);
+    public JapanBuildingDecorator(Building building) {
+        super(building);
     }
 
-    @Override
-    public void setTeam(){
-        decoratedBuilding.setTeam();
-        setJapanTeam(decoratedBuilding);
+    private void setJapanBuilding(){
+        System.out.println("这栋楼安排日本代表队入住");
     }
 
-    private void setJapanTeam(Building decoratedBuilding){
-
-        System.out.println("这栋楼里面日本代表队");
+    public void setBuilding(){
+        super.setBuilding();
+        this.setJapanBuilding();
     }
 }
