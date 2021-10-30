@@ -1,6 +1,6 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
-import athletes.Athletes;
+import com.tjupd.olympics.athletes.Athletes;
 
 public class DomitoryDelegatePatternDemo {
     public static void main(String args[]){
