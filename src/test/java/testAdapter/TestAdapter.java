@@ -1,4 +1,4 @@
-package com.tjupd.olympics.testAdapter;
+package testAdapter;
 
 import org.junit.Test;
 
