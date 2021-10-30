@@ -1,4 +1,4 @@
-package com.tjupd.olympics.testAudience;
+package testAudience;
 
 import org.junit.Test;
 import com.tjupd.olympics.audience.Audience;

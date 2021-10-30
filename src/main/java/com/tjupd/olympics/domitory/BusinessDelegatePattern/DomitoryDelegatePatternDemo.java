@@ -1,6 +1,6 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
-import athletes.Athletes;
+import com.tjupd.olympics.athletes.Athletes;
 
 public class DomitoryDelegatePatternDemo {
     public static void main(String args[]){
@@ -24,7 +24,6 @@ public class DomitoryDelegatePatternDemo {
         System.out.println("update:");
         System.out.println("building:"+athletes.getAthlete("Ford").getBuilding());
         System.out.println("roomNumber:"+athletes.getAthlete("Ford").getRoomNumber());
-
 
     }
 }

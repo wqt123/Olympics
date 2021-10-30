@@ -1,14 +1,18 @@
 package com.tjupd.olympics.athletes;
 
 import com.tjupd.olympics.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.ChainOfResponsibility.ChainPatternDemo;
 import com.tjupd.olympics.CommandAndCompositePattern.BuyCommand;
 import com.tjupd.olympics.CommandAndCompositePattern.MultipleCommand;
+import com.tjupd.olympics.Observer.ObserverDemo;
+import com.tjupd.olympics.State.StateDemo;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 
 /**
  * @author ShaoCHi
@@ -277,4 +281,45 @@ public class Athletes implements athletesInterface {
     public void clearCommand() {
         mulcmd.clear();
     }
+
+  @Override
+  public void runEpidemicCheck(Athlete athlete) {
+
+    int healthCode;
+    Random r = new Random();
+    int k=r.nextInt(101);
+    if(k>=0&&k<=15) {//15%
+      healthCode = 2;
+    }
+    else if(k>15&&k<=40) {//25%
+      healthCode = 1;
+    }
+    else {//60%
+      healthCode = 0;
+    }
+    //因为需要测试，设置一个国家，实际是自己输入的
+    athlete.setHealthCode(healthCode);
+    //athlete.setHealthCode(healthcode);
+
+    //运动员当前各项状态
+    System.out.println("运动员身体状态：");
+    System.out.println(athlete.getName() + "	"+ athlete.getCountry() +"	"+ athlete.getHealthCode());
+
+    //责任链模式
+    ChainPatternDemo chainPatternDemo = new ChainPatternDemo();
+    System.out.println("查找责任链中不同疫情健康码级别的记录器：");
+    chainPatternDemo.run(athlete);
+    System.out.println();
+
+    //状态模式
+    System.out.println("根据不同健康吗状态采取不同措施：");
+    StateDemo statedemo = new StateDemo();
+    statedemo.run(athlete);
+    System.out.println();
+
+    //观察者模式
+    System.out.println("其他运动员作为观察者更新其他运动员自己的健康码：");
+    ObserverDemo observerdemo = new ObserverDemo();
+    observerdemo.run(athlete,this);
+  }
 }

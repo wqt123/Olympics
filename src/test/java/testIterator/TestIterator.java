@@ -1,4 +1,4 @@
-package com.tjupd.olympics.testIterator;
+package testIterator;
 
 import java.util.ArrayList;
 import java.util.List;
