@@ -29,4 +29,9 @@ public interface athletesInterface {
     void doAllCommand();
     void undoCommand();
     void clearCommand();
+
+    /**
+     * 疫情监控
+     */
+    void runEpidemic();
 }
