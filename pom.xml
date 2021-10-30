@@ -4,21 +4,21 @@
   <artifactId>olympics</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>7</source>
-                    <target>7</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <configuration>-->
+<!--                    <source>7</source>-->
+<!--                    <target>7</target>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
     <properties>
-  	<maven.compiler.target>1.6</maven.compiler.target>
-  	<maven.compiler.source>1.6</maven.compiler.source>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  	<maven.compiler.source>1.8</maven.compiler.source>
   </properties>
   <dependencies>
   	<dependency>
@@ -32,17 +32,17 @@
           <version>RELEASE</version>
           <scope>compile</scope>
       </dependency>
-      <dependency>
-          <groupId>org.projectlombok</groupId>
-          <artifactId>lombok</artifactId>
-          <version>RELEASE</version>
-          <scope>compile</scope>
-      </dependency>
-      <dependency>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-          <version>RELEASE</version>
-          <scope>test</scope>
-      </dependency>
+<!--      <dependency>-->
+<!--          <groupId>org.projectlombok</groupId>-->
+<!--          <artifactId>lombok</artifactId>-->
+<!--          <version>RELEASE</version>-->
+<!--          <scope>compile</scope>-->
+<!--      </dependency>-->
+<!--      <dependency>-->
+<!--          <groupId>junit</groupId>-->
+<!--          <artifactId>junit</artifactId>-->
+<!--          <version>RELEASE</version>-->
+<!--          <scope>test</scope>-->
+<!--      </dependency>-->
   </dependencies>
 </project>

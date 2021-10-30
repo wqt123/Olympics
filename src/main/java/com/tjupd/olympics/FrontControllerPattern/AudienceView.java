@@ -2,6 +2,9 @@ package com.tjupd.olympics.FrontControllerPattern;
 
 import com.tjupd.olympics.FrontControllerPattern.AthleteFrontController.AthleteFrontController;
 import com.tjupd.olympics.FrontControllerPattern.AudienceFrontController.AudienceFrontController;
+import com.tjupd.olympics.FrontControllerPattern.AudienceFrontController.BuySouvenirView;
+import com.tjupd.olympics.audience.Audience;
+import com.tjupd.olympics.iterator.BuySouvenir;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,7 +13,9 @@ import java.util.Objects;
 public class AudienceView {
     public void show(){
         System.out.println("Displaying Home Page");
-        AudienceFrontController frontController = new AudienceFrontController();
+        Audience audience = new Audience();
+        audience.init();
+        AudienceFrontController frontController = new AudienceFrontController(audience);
         System.out.println("您现在的身份是观众！");
         while (true){
             System.out.println("请选择操作：");
@@ -30,6 +35,7 @@ public class AudienceView {
                 case "1":
                     break;
                 case "2":
+                    frontController.dispatchRequest("BuySouvenir");
                     break;
                 case "3":
                     break;

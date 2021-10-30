@@ -3,10 +3,9 @@ package testAudience;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
-
-import com.tjupd.olympics.testAdapter.TestAdapter;
-import com.tjupd.olympics.testIterator.TestIterator;
-import com.tjupd.olympics.testPrototype.TestPrototype;
+import testAdapter.TestAdapter;
+import testIterator.TestIterator;
+import testPrototype.TestPrototype;
 
 
 public class TestRunner {

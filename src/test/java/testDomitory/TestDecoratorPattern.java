@@ -1,5 +1,6 @@
-package com.tjupd.olympics.DecoratorPattern;
+package testDomitory;
 
+import com.tjupd.olympics.domitory.DecoratorPattern.*;
 import org.junit.Test;
 
 public class TestDecoratorPattern {
@@ -9,21 +10,22 @@ public class TestDecoratorPattern {
 
     @Test
     public void testDecoratorPattern() throws CloneNotSupportedException {
-    //楼栋No.1
-    no1=new ChinaBuildingDecorator(no1);
+        //楼栋No.1
+        no1 = new ChinaBuildingDecorator(no1);
         no1.setBuilding();
 
-    //楼栋No.2
-    no2=new JapanBuildingDecorator(no2);
-    no2=new KoreaBuildingDecorator(no2);
+        //楼栋No.2
+        no2 = new JapanBuildingDecorator(no2);
+        no2 = new KoreaBuildingDecorator(no2);
         no2.setBuilding();
 
-    //楼栋No.3
-    no3=new RussiaBuildingDecorator(no3);
-    no3=new ChinaBuildingDecorator(no3);
+        //楼栋No.3
+        no3 = new RussiaBuildingDecorator(no3);
+        no3 = new ChinaBuildingDecorator(no3);
         no3.setBuilding();
 
-    //楼栋No.4
-    no3=new RussiaBuildingDecorator(no3);
+        //楼栋No.4
+        no3 = new RussiaBuildingDecorator(no3);
         no3.setBuilding();
+    }
 }
