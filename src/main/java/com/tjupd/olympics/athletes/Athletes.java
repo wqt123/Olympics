@@ -1,11 +1,11 @@
 package com.tjupd.olympics.athletes;
 
+import com.tjupd.olympics.BuilderPattern.food.FoodType;
 import com.tjupd.olympics.ChainOfResponsibility.ChainPatternDemo;
+import com.tjupd.olympics.CommandAndCompositePattern.BuyCommand;
+import com.tjupd.olympics.CommandAndCompositePattern.MultipleCommand;
 import com.tjupd.olympics.Observer.ObserverDemo;
 import com.tjupd.olympics.State.StateDemo;
-import com.tjupd.olympics.diet.BuilderPattern.food.FoodType;
-import com.tjupd.olympics.diet.CommandAndCompositePattern.BuyCommand;
-import com.tjupd.olympics.diet.CommandAndCompositePattern.MultipleCommand;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
@@ -73,7 +73,7 @@ public class Athletes implements athletesInterface {
     countryNames.add("China");
     countryNames.add("Japan");
     countryNames.add("Korea");
-    countryNames.add("Russian");
+    countryNames.add("Russia");
     for (int i = 0; i < 6; i++) {
       Athlete female = new Athlete();
       female.setSex(false);
@@ -253,7 +253,7 @@ public class Athletes implements athletesInterface {
    * 饮食
    * 命令模式
    *
-   * @return（MultipleCommand）
+   * @return（Multiplecommand）
    */
   @Override
   public MultipleCommand getMulcmd() {
@@ -281,14 +281,14 @@ public class Athletes implements athletesInterface {
     mulcmd.clear();
   }
 
+
   /**
-   * 疫情监测
+   * 参数为用户新建运动员
+   * @param athlete
    */
   @Override
-  public void runEpidemic() {
-    Athletes athletes = Athletes.getAthlete();
-    Athlete athlete = new Athlete();
-    int healthCode=0;
+  public void runEpidemicCheck(Athlete athlete) {
+    int healthCode;
     Random r = new Random();
     int k=r.nextInt(101);
     if(k>=0&&k<=15) {//15%
@@ -301,8 +301,6 @@ public class Athletes implements athletesInterface {
       healthCode = 0;
     }
     //因为需要测试，设置一个国家，实际是自己输入的
-    //athlete.setCountry("China");
-    //athlete.setHealthCode(2);
     athlete.setHealthCode(healthCode);
 
     //运动员当前各项状态
@@ -324,6 +322,6 @@ public class Athletes implements athletesInterface {
     //观察者模式
     System.out.println("其他运动员作为观察者更新其他运动员自己的健康码：");
     ObserverDemo observerdemo = new ObserverDemo();
-    observerdemo.run(athlete, athletes);
+    observerdemo.run(athlete, this);
   }
 }
