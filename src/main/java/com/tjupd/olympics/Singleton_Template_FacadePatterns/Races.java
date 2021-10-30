@@ -1,8 +1,8 @@
-package com.tjupd.olympics.races.Singleton_Template_FacadePatterns;
+package com.tjupd.olympics.Singleton_Template_FacadePatterns;
 
-import com.tjupd.olympics.athletes.Athletes;
+import com.tjupd.olympics.athletes.*;
 import com.tjupd.olympics.other.Game.*;
-import com.tjupd.olympics.races.StrategyPattern.*;
+import com.tjupd.olympics.StrategyPattern.*;
 
 import java.util.*;
 
@@ -118,6 +118,36 @@ public class Races {
         } else if (kind == 3) {
             for (int i = 0; i < theScore.size(); i++) {
                 theScore.get(i).showScore_LongJump();
+            }
+        }
+    }
+
+    public void ShowTheAthletes(int kind){
+        Athletes athletes = Athletes.getAthlete();
+        List<Athlete> athletes_male =athletes.getAthletes(true);// 获得男远动员
+        List<Athlete> athletes_female = athletes.getAthletes(false);// 女运动员
+        Collections.shuffle(athletes_male); // 打乱一下顺序
+        Collections.shuffle(athletes_female);
+
+        if(kind==1 || kind==2){
+            System.out.println("参加本场男子100m比赛的运动员有:");
+
+            for (int i= 0;i<athletes_male.size();i++){
+                System.out.println((i+1)+"号: 来自"+athletes_male.get(i).getCountry()+"的"+athletes_male.get(i).getName()+"选手！");
+            }
+            System.out.println("参加本场女子100m比赛的运动员有:");
+            for (int i= 0;i<athletes_male.size();i++){
+                System.out.println((i+1)+"号: 来自"+athletes_female.get(i).getCountry()+"的"+athletes_female.get(i).getName()+"选手！");
+            }
+        }
+        else if(kind ==3 || kind == 4){
+            System.out.println("参加本场男子800m比赛的运动员有:");
+            for (int i= 0;i<athletes_male.size();i++){
+                System.out.println((i+1)+"号: 来自"+athletes_male.get(i).getCountry()+"的"+athletes_male.get(i).getName()+"选手！");
+            }
+            System.out.println("参加本场女子800m比赛的运动员有:");
+            for (int i= 0;i<athletes_male.size();i++){
+                System.out.println((i+1)+"号: 来自"+athletes_female.get(i).getCountry()+"的"+athletes_female.get(i).getName()+"选手！");
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.tjupd.olympics.races.StrategyPattern;
+package com.tjupd.olympics.StrategyPattern;
 // 上下文类，我也不知道为什么要这么叫
 public class StrategyContext {
     private Strategy strategy;

@@ -1,4 +1,4 @@
-package com.tjupd.olympics.races.StrategyPattern;
+package com.tjupd.olympics.StrategyPattern;
 
 public class StrategyC extends Strategy {
     @Override
