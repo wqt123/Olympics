@@ -16,7 +16,7 @@ public class MappingCountry2Building {
 
     public int mapping(){
         if (country=="China"){
-            arr[0]=3;arr[1]=4;
+            arr[0]=1;arr[1]=3;
         }
         else if (country=="Japan"){
             arr[0]=2;
