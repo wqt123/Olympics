@@ -50,23 +50,23 @@ public class BuySouvenir{
 		
 		int number = 1;
 		
-	      for(Iterator iter = souvenirRepository.getIterator(); iter.hasNext();){
-	         Souvenir souvenir = (Souvenir)iter.next();
-	         String name = String.format("%-20s", souvenir.getName());
-	         System.out.println("商品：" + number+ " " + name +" 价格：" + souvenir.getPrice()+"元");
-	         number++;
-	      }
+		for(Iterator iter = souvenirRepository.getIterator(); iter.hasNext();){
+			Souvenir souvenir = (Souvenir)iter.next();
+			String name = String.format("%-20s", souvenir.getName());
+			System.out.println("商品：" + number+ " " + name +" 价格：" + souvenir.getPrice()+"元");
+			number++;
+		}
 	      
-	     int num=chooseSouvenir()-1;
+		int num=chooseSouvenir()-1;
 	     
-	     int pricetag =  souvenirList.get(num).getPrice();
+		int pricetag =  souvenirList.get(num).getPrice();
 	     
-	     PayForSouvenir payForSouvenir = new PayForSouvenir();
-	     // 如果支付成功，则打印购物凭证
-	     if((boolean) payForSouvenir.run(audience, pricetag)) {
-	    	 audience.setBag(souvenirList.get(num).getName());
-		     PrintReceipt receipt = new PrintReceipt();
-		     receipt.run(audience,pricetag);
-	     };
-	   }
+		PayForSouvenir payForSouvenir = new PayForSouvenir();
+		// 如果支付成功，则打印购物凭证
+		if((boolean) payForSouvenir.run(audience, pricetag)){
+			audience.setBag(souvenirList.get(num).getName());
+			PrintReceipt receipt = new PrintReceipt();
+			receipt.run(audience,pricetag);
+		};
+	}
 }

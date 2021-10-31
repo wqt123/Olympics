@@ -1,18 +1,15 @@
 package com.tjupd.olympics.FrontControllerPattern;
 
-import com.tjupd.olympics.FrontControllerPattern.AthleteFrontController.AthleteFrontController;
 import com.tjupd.olympics.FrontControllerPattern.AudienceFrontController.AudienceFrontController;
-import com.tjupd.olympics.FrontControllerPattern.AudienceFrontController.BuySouvenirView;
 import com.tjupd.olympics.audience.Audience;
-import com.tjupd.olympics.iterator.BuySouvenir;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class AudienceView {
     public void show(){
-        System.out.println("Displaying Home Page");
+        Scanner input = new Scanner(System.in);
+
         Audience audience = new Audience();
         audience.init();
         AudienceFrontController frontController = new AudienceFrontController(audience);
@@ -24,20 +21,16 @@ public class AudienceView {
             System.out.println("3. 观看比赛");
             System.out.println("4. 查看奖牌榜");
             System.out.println("0. 退出");
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String str = null;
-            try{
-                str = br.readLine();
-            }catch (Exception e){
-                System.err.println("字符串读取异常："+ e.getMessage());
-            }
-            switch (Objects.requireNonNull(str)){
+            String option =  input.nextLine();
+            switch (Objects.requireNonNull(option)){
                 case "1":
+                    frontController.dispatchRequest("BuyTicket");
                     break;
                 case "2":
                     frontController.dispatchRequest("BuySouvenir");
                     break;
                 case "3":
+                    frontController.dispatchRequest("WatchGame");
                     break;
                 case "4":
                     break;

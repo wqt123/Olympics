@@ -1,7 +1,5 @@
 package com.tjupd.olympics.FrontControllerPattern;
 
-import com.tjupd.olympics.audience.Audience;
-
 public class Dispatcher {
     private final AthleteView athleteView;
     private final AudienceView audienceView;
@@ -12,10 +10,10 @@ public class Dispatcher {
 
     public void dispatch(String request){
         switch (request){
-            case "ATHLETE":
+            case "Athlete":
                 athleteView.show();
                 break;
-            case "AUDIENCE":
+            case "Audience":
                 audienceView.show();
         }
     }

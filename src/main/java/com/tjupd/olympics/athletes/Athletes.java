@@ -22,6 +22,7 @@ import java.util.Random;
 public class Athletes implements athletesInterface {
 
   private final List<Athlete> athletes;
+  public Athlete myAthlete;
   private MultipleCommand mulcmd;
 
   public List<Athlete> getAthletes() {
@@ -32,12 +33,11 @@ public class Athletes implements athletesInterface {
     return athlete;
   }
 
-
   private static final Athletes athlete = new Athletes();
 
   private Athletes() {
     this.athletes = initialization();
-        this.mulcmd=new MultipleCommand();
+    this.mulcmd=new MultipleCommand();
   }
 
   /**
@@ -153,13 +153,16 @@ public class Athletes implements athletesInterface {
 
   /**
    * 用户创建属于自己的运动员对象
-   *
-   * @param name（String）
-   * @param sex（boolean）
-   * @param country（String）
    */
   @Override
-  public String addAthlete(String name, boolean sex, String country) {
+  public String createAthlete() {
+    String name = "";
+    boolean sex = true;
+    String country = "";
+    System.out.println("下面开始角色创建，请依次输入您的信息：");
+    System.out.println("姓名：");
+    System.out.println("性别：1. 男 2. 女");
+    System.out.println("国家：1. 中国 2. 日本 3. 韩国 4. 俄国");
     String[] names = {"Aaron", "Bill", "Carl", "Dick", "Evan", "Ford", "Taylor", "Rose", "Zoe", "Mila", "Ella", "Judy"};
     String[] countries = {"China", "Japan", "Korea", "Russian"};
     for (String s : names) {
@@ -170,6 +173,7 @@ public class Athletes implements athletesInterface {
     for (String s : countries) {
       if (s.equals(country)) {
         Athlete athlete = new Athlete();
+        myAthlete = athlete;
         athlete.setName(name);
         athlete.setCountry(country);
         athlete.setSex(sex);

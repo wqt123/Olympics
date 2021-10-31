@@ -61,7 +61,7 @@ public class Ticket {
 		for(;;) {
 			System.out.println("请选择买票方式：\na:网络售票\nb:现场售票");
 			Scanner input=new Scanner(System.in);
-			String str=input.next();
+			String str=input.nextLine();
 			if(str.equals("a")==true) {
 				PurchaseMethod purchaseMethod2 = purchaseMethodFactory.getPurchaseMethod("OnlineTicket");
 				setPurchaseMethod(purchaseMethod2.purchaseTicket());
@@ -92,7 +92,7 @@ public class Ticket {
 		for(;;) {
 			System.out.println("请选择入场时间：\na:上午（9:00-13:00）\nb:下午（13:00-17:00）\nc:晚上（17:00-21:00）");
 			Scanner input=new Scanner(System.in);
-			String str=input.next();
+			String str=input.nextLine();
 			if(str.equals("a")==true) {
 				AdmissionTime time1 = timeFactory.getAdmissionTime("morning");
 				setAdmissionTime(time1.chooseAdmissionTime());
@@ -126,7 +126,7 @@ public class Ticket {
 		for(;;) {
 			System.out.println("请选择座位分区：\na:A区域\nb:B区域\nc:C区域\nd:D区域");
 			Scanner input=new Scanner(System.in);
-			String str=input.next();
+			String str=input.nextLine();
 			if(str.equals("a")==true) {
 				setPartition("A");
 				break;
@@ -161,7 +161,7 @@ public class Ticket {
 		for(;;) {
 			System.out.println("请选择座位楼层：\na:第1层\nb:第2层\nc:第3层");
 			Scanner input=new Scanner(System.in);
-			String str=input.next();
+			String str=input.nextLine();
 			if(str.equals("a")==true) {
 				setLayer(1);
 				break;
@@ -287,7 +287,6 @@ public class Ticket {
 				} else {
 					System.out.println("您选择的排为：" + seat);
 					setSeat(seat);
-					input.close();
 					break;
 				}
 	            

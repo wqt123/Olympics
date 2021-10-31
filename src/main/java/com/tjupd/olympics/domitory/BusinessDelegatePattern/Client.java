@@ -12,8 +12,7 @@ public class Client {
         this.athlete=athlete;
     }
 
-    public void doTask(Athlete athlete){
+    public void doTask(){
         domitoryDelegate.doTask(athlete);
-
     }
 }

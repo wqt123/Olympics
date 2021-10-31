@@ -16,7 +16,7 @@ public class TestBussinessDelegatePattern {
         DomitoryDelegate domitoryDelegate=new DomitoryDelegate(country);
         domitoryDelegate.setServiceType();
         Client client=new Client(domitoryDelegate,athlete);
-        client.doTask(athlete);
+        client.doTask();
         String roomNumber=domitoryDelegate.getroomNumber();
         String building=domitoryDelegate.getBuilding();
 
