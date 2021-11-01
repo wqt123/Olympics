@@ -62,23 +62,27 @@ public class MedalTableGold implements MedalTable {
         Scanner input = new Scanner(System.in);
         String option = input.nextLine();
         System.out.println("||=====奥运金牌榜=====||");
-        System.out.println("排名\t金牌数");
-        if(Objects.equals(option, "n")){
+        System.out.println("排名\t国家\t金牌数");
+        if(option=="n"){
             int rank=0;
             for(CountryMedal t : countryMedal) {
                 rank++;
                 System.out.print(rank);
                 System.out.print("\t");
+                System.out.print(t.getCountry());
+                System.out.print("\t");
                 System.out.println(t.getGold());
             }
         }
-        else if(Objects.equals(option, "y")){
+        else if(option=="y"){
             List<CountryMedal> countryMedalList = new ArrayList<CountryMedal>();
             Criteria withGold = new CriteriaWithGold();
             int rank = 0;
             for(CountryMedal t : withGold.meetCriteria(countryMedal)) {
                 rank++;
                 System.out.print(rank);
+                System.out.print("\t");
+                System.out.print(t.getCountry());
                 System.out.print("\t");
                 System.out.print(t.getGold());
             }
