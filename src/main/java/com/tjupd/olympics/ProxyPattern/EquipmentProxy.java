@@ -7,6 +7,12 @@ import java.util.Scanner;
 
 import com.tjupd.olympics.MementoPattern.CareTaker;
 import  com.tjupd.olympics.MementoPattern.Memento;
+
+/**
+ * @author Mizu_long
+ * 代理模式
+ * 使用EquipmentProxy来对装备生成相关类进行控制
+ */
 public class EquipmentProxy {
 
 

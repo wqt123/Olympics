@@ -19,9 +19,9 @@ public class SportPants extends Equipment {
     @Override
     void buff(String name,Athletes athletes){
 
-        double srength = StrengthInterpreter.calculate(this);
-        System.out.println("获得运动背心增益"+srength);
-        athletes.updateAthletesBody(name,srength);
+        double strength = StrengthInterpreter.calculate(this);
+        System.out.println("获得运动背心增益"+strength);
+        athletes.updateAthletesBody(name,strength);
     }
 
     @Override

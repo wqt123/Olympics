@@ -19,10 +19,10 @@ public class Shoes extends  Equipment{
     @Override
     void buff(String name,Athletes athletes){
 
-         double srength = StrengthInterpreter.calculate(this);
-        System.out.println("获得鞋子增益"+srength);
+         double strength = StrengthInterpreter.calculate(this);
+        System.out.println("获得鞋子增益"+strength);
 
-        athletes.updateAthletesBody(name,srength);
+        athletes.updateAthletesBody(name,strength);
     }
 
     @Override
