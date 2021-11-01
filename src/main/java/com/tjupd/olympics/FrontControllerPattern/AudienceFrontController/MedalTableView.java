@@ -1,4 +1,4 @@
-package com.tjupd.olympics.MedalTable;
+package com.tjupd.olympics.FrontControllerPattern.AudienceFrontController;
 
 import com.tjupd.olympics.MedalTable.visitor.MedalTable;
 import com.tjupd.olympics.MedalTable.visitor.MedalTableAll;
@@ -9,10 +9,8 @@ import com.tjupd.olympics.athletes.Athletes;
 import java.util.Scanner;
 
 public class MedalTableView {
-    private Athletes athletes;
-    public MedalTableView(Athletes athletes){this.athletes=athletes;}
-
-    public void medalTableViewer() {
+    public void show(){
+        Athletes athletes = Athletes.getAll();
         System.out.println("请选择想要查看的奖牌榜类型：");
         System.out.println("[1]奥运奖牌榜 [2]奥运金牌榜");
         Scanner input = new Scanner(System.in);
@@ -28,7 +26,5 @@ public class MedalTableView {
         else {
             System.out.println("错误的操作码。");
         }
-
     }
-
 }
