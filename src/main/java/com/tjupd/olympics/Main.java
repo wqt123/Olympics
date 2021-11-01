@@ -23,7 +23,7 @@ public class Main {
                     athletes.createAthlete();
                     FilterManager filterManager = new FilterManager(new FrontController());
                     filterManager.setFilter(new AuthenticationFilter(athletes));
-                    if(!filterManager.filterRequest("Athletes")){
+                    if(!filterManager.filterRequest("Athlete")){
                         System.out.println("健康码非绿色！");
                     }
                     break;

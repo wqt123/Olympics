@@ -9,10 +9,7 @@ import com.tjupd.olympics.State.StateDemo;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author ShaoCHi
@@ -159,10 +156,42 @@ public class Athletes implements athletesInterface {
     String name = "";
     boolean sex = true;
     String country = "";
+    Scanner input = new Scanner(System.in);
     System.out.println("下面开始角色创建，请依次输入您的信息：");
     System.out.println("姓名：");
+    name = input.nextLine();
     System.out.println("性别：1. 男 2. 女");
+    String tmp1 = input.nextLine();
+    switch (tmp1){
+      case "1":
+        sex = true;
+        break;
+      case "2":
+        sex = false;
+        break;
+      default:
+        System.out.println("未识别字符，默认生成为男");
+        sex = true;
+    }
     System.out.println("国家：1. 中国 2. 日本 3. 韩国 4. 俄国");
+    String tmp2 = input.nextLine();
+    switch (tmp2){
+      case "1":
+        country = "China";
+        break;
+      case "2":
+        country = "Japan";
+        break;
+      case "3":
+        country = "Korea";
+        break;
+      case "4":
+        country = "Russian";
+        break;
+      default:
+        System.out.println("未识别字符，默认生成为男");
+        sex = true;
+    }
     String[] names = {"Aaron", "Bill", "Carl", "Dick", "Evan", "Ford", "Taylor", "Rose", "Zoe", "Mila", "Ella", "Judy"};
     String[] countries = {"China", "Japan", "Korea", "Russian"};
     for (String s : names) {

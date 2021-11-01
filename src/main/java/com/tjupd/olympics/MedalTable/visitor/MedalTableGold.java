@@ -63,7 +63,7 @@ public class MedalTableGold implements MedalTable {
         String option = input.nextLine();
         System.out.println("||=====奥运金牌榜=====||");
         System.out.println("排名\t金牌数");
-        if(option=="n"){
+        if(Objects.equals(option, "n")){
             int rank=0;
             for(CountryMedal t : countryMedal) {
                 rank++;
@@ -72,7 +72,7 @@ public class MedalTableGold implements MedalTable {
                 System.out.println(t.getGold());
             }
         }
-        else if(option=="y"){
+        else if(Objects.equals(option, "y")){
             List<CountryMedal> countryMedalList = new ArrayList<CountryMedal>();
             Criteria withGold = new CriteriaWithGold();
             int rank = 0;

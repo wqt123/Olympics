@@ -9,9 +9,7 @@ public class AuthenticationFilter implements Filter {
         this.athletes = athletes;
     }
     public boolean execute(String request){
-        System.out.println("Authenticating request: " + request);
         athletes.runEpidemicCheck(athletes.myAthlete);
-
         return true;
     }
 }
