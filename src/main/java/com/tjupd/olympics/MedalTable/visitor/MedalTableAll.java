@@ -15,7 +15,7 @@ public class MedalTableAll implements MedalTable {
 
         private Athletes athletes;
 
-        private List<CountryMedal> countryMedal;
+        private List<CountryMedal> countryMedal=new ArrayList();;
 
         public MedalTableAll(Athletes athletes) {
             super();
@@ -29,13 +29,16 @@ public class MedalTableAll implements MedalTable {
                     CountryMedal e = new CountryMedal(tempCountry);//创建这个运动员的国家
                     countryMedal.add(e);
                 }
+                boolean inTable=false;
                 for (CountryMedal t : countryMedal) {//遍历奖牌榜
-                    if (t.getCountry() != tempCountry) {//如果没有这个国家
-                        CountryMedal e = new CountryMedal(tempCountry);
-                        countryMedal.add(e);
+                    if (t.getCountry() == tempCountry) {//如果有这个国家
+                        inTable=true;
                     }
                 }
-
+                if(!inTable) {
+                    CountryMedal e = new CountryMedal(tempCountry);
+                    countryMedal.add(e);
+                }
                 //下面添加奖牌
                 for(GameWithScore result:athlete.getScores()){
                     for(CountryMedal t : countryMedal){
