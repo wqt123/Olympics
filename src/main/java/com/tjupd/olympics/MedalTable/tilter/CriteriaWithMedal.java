@@ -4,6 +4,11 @@ import com.tjupd.olympics.MedalTable.visitor.CountryMedal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author Yuqi Kuang
+ * 过滤器模式
+ * 过滤没有获得奖牌的国家，保留有奖牌的国家
+ */
 public class CriteriaWithMedal implements Criteria {
     @Override
     public List<CountryMedal> meetCriteria(List<CountryMedal> countryMedals) {

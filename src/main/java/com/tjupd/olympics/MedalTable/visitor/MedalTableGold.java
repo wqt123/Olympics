@@ -8,6 +8,11 @@ import com.tjupd.olympics.athletes.GameWithScore;
 
 import java.util.*;
 
+/**
+ * @author Yuqi Kuang
+ * 访问者模式
+ * 访问金牌榜的实体类
+ */
 public class MedalTableGold implements MedalTable {
     private Athletes athletes;
 
@@ -45,8 +50,8 @@ public class MedalTableGold implements MedalTable {
                 }
             }
 
-        for(int i=0;i<countryMedal.size() - 1;i++)
-            for(int j=i;j<countryMedal.size() - 1 - i;j++)
+        for(int i=0;i<countryMedal.size();i++)
+            for(int j=0;j<countryMedal.size() - 1 - i;j++)
                 if(countryMedal.get(j).getGold()<countryMedal.get(j+1).getGold())
                     Collections.swap(countryMedal,j,j+1);
 
@@ -60,18 +65,20 @@ public class MedalTableGold implements MedalTable {
         System.out.println("[y]是\t[n]否");
         Scanner input = new Scanner(System.in);
         String option = input.nextLine();
-        System.out.println("||=====奥运金牌榜=====||");
-        System.out.println("排名\t国家\t金牌数");
+        System.out.println("||======奥运金牌榜======||");
+        System.out.println("排名\t\t国家\t\t  金牌数");
         if(Objects.equals(option, "n")){
             int rank=0;
             for(CountryMedal t : countryMedal) {
                 rank++;
+                System.out.print(" ");
                 System.out.print(rank);
-                System.out.print("\t");
+                System.out.print("\t\t");
                 System.out.print(t.getCountry());
-                System.out.print("\t");
+                System.out.print("\t\t");
                 System.out.println(t.getGold());
             }
+            System.out.print("\n");
         }
         else if(Objects.equals(option, "y")){
 //            List<CountryMedal> countryMedalList = new ArrayList<CountryMedal>();
@@ -79,11 +86,12 @@ public class MedalTableGold implements MedalTable {
             int rank = 0;
             for(CountryMedal t : withGold.meetCriteria(countryMedal)) {
                 rank++;
+                System.out.print(" ");
                 System.out.print(rank);
-                System.out.print("\t");
+                System.out.print("\t\t");
                 System.out.print(t.getCountry());
-                System.out.print("\t");
-                System.out.print(t.getGold());
+                System.out.print("\t\t");
+                System.out.println(t.getGold());
             }
         }
         else

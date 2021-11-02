@@ -1,5 +1,10 @@
 package com.tjupd.olympics.MedalTable.visitor;
 
+/**
+ * @author Yuqi Kuang
+ * 访问者模式
+ * 实体访问者的类
+ */
 public class MedalTableDisplayVisitor implements MedalTableVisitor {
 
     @Override
@@ -9,7 +14,6 @@ public class MedalTableDisplayVisitor implements MedalTableVisitor {
 
     @Override
     public void visit(MedalTableGold medalTableGold){
-
 
     }
 }

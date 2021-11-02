@@ -7,6 +7,11 @@ import com.tjupd.olympics.athletes.*;
 
 import java.util.*;
 
+/**
+ * @author Yuqi Kuang
+ * 访问者模式
+ * 访问奖牌榜的实体类
+ */
 
 public class MedalTableAll implements MedalTable {
 
@@ -52,20 +57,20 @@ public class MedalTableAll implements MedalTable {
                 }
             }
 
-            for(int i=0;i<countryMedal.size() - 1;i++)
-                for(int j=i;j<countryMedal.size() - 1 - i;j++)
+            for(int i=0;i<countryMedal.size();i++)
+                for(int j=0;j<countryMedal.size() - 1 - i;j++)
                     if(countryMedal.get(j).getBronze()<countryMedal.get(j+1).getBronze())
                         Collections.swap(countryMedal,j,j+1);
-            for(int i=0;i<countryMedal.size() - 1;i++)
-                for(int j=i;j<countryMedal.size() - 1 - i;j++)
+            for(int i=0;i<countryMedal.size() ;i++)
+                for(int j=0;j<countryMedal.size() - 1 - i;j++)
                     if(countryMedal.get(j).getSilver()<countryMedal.get(j+1).getSilver())
                         Collections.swap(countryMedal,j,j+1);
-            for(int i=0;i<countryMedal.size() - 1;i++)
-                for(int j=i;j<countryMedal.size() - 1 - i;j++)
+            for(int i=0;i<countryMedal.size() ;i++)
+                for(int j=0;j<countryMedal.size() - 1 - i;j++)
                     if(countryMedal.get(j).getGold()<countryMedal.get(j+1).getGold())
                         Collections.swap(countryMedal,j,j+1);
-            for(int i=0;i<countryMedal.size() - 1;i++)
-                for(int j=i;j<countryMedal.size() - 1 - i;j++)
+            for(int i=0;i<countryMedal.size() ;i++)
+                for(int j=0;j<countryMedal.size() - 1 - i;j++)
                     if(countryMedal.get(j).getTotal()<countryMedal.get(j+1).getTotal())
                         Collections.swap(countryMedal,j,j+1);
         }
@@ -79,24 +84,27 @@ public class MedalTableAll implements MedalTable {
             System.out.println("[y]是\t[n]否");
             Scanner input = new Scanner(System.in);
             String option = input.nextLine();
-            System.out.println("||=====奥运奖牌榜=====||");
-            System.out.println("排名\t国家\t金牌数\t银牌数\t铜牌数\t奖牌数");
+            System.out.print("\n");
+            System.out.println("||==================奥运奖牌榜==================||");
+            System.out.println("排名\t\t国家\t\t  金牌数\t  银牌数\t  铜牌数\t  奖牌数");
             if(Objects.equals(option, "n")){
                 int rank=0;
                 for(CountryMedal t : countryMedal) {
                     rank++;
+                    System.out.print(" ");
                     System.out.print(rank);
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.print(t.getCountry());
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.print(t.getGold());
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.print(t.getSilver());
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.print(t.getBronze());
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.println(t.getTotal());
                 }
+                System.out.print("\n");
             }
             else if(Objects.equals(option, "y")){
 //                List<CountryMedal> countryMedalList = new ArrayList<CountryMedal>();
@@ -104,18 +112,20 @@ public class MedalTableAll implements MedalTable {
                 int rank = 0;
                 for(CountryMedal t : withMedal.meetCriteria(countryMedal)) {
                     rank++;
+                    System.out.print(" ");
                     System.out.print(rank);
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.print(t.getCountry());
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.print(t.getGold());
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.print(t.getSilver());
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.print(t.getBronze());
-                    System.out.print("\t");
+                    System.out.print("\t\t");
                     System.out.println(t.getTotal());
                 }
+                System.out.print("\n");
             }
             else
                 System.out.println("错误的操作码。");
