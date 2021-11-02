@@ -53,7 +53,7 @@ public class BuySouvenir{
 		for(Iterator iter = souvenirRepository.getIterator(); iter.hasNext();){
 			Souvenir souvenir = (Souvenir)iter.next();
 			String name = String.format("%-20s", souvenir.getName());
-			System.out.println("商品：" + number+ " " + name +" 价格：" + souvenir.getPrice()+"元");
+			System.out.println("商品：" + "[" + number+ "]" + " " + name +" 价格：" + souvenir.getPrice()+"元");
 			number++;
 		}
 	      
