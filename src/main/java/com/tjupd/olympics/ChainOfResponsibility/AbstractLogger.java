@@ -28,7 +28,7 @@ public abstract class AbstractLogger {
 	}
 
 	/**
-	 * 比较责任链上不同状态的级别大小
+	 * 比较责任链上不同状态的级别大小，只用等于时采用相等级别的动作
 	 * @param level
 	 * @param message
 	 */
