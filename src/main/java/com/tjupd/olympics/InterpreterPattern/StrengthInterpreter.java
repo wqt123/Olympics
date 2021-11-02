@@ -6,13 +6,14 @@ import com.tjupd.olympics.TemplatePattern.Equipment;
  * @author Mizu_long
  * 解释器模式
  */
-public class StrengthInterpreter {
+public class StrengthInterpreter implements Calculate {
     /**
      * 解释器模式，计算相关装备的正面增益效果
      * @param equipment
      * @return
      */
-    public static double calculate(Equipment equipment){
+    @Override
+    public double calculate(Equipment equipment){
         return equipment.getDex()*2+equipment.getStr()*5;
     }
 }
