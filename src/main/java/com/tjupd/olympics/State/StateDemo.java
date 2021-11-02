@@ -13,7 +13,7 @@ public class StateDemo {
 	private WarningState warningstate = new WarningState();
 	private DangerousState dangerousstate = new DangerousState();
 	
-	public void run(Athlete athlete) {
+	public void run(Athlete athlete) throws InterruptedException {
 		Context context = new Context(athlete.getHealthCode());
 		
 		if(athlete.getHealthCode()==0) {

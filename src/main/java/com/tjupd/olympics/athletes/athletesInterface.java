@@ -35,5 +35,5 @@ public interface athletesInterface {
     /**
      * 疫情监测
      */
-    void runEpidemicCheck(Athlete athlete);
+    void runEpidemicCheck(Athlete athlete) throws InterruptedException;
 }

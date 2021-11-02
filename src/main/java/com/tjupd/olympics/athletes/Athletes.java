@@ -316,7 +316,7 @@ public class Athletes implements athletesInterface {
     }
 
   @Override
-  public void runEpidemicCheck(Athlete athlete) {
+  public void runEpidemicCheck(Athlete athlete) throws InterruptedException {
 
     int healthCode;
     Random r = new Random();
@@ -354,5 +354,6 @@ public class Athletes implements athletesInterface {
     System.out.println("其他运动员作为观察者更新其他运动员自己的健康码：");
     ObserverDemo observerdemo = new ObserverDemo();
     observerdemo.run(athlete,this);
+    athlete.setStatus(true);
   }
 }

@@ -1,10 +1,7 @@
 package com.tjupd.olympics;
 
 import com.tjupd.olympics.FrontControllerPattern.FrontController;
-import com.tjupd.olympics.athletes.Athletes;
-import com.tjupd.olympics.interceptingfilter.AuthenticationFilter;
-import com.tjupd.olympics.interceptingfilter.FilterManager;
-
+import com.tjupd.olympics.interceptingfilter.AthleteClient;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -18,14 +15,8 @@ public class Main {
             String option = input.nextLine();
             switch (Objects.requireNonNull(option)){
                 case "1":
-                    //初始化运动员
-                    Athletes athletes = Athletes.getAll();
-                    athletes.createAthlete();
-                    FilterManager filterManager = new FilterManager(new FrontController());
-                    filterManager.setFilter(new AuthenticationFilter(athletes));
-                    if(!filterManager.filterRequest("Athlete")){
-                        System.out.println("健康码非绿色！");
-                    }
+                    AthleteClient athleteClient = new AthleteClient();
+                    athleteClient.sendRequest("Athlete");
                     break;
                 case "2":
                     FrontController frontController = new FrontController();
