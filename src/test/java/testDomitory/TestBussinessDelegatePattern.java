@@ -9,6 +9,7 @@ public class TestBussinessDelegatePattern {
     public void testBusinessDelegatePattern() throws CloneNotSupportedException {
         Athletes athletes= Athletes.getAll();
         for (Athlete athlete:athletes.getAthletes()) //遍历运动员，为所有运动员分配住宿
+
         {
             String country=athlete.getCountry();
 
