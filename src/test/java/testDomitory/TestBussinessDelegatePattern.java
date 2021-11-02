@@ -6,7 +6,7 @@ import com.tjupd.olympics.athletes.*;
 public class TestBussinessDelegatePattern {
 
     @Test
-    public void testBusinessDelegatePattern() throws CloneNotSupportedException {
+    public void testBusinessDelegatePattern(){
         Athletes athletes= Athletes.getAll();
         for (Athlete athlete:athletes.getAthletes()) //遍历运动员，为所有运动员分配住宿
 

@@ -6,7 +6,7 @@ public class TestDecoratorPattern {
 
 
         @Test
-        public void testDecoratorPattern() throws CloneNotSupportedException {
+        public void testDecoratorPattern()  {
                 Building no1 = new ConcereteBuilding(1);
                 Building no2 = new ConcereteBuilding(2);
                 Building no3 = new ConcereteBuilding(3);
