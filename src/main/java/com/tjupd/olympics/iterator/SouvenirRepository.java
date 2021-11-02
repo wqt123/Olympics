@@ -17,6 +17,7 @@ public class SouvenirRepository implements Container {
     public Iterator getIterator() {
        return new NameIterator();
     }
+// NameIterator 实现 Iterator接口，用于返回next
     private class NameIterator implements Iterator {
     	 
         int index;
