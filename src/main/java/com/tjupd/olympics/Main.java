@@ -14,7 +14,7 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         while(true){
-            System.out.println("1. 运动员          2. 观众           0. 退出");
+            System.out.println("[1] 运动员          [2] 观众           [0] 退出");
             String option = input.nextLine();
             switch (Objects.requireNonNull(option)){
                 case "1":

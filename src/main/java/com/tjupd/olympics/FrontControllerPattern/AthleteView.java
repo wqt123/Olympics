@@ -15,12 +15,12 @@ public class AthleteView {
 
         while (true){
             System.out.println("请选择操作：");
-            System.out.println("1. 参加比赛");
-            System.out.println("2. 就餐");
-            System.out.println("3. 住宿");
-            System.out.println("4. 查看奖牌榜");
-            System.out.println("5. 更新装备");
-            System.out.println("0. 退出");
+            System.out.println("[1] 参加比赛");
+            System.out.println("[2] 就餐");
+            System.out.println("[3] 住宿");
+            System.out.println("[4] 查看奖牌榜");
+            System.out.println("[5] 更新装备");
+            System.out.println("[0] 退出");
 
             String option = input.nextLine();
             switch (Objects.requireNonNull(option)){

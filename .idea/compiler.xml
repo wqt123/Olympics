@@ -10,7 +10,7 @@
         <module name="Olympics" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8">
       <module name="Olympics" target="8" />
     </bytecodeTargetLevel>
   </component>
