@@ -16,7 +16,7 @@ public class AthleteClient {
 //        this.filterManager = filterManager;
 //    }
 
-    public void sendRequest(String request){
+    public void sendRequest(String request) throws InterruptedException {
         filterManager.filterRequest(request);
     }
 }

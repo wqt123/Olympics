@@ -12,7 +12,7 @@ public class FilterChain {
         filters.add(filter);
     }
 
-    public boolean execute(String request){
+    public boolean execute(String request) throws InterruptedException {
         for (Filter filter : filters) {
             if(!filter.execute(request)){
                 return false;

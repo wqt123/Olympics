@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("欢迎来到奥林匹克运动会模拟程序，首先请选择您的角色：");
         Scanner input = new Scanner(System.in);
 
