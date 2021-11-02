@@ -13,7 +13,7 @@ public class AthleteFrontController {
     }
 
     private void trackRequest(String request){
-        System.out.println("Page requested: " + request);
+        //ignore
     }
 
     public void dispatchRequest(String request){

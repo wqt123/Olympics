@@ -1,14 +1,15 @@
 package com.tjupd.olympics.athletes;
 
 import com.tjupd.olympics.BuilderPattern.food.FoodType;
+import com.tjupd.olympics.ChainOfResponsibility.ChainPatternDemo;
 import com.tjupd.olympics.CommandAndCompositePattern.BuyCommand;
 import com.tjupd.olympics.CommandAndCompositePattern.MultipleCommand;
+import com.tjupd.olympics.Observer.ObserverDemo;
+import com.tjupd.olympics.State.StateDemo;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @author ShaoCHi
@@ -18,6 +19,7 @@ import java.util.Objects;
 public class Athletes implements athletesInterface {
 
   private final List<Athlete> athletes;
+  public Athlete myAthlete;
   private MultipleCommand mulcmd;
 
   public List<Athlete> getAthletes() {
@@ -28,12 +30,11 @@ public class Athletes implements athletesInterface {
     return athlete;
   }
 
-
   private static final Athletes athlete = new Athletes();
 
   private Athletes() {
     this.athletes = initialization();
-        this.mulcmd=new MultipleCommand();
+    this.mulcmd=new MultipleCommand();
   }
 
   /**
@@ -149,13 +150,48 @@ public class Athletes implements athletesInterface {
 
   /**
    * 用户创建属于自己的运动员对象
-   *
-   * @param name（String）
-   * @param sex（boolean）
-   * @param country（String）
    */
   @Override
-  public String addAthlete(String name, boolean sex, String country) {
+  public String createAthlete() {
+    String name = "";
+    boolean sex = true;
+    String country = "";
+    Scanner input = new Scanner(System.in);
+    System.out.println("下面开始角色创建，请依次输入您的信息：");
+    System.out.println("姓名：");
+    name = input.nextLine();
+    System.out.println("性别：1. 男 2. 女");
+    String tmp1 = input.nextLine();
+    switch (tmp1){
+      case "1":
+        sex = true;
+        break;
+      case "2":
+        sex = false;
+        break;
+      default:
+        System.out.println("未识别字符，默认生成为男");
+        sex = true;
+    }
+    System.out.println("国家：1. 中国 2. 日本 3. 韩国 4. 俄国");
+    String tmp2 = input.nextLine();
+    switch (tmp2){
+      case "1":
+        country = "China";
+        break;
+      case "2":
+        country = "Japan";
+        break;
+      case "3":
+        country = "Korea";
+        break;
+      case "4":
+        country = "Russian";
+        break;
+      default:
+        System.out.println("未识别字符，默认生成为男");
+        sex = true;
+    }
     String[] names = {"Aaron", "Bill", "Carl", "Dick", "Evan", "Ford", "Taylor", "Rose", "Zoe", "Mila", "Ella", "Judy"};
     String[] countries = {"China", "Japan", "Korea", "Russian"};
     for (String s : names) {
@@ -166,6 +202,7 @@ public class Athletes implements athletesInterface {
     for (String s : countries) {
       if (s.equals(country)) {
         Athlete athlete = new Athlete();
+        myAthlete = athlete;
         athlete.setName(name);
         athlete.setCountry(country);
         athlete.setSex(sex);
@@ -277,4 +314,45 @@ public class Athletes implements athletesInterface {
     public void clearCommand() {
         mulcmd.clear();
     }
+
+  @Override
+  public void runEpidemicCheck(Athlete athlete) {
+
+    int healthCode;
+    Random r = new Random();
+    int k=r.nextInt(101);
+    if(k>=0&&k<=15) {//15%
+      healthCode = 2;
+    }
+    else if(k>15&&k<=40) {//25%
+      healthCode = 1;
+    }
+    else {//60%
+      healthCode = 0;
+    }
+    //因为需要测试，设置一个国家，实际是自己输入的
+    athlete.setHealthCode(healthCode);
+    //athlete.setHealthCode(healthcode);
+
+    //运动员当前各项状态
+    System.out.println("运动员身体状态：");
+    System.out.println(athlete.getName() + "	"+ athlete.getCountry() +"	"+ athlete.getHealthCode());
+
+    //责任链模式
+    ChainPatternDemo chainPatternDemo = new ChainPatternDemo();
+    System.out.println("查找责任链中不同疫情健康码级别的记录器：");
+    chainPatternDemo.run(athlete);
+    System.out.println();
+
+    //状态模式
+    System.out.println("根据不同健康吗状态采取不同措施：");
+    StateDemo statedemo = new StateDemo();
+    statedemo.run(athlete);
+    System.out.println();
+
+    //观察者模式
+    System.out.println("其他运动员作为观察者更新其他运动员自己的健康码：");
+    ObserverDemo observerdemo = new ObserverDemo();
+    observerdemo.run(athlete,this);
+  }
 }

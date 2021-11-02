@@ -15,8 +15,9 @@ public interface athletesInterface {
     List<Athlete> initialization();
     List<Athlete> getAthletes(boolean sex);
     Athlete getAthlete(String name);
+
     void updateAthletesBody(String name, double score);
-    String addAthlete(String name, boolean sex,String country);
+    String createAthlete();
     void updateScores(GetScore score,boolean sex);
     void updateHealthCode(String name,int code);
     void deliverRoom(String name,String building,String roomNumber);
@@ -30,4 +31,9 @@ public interface athletesInterface {
     void doAllCommand();
     void undoCommand();
     void clearCommand();
+
+    /**
+     * 疫情监测
+     */
+    void runEpidemicCheck(Athlete athlete);
 }

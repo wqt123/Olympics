@@ -1,29 +1,37 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
+import com.tjupd.olympics.athletes.Athlete;
 import com.tjupd.olympics.athletes.Athletes;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Objects;
+import java.util.Random;
+
 
 public class DomitoryDelegatePatternDemo {
     public static void main(String args[]){
         Athletes athletes= Athletes.getAll();
-        String country=athletes.getAthlete("Ford").getCountry();
-        //抽取一个运动员
+        for (Athlete athlete:athletes.getAthletes()) //遍历运动员，为所有运动员分配住宿
+        {
+            String country=athlete.getCountry();
 
-        //办理住宿
-        DomitoryDelegate domitoryDelegate=new DomitoryDelegate(country);
-        domitoryDelegate.setServiceType();
-        Client client=new Client(domitoryDelegate);
-        client.doTask();
-        String roomNumber=domitoryDelegate.getroomNumber();
-        String building=domitoryDelegate.getBuilding();
+            //办理住宿
+            DomitoryDelegate domitoryDelegate=new DomitoryDelegate(country);
+            domitoryDelegate.setServiceType();
+            Client client=new Client(domitoryDelegate,athlete);
+            System.out.print(athlete.getName());
+            client.doTask();
+            String roomNumber=domitoryDelegate.getroomNumber();
+            String building=domitoryDelegate.getBuilding();
 
-        //打印前后结果
-        System.out.println("country"+" "+country);
-        System.out.println("building:"+athletes.getAthlete("Ford").getBuilding());
-        System.out.println("roomNumber:"+athletes.getAthlete("Ford").getRoomNumber());
-        athletes.deliverRoom("Ford",building,roomNumber);
-        System.out.println("update:");
-        System.out.println("building:"+athletes.getAthlete("Ford").getBuilding());
-        System.out.println("roomNumber:"+athletes.getAthlete("Ford").getRoomNumber());
+            //打印前后结果
+            System.out.println("country"+" "+country);
+            System.out.println("building:"+athlete.getBuilding());
+            System.out.println("roomNumber:"+athlete.getRoomNumber());
+            System.out.println();
+        }
+
 
 
     }

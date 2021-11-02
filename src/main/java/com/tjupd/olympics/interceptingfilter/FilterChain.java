@@ -13,14 +13,13 @@ public class FilterChain {
     }
 
     public boolean execute(String request){
-        boolean isTrue = true;
         for (Filter filter : filters) {
-            isTrue &= filter.execute(request);
-            if(!isTrue){
+            if(!filter.execute(request)){
                 return false;
             }
         }
-        target.execute(request);
+        System.out.println(request);
+        target.dispatchRequest(request);
         return true;
     }
 

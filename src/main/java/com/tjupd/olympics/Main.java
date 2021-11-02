@@ -1,32 +1,29 @@
 package com.tjupd.olympics;
 
 import com.tjupd.olympics.FrontControllerPattern.FrontController;
+import com.tjupd.olympics.athletes.Athletes;
 import com.tjupd.olympics.interceptingfilter.AuthenticationFilter;
 import com.tjupd.olympics.interceptingfilter.FilterManager;
 
-
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("欢迎来到奥林匹克运动会模拟程序，首先请选择您的角色：");
+        Scanner input = new Scanner(System.in);
+
         while(true){
-            System.out.println("1. 运动员          2. 观众           0. 退出");
-            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-            String str = null;
-            try{
-                str = br.readLine();
-            }catch (Exception e){
-                System.err.println("字符串读取异常"+ e.getMessage());
-            }
-            switch (Objects.requireNonNull(str)){
+            System.out.println("[1] 运动员          [2] 观众           [0] 退出");
+            String option = input.nextLine();
+            switch (Objects.requireNonNull(option)){
                 case "1":
                     //初始化运动员
+                    Athletes athletes = Athletes.getAll();
+                    athletes.createAthlete();
                     FilterManager filterManager = new FilterManager(new FrontController());
-                    filterManager.setFilter(new AuthenticationFilter());
-                    if(!filterManager.filterRequest("Athletes")){
+                    filterManager.setFilter(new AuthenticationFilter(athletes));
+                    if(!filterManager.filterRequest("Athlete")){
                         System.out.println("健康码非绿色！");
                     }
                     break;

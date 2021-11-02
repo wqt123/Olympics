@@ -1,5 +1,8 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
+import com.tjupd.olympics.athletes.Athlete;
+import com.tjupd.olympics.athletes.Athletes;
+
 //业务代表
 public class DomitoryDelegate {
     private DomitoryLookUp lookupService=new DomitoryLookUp();
@@ -18,11 +21,13 @@ public class DomitoryDelegate {
         this.serviceType= map.mapping(country);
     }
 
-    public void doTask(){
+    public void doTask(Athlete athlete){
         domitoryService=lookupService.getDomitoryService(country,serviceType);
         domitoryService.checkIn();
         Building=domitoryService.setBuilding();
         roomNumber=domitoryService.setRoomNumber();
+        Athletes athletes= Athletes.getAll();
+        athletes.deliverRoom(athlete.getName(),Building,roomNumber);
     }
 
     public String getroomNumber(){
