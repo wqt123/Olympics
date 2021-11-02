@@ -16,6 +16,14 @@ public class BuyCommand implements Command{
         this.num = num;
     }
 
+    public FoodType getBuyfoottype() {
+        return buyfoottype;
+    }
+
+    public int getNum() {
+        return num;
+    }
+
     @Override
     public void buy(){
         //创建导演
@@ -36,14 +44,14 @@ public class BuyCommand implements Command{
         Food food = builder.getResult();
         //food是builder创建的食物对象，再乘数量即可
         System.out.println("\n---------------------------------");
-        System.out.println("Buy Food:       "+num+" tmies of "+ food.getFoodtype()+
-                "\nWith nutrition:" +
-                "\n                Carbohydrates " +food.getCarbohydrates()*num+
-                "\n                Fats "+food.getFats()*num+
-                "\n                Minerals "+food.getMinerals()*num+
-                "\n                Proteins "+food.getProteins()*num+
-                "\n                Vitamins "+food.getVitamins()*num+
-                "\n                Water "+food.getWater()*num
+        System.out.println("您购买了:         "+num+" 个 "+ food.getFoodtype()+
+                "\n它具有这些营养:" +
+                "\n                碳水化合物 " +food.getCarbohydrates()*num+
+                "\n                脂类 "+food.getFats()*num+
+                "\n                矿物质 "+food.getMinerals()*num+
+                "\n                蛋白质 "+food.getProteins()*num+
+                "\n                维生素 "+food.getVitamins()*num+
+                "\n                水分 "+food.getWater()*num
         );
         System.out.println("---------------------------------\n");
 

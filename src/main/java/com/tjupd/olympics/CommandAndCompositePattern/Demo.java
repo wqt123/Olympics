@@ -17,7 +17,7 @@ public class Demo {
             boolean continue_to_buy = true;
 
             //食物种类
-            System.out.println("Please select the type of the food:\n [1]Milk [2]Egg [3]Bread [4]Bonbon [5]Sausage");
+            System.out.println("请选择购买食物的种类:\n [1]牛奶 [2]鸡蛋 [3]面包 [4]棒棒糖 [5]火腿肠");
             //接受输入
             Scanner input = new Scanner(System.in);
             String str = input.next();
@@ -32,8 +32,7 @@ public class Demo {
                     throw new IllegalStateException("Unexpected value: " + str);
             }
             //数量
-            System.out.println("How many do you want?");
-            Scanner inputfoodnum = new Scanner(System.in);
+            System.out.println("想要多少这种食物?请输入数字：");
             String strfoodnum = input.next();
             foodnum = Integer.parseInt(strfoodnum);
 
@@ -44,7 +43,6 @@ public class Demo {
             while(continue_to_buy)
             {
                 System.out.println("是否继续购买？[1]继续购买 [2]购买完成 [3]撤销最近购买 [4]清空所有购买");
-                Scanner inputopnum = new Scanner(System.in);
                 String stropnum= input.next();
                 switch(stropnum)
                 {
