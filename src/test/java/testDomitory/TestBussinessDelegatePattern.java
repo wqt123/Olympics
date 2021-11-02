@@ -8,26 +8,25 @@ public class TestBussinessDelegatePattern {
     @Test
     public void testBusinessDelegatePattern() throws CloneNotSupportedException {
         Athletes athletes= Athletes.getAll();
-        Athlete athlete= athletes.getAthlete("Ford");
-        String country=athletes.getAthlete("Ford").getCountry();
-        //抽取一个运动员
+        for (Athlete athlete:athletes.getAthletes()) //遍历运动员，为所有运动员分配住宿
+        {
+            String country=athlete.getCountry();
 
-        //办理住宿
-        DomitoryDelegate domitoryDelegate=new DomitoryDelegate(country);
-        domitoryDelegate.setServiceType();
-        Client client=new Client(domitoryDelegate,athlete);
-        client.doTask(athlete);
-        String roomNumber=domitoryDelegate.getroomNumber();
-        String building=domitoryDelegate.getBuilding();
+            //办理住宿
+            DomitoryDelegate domitoryDelegate=new DomitoryDelegate(country);
+            domitoryDelegate.setServiceType();
+            Client client=new Client(domitoryDelegate,athlete);
+            System.out.print(athlete.getName());
+            client.doTask(athlete);
+            String roomNumber=domitoryDelegate.getroomNumber();
+            String building=domitoryDelegate.getBuilding();
 
-        //打印前后结果
-        System.out.println("country"+" "+country);
-        System.out.println("building:"+athletes.getAthlete("Ford").getBuilding());
-        System.out.println("roomNumber:"+athletes.getAthlete("Ford").getRoomNumber());
-        // athletes.deliverRoom("Ford",building,roomNumber);
-        System.out.println("update:");
-        System.out.println("building:"+athletes.getAthlete("Ford").getBuilding());
-        System.out.println("roomNumber:"+athletes.getAthlete("Ford").getRoomNumber());
+            //打印分配结果
+            System.out.println("country"+" "+country);
+            System.out.println("building:"+athlete.getBuilding());
+            System.out.println("roomNumber:"+athlete.getRoomNumber());
+            System.out.println();
+        }
     }
 }
 
