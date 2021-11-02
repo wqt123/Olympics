@@ -23,9 +23,9 @@ public class TestBussinessDelegatePattern {
             String building=domitoryDelegate.getBuilding();
 
             //打印分配结果
-            System.out.println("country"+" "+country);
-            System.out.println("building:"+athlete.getBuilding());
-            System.out.println("roomNumber:"+athlete.getRoomNumber());
+            System.out.println("国家"+" "+country);
+            System.out.println("楼栋号:"+athlete.getBuilding());
+            System.out.println("房间号:"+athlete.getRoomNumber());
             System.out.println();
         }
     }
