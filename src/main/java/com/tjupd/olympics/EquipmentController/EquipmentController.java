@@ -27,7 +27,6 @@ public class EquipmentController {
 
     public EquipmentController(Athletes athletes){
         this.athletes = athletes;
-
         this.careTaker = new CareTaker();
         this.equipmentProxy = new EquipmentProxy();
     }

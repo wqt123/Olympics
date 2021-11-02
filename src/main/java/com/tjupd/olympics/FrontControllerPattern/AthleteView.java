@@ -35,6 +35,7 @@ public class AthleteView {
                     frontController.dispatchRequest("MedalTable");
                     break;
                 case "5":
+                    frontController.dispatchRequest("Equipment");
                     break;
                 case "0":
                     System.out.println("程序已正常推出！");

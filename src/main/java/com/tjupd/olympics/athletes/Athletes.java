@@ -160,7 +160,7 @@ public class Athletes implements athletesInterface {
     System.out.println("下面开始角色创建，请依次输入您的信息：");
     System.out.println("姓名：");
     name = input.nextLine();
-    System.out.println("性别：1. 男 2. 女");
+    System.out.println("性别：[1] 男 [2] 女");
     String tmp1 = input.nextLine();
     switch (tmp1){
       case "1":
@@ -173,7 +173,7 @@ public class Athletes implements athletesInterface {
         System.out.println("未识别字符，默认生成为男");
         sex = true;
     }
-    System.out.println("国家：1. 中国 2. 日本 3. 韩国 4. 俄国");
+    System.out.println("国家：[1] 中国 [2] 日本 [3] 韩国 [4] 俄国");
     String tmp2 = input.nextLine();
     switch (tmp2){
       case "1":
@@ -189,7 +189,7 @@ public class Athletes implements athletesInterface {
         country = "Russian";
         break;
       default:
-        System.out.println("未识别字符，默认生成为男");
+        System.out.println("未识别字符，默认为中国");
         sex = true;
     }
     String[] names = {"Aaron", "Bill", "Carl", "Dick", "Evan", "Ford", "Taylor", "Rose", "Zoe", "Mila", "Ella", "Judy"};

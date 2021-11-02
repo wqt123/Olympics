@@ -6,11 +6,13 @@ public class Dispatcher {
     private DietView dietView;
     private DormitoryView dormitoryView;
     private MedalTableView medalTableView;
+    private EquipmentView equipmentView;
     public Dispatcher(){
         gameView = new GameView();
         dietView = new DietView();
         dormitoryView = new DormitoryView();
         medalTableView = new MedalTableView();
+        equipmentView = new EquipmentView();
     }
 
     public void dispatch(String request){
@@ -26,6 +28,9 @@ public class Dispatcher {
                 break;
             case "MedalTable":
                 medalTableView.show();
+                break;
+            case "Equipment":
+                equipmentView.show();
                 break;
         }
     }
