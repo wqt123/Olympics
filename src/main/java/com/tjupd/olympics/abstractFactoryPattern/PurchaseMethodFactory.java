@@ -10,7 +10,10 @@ public class PurchaseMethodFactory extends AbstractFactory {
 	}
 
 	@Override
-	public PurchaseMethod getPurchaseMethod(String purchaseMethod) { //获取售票类型，生成相应售票类型的类
+	public PurchaseMethod getPurchaseMethod(String purchaseMethod) {
+	/**
+	 * 获取售票类型，生成相应售票类型的类
+	 */
 		if(purchaseMethod == null){
 	         return null;
 	      }        
