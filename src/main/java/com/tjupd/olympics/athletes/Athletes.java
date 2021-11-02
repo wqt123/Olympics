@@ -152,7 +152,7 @@ public class Athletes implements athletesInterface {
    * 用户创建属于自己的运动员对象
    */
   @Override
-  public String createAthlete() {
+  public void createAthlete() {
     String name = "";
     boolean sex = true;
     String country = "";
@@ -196,22 +196,17 @@ public class Athletes implements athletesInterface {
     String[] countries = {"China", "Japan", "Korea", "Russian"};
     for (String s : names) {
       if (s.equals(name)) {
-        return "Your name already exists!Please try again!";
+        System.out.println("您的名字已经存在，请重新输入！");
       }
     }
-    for (String s : countries) {
-      if (s.equals(country)) {
-        Athlete athlete = new Athlete();
-        myAthlete = athlete;
-        athlete.setName(name);
-        athlete.setCountry(country);
-        athlete.setSex(sex);
-        athlete.setScores(new LinkedList<>());
-        athletes.add(athlete);
-        return "Hello " + name + "!";
-      }
-    }
-    return "Your Country doesn't exist!Please try again!";
+    Athlete athlete = new Athlete();
+    myAthlete = athlete;
+    athlete.setName(name);
+    athlete.setCountry(country);
+    athlete.setSex(sex);
+    athlete.setScores(new LinkedList<>());
+    athletes.add(athlete);
+    System.out.println("角色创建成功！");
   }
 
   /**
