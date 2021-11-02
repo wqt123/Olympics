@@ -9,6 +9,7 @@ public abstract class AbstractLogger {
 
 	/**
 	 * 不同健康码级别
+	 * SAFE表示绿码，WARNING黄码，DANGEROUS红码
 	 */
 	public static int SAFE = 1;
 	public static int WARNING = 2;
