@@ -33,10 +33,10 @@ public class BuySouvenir{
 		Souvenir souvenir3 = new Souvenir("奥运纪念纸钞",4350);
 		Souvenir souvenir4 = new Souvenir("奥运纪念徽章",541);
 		Souvenir souvenir5 = new Souvenir("吉祥物玩偶A款",86);
-    	Souvenir souvenir6 = new Souvenir("吉祥物玩偶B款",95);
-    	Souvenir souvenir7 = new Souvenir("吉祥物玩偶C款",119);
-    	Souvenir souvenir8 = new Souvenir("吉祥物摆件",57);
-    	List<Souvenir> souvenirList = new ArrayList<Souvenir>();
+		Souvenir souvenir6 = new Souvenir("吉祥物玩偶B款",95);
+		Souvenir souvenir7 = new Souvenir("吉祥物玩偶C款",119);
+		Souvenir souvenir8 = new Souvenir("吉祥物摆件",57);
+		List<Souvenir> souvenirList = new ArrayList<Souvenir>();
     		souvenirList.add(souvenir1);
     		souvenirList.add(souvenir2);
     		souvenirList.add(souvenir3);
@@ -53,7 +53,7 @@ public class BuySouvenir{
 		for(Iterator iter = souvenirRepository.getIterator(); iter.hasNext();){
 			Souvenir souvenir = (Souvenir)iter.next();
 			String name = String.format("%-20s", souvenir.getName());
-			System.out.println("商品：" + number+ " " + name +" 价格：" + souvenir.getPrice()+"元");
+			System.out.println("商品：" + "[" + number+ "]" + " " + name +" 价格：" + souvenir.getPrice()+"元");
 			number++;
 		}
 	      

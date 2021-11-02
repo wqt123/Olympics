@@ -3,13 +3,13 @@ package com.tjupd.olympics.testProxy;
 
 import com.tjupd.olympics.athletes.Athletes;
 import org.junit.Test;
-import com.tjupd.olympics.ProxyPattern.*;
+import com.tjupd.olympics.EquipmentController.*;
 
 
 
-public class TestProxy {
+public class TestMediator {
     private Athletes athletes= Athletes.getAthlete();
-    private EquipmentProxy equipmentProxy = new EquipmentProxy(athletes);
+    private EquipmentController equipmentProxy = new EquipmentController(athletes);
 
     @Test
     public void testlogger() {

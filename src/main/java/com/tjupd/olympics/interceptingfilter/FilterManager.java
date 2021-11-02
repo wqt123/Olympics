@@ -13,7 +13,7 @@ public class FilterManager {
         filterChain.addFilter(filter);
     }
 
-    public boolean filterRequest(String request){
+    public boolean filterRequest(String request) throws InterruptedException {
         return filterChain.execute(request);
     }
 }
