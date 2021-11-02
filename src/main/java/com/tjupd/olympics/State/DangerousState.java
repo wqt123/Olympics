@@ -13,7 +13,10 @@ public class DangerousState implements State {
 	 * 执行对应函数
 	 */
 	public void doAction(Context context, Athlete athlete) {
-		System.out.println("危险！立即停赛！");
+		System.out.println("危险！立即隔离进行核算检测！");
 		athlete.setStatus(false);
+		System.out.println("核算检测中……");
+		System.out.println("核算检测正常，更新");
+
 	}
 }

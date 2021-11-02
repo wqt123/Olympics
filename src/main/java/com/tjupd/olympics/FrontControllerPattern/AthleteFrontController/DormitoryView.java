@@ -1,6 +1,5 @@
 package com.tjupd.olympics.FrontControllerPattern.AthleteFrontController;
 
-import com.tjupd.olympics.athletes.Athlete;
 import com.tjupd.olympics.athletes.Athletes;
 import com.tjupd.olympics.domitory.BusinessDelegatePattern.Client;
 import com.tjupd.olympics.domitory.BusinessDelegatePattern.DomitoryDelegate;

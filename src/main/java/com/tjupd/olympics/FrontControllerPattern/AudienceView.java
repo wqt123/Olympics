@@ -16,11 +16,11 @@ public class AudienceView {
         System.out.println("您现在的身份是观众！");
         while (true){
             System.out.println("请选择操作：");
-            System.out.println("1. 购票");
-            System.out.println("2. 购买纪念品");
-            System.out.println("3. 观看比赛");
-            System.out.println("4. 查看奖牌榜");
-            System.out.println("0. 退出");
+            System.out.println("[1] 购票");
+            System.out.println("[2] 购买纪念品");
+            System.out.println("[3] 观看比赛");
+            System.out.println("[4] 查看奖牌榜");
+            System.out.println("[0] 退出");
             String option =  input.nextLine();
             switch (Objects.requireNonNull(option)){
                 case "1":
@@ -33,6 +33,7 @@ public class AudienceView {
                     frontController.dispatchRequest("WatchGame");
                     break;
                 case "4":
+                    frontController.dispatchRequest("MedalTable");
                     break;
                 case "0":
                     System.out.println("程序已正常退出！");

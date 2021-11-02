@@ -5,10 +5,7 @@ import com.tjupd.olympics.MedalTable.tilter.CriteriaWithMedal;
 import com.tjupd.olympics.athletes.*;
 
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class MedalTableAll implements MedalTable {
@@ -25,13 +22,13 @@ public class MedalTableAll implements MedalTable {
 
                 //首先要创建他们的国家
                 String tempCountry = athlete.getCountry();//暂存他们的国家名称
-                if (countryMedal.isEmpty() == true) {//奖牌榜如果为空
+                if (countryMedal.isEmpty()) {//奖牌榜如果为空
                     CountryMedal e = new CountryMedal(tempCountry);//创建这个运动员的国家
                     countryMedal.add(e);
                 }
                 boolean inTable=false;
                 for (CountryMedal t : countryMedal) {//遍历奖牌榜
-                    if (t.getCountry() == tempCountry) {//如果有这个国家
+                    if (Objects.equals(t.getCountry(), tempCountry)) {//如果有这个国家
                         inTable=true;
                     }
                 }
@@ -42,7 +39,7 @@ public class MedalTableAll implements MedalTable {
                 //下面添加奖牌
                 for(GameWithScore result:athlete.getScores()){
                     for(CountryMedal t : countryMedal){
-                        if(t.getCountry()==tempCountry){
+                        if(Objects.equals(t.getCountry(), tempCountry)){
                             if(result.getRank()==1)
                                 t.addGold();
                             else if(result.getRank()==2)
@@ -84,7 +81,7 @@ public class MedalTableAll implements MedalTable {
             String option = input.nextLine();
             System.out.println("||=====奥运奖牌榜=====||");
             System.out.println("排名\t国家\t金牌数\t银牌数\t铜牌数\t奖牌数");
-            if(option=="n"){
+            if(Objects.equals(option, "n")){
                 int rank=0;
                 for(CountryMedal t : countryMedal) {
                     rank++;
@@ -101,8 +98,8 @@ public class MedalTableAll implements MedalTable {
                     System.out.println(t.getTotal());
                 }
             }
-            else if(option=="y"){
-                List<CountryMedal> countryMedalList = new ArrayList<CountryMedal>();
+            else if(Objects.equals(option, "y")){
+//                List<CountryMedal> countryMedalList = new ArrayList<CountryMedal>();
                 Criteria withMedal = new CriteriaWithMedal();
                 int rank = 0;
                 for(CountryMedal t : withMedal.meetCriteria(countryMedal)) {
