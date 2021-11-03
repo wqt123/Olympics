@@ -3,7 +3,7 @@ package com.tjupd.olympics;
 import com.tjupd.olympics.FrontControllerPattern.FrontController;
 import com.tjupd.olympics.athletes.Athletes;
 import com.tjupd.olympics.interceptingfilter.AthleteClient;
-import com.tjupd.olympics.interceptingfilter.AuthenticationFilter;
+import com.tjupd.olympics.interceptingfilter.SurveillanceFilter;
 import com.tjupd.olympics.interceptingfilter.FilterManager;
 
 import java.util.Objects;
@@ -22,7 +22,7 @@ public class Main {
                     Athletes athletes = Athletes.getAll();
                     athletes.createAthlete();
                     FilterManager filterManager = new FilterManager(new FrontController());
-                    filterManager.setFilter(new AuthenticationFilter(athletes));
+                    filterManager.setFilter(new SurveillanceFilter(athletes));
                     AthleteClient athleteClient = new AthleteClient();
                     athleteClient.setFilterManager(filterManager);
                     athleteClient.sendRequest("Athlete");

@@ -22,7 +22,7 @@ public class SportPants extends Equipment {
         Calculate calculate = new StrengthInterpreter();
         double strength = calculate.calculate(this);
         //double strength = StrengthInterpreter.calculate(this);
-        System.out.println("获得运动背心增益："+strength);
+        System.out.println("获得运动裤增益："+strength);
         athletes.updateAthletesBody(name,strength);
     }
 
@@ -31,7 +31,7 @@ public class SportPants extends Equipment {
         Calculate calculate = new WeaknessInterpreter();
         double weakness= calculate.calculate(this);
         //double weakness = WeaknessInterpreter.calculate(this);
-        System.out.println("获得运动背心减益："+weakness);
+        System.out.println("获得运动裤减益："+weakness);
         athletes.updateAthletesBody(name,weakness);
         System.out.println("当前身体素质："+athletes.getAthlete(name).getBodyScore());
     }

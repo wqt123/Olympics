@@ -23,27 +23,26 @@ public class Race_100m extends Races {
     private Race_100m() {
         RaceName = "100m比赛";
         RaceKind = 1;
+
+        // 初始化
+        Athletes athletes = Athletes.getAthlete();
+        boolean sex = true;
+        if(RaceKind % 2 == 0) sex=false;
+        List<Athlete> athletesList = athletes.getAthletes(sex);
+
+        for (int i = 0;i < athletesList.size(); i++){
+            // 经典传地址问题
+            MyAthletes current_athletes = new MyAthletes();
+            current_athletes.setBodyscore((int)athletesList.get(i).getBodyScore());
+            current_athletes.setName(athletesList.get(i).getName());
+            theAthletes.add(current_athletes);
+        }
     }
     /**
      * 单例模式获取实例
      * 同时进行实例化
      */
     public static Race_100m getInstance(){
-        // 获取实例，顺便初始化
-        Athletes athletes = Athletes.getAll();
-        boolean sex = true;
-        if(race_100m.RaceKind % 2 == 0) sex=false;
-        List<Athlete> athletesList = athletes.getAthletes(sex);
-
-        for (int i = 0;i < athletesList.size(); i++){
-            // 经典传地址问题
-            MyAthletes current_athletes = new MyAthletes();
-
-            current_athletes.setBodyscore((int)athletesList.get(i).getBodyScore());
-            current_athletes.setName(athletesList.get(i).getName());
-            race_100m.theAthletes.add(current_athletes);
-        }
-
         return race_100m;
     }
 
