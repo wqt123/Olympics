@@ -14,7 +14,7 @@ public class ConcreteMediator extends Mediator{
         this.audienceTwo = audienceTwo;
     }
 
-
+    @Override
     public void send(String message,Audience audience){
         if(audience ==audienceOne){
             audienceTwo.notify(message);

@@ -7,7 +7,7 @@ import com.tjupd.olympics.EquipmentController.*;
 
 
 
-public class TestMediator {
+public class TestEquipmentController {
     private Athletes athletes= Athletes.getAthlete();
     private EquipmentController equipmentProxy = new EquipmentController(athletes);
 
