@@ -1,4 +1,4 @@
-package com.tjupd.olympics.TemplatePattern;
+package com.tjupd.olympics.FlyWeightPattern;
 
 import com.tjupd.olympics.InterpreterPattern.StrengthInterpreter;
 import com.tjupd.olympics.InterpreterPattern.WeaknessInterpreter;
@@ -6,16 +6,16 @@ import com.tjupd.olympics.athletes.Athletes;
 
 import java.util.Random;
 
-public class SportPants extends Equipment {
+public class Clothes extends Equipment {
 
-    public SportPants(){
+    public Clothes(){
         Random rand = new Random();
-        this.dex = rand.nextDouble()*15;
-        this.lassitude = rand.nextDouble()*3;
-        this.sloth = rand.nextDouble()*3;
-        this.str = rand.nextDouble()*1;
-    }
+        this.dex = rand.nextDouble()*4;
+        this.lassitude = rand.nextDouble()*10;
+        this.sloth = rand.nextDouble()*2;
+        this.str = rand.nextDouble()*10;
 
+    }
     @Override
     void buff(String name,Athletes athletes){
 
@@ -28,6 +28,7 @@ public class SportPants extends Equipment {
     void deBuff(String name,Athletes athletes){
         double weakness = WeaknessInterpreter.calculate(this);
         System.out.println("获得运动背心减益"+weakness);
+
         athletes.updateAthletesBody(name,weakness);
         System.out.println("当前身体素质："+athletes.getAthlete(name).getBodyScore());
     }

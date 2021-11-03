@@ -1,4 +1,4 @@
-package com.tjupd.olympics.testProxy;
+package com.tjupd.olympics.testEquipmentController;
 
 
 import com.tjupd.olympics.athletes.Athletes;

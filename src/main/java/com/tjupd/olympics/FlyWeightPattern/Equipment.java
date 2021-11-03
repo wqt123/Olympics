@@ -1,8 +1,6 @@
-package com.tjupd.olympics.TemplatePattern;
+package com.tjupd.olympics.FlyWeightPattern;
 
 
-import com.tjupd.olympics.InterpreterPattern.StrengthInterpreter;
-import com.tjupd.olympics.InterpreterPattern.WeaknessInterpreter;
 import com.tjupd.olympics.athletes.Athletes;
 
 /**
