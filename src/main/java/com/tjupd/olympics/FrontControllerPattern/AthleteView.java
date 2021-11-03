@@ -2,10 +2,16 @@ package com.tjupd.olympics.FrontControllerPattern;
 
 import java.util.Objects;
 import java.util.Scanner;
-
 import com.tjupd.olympics.FrontControllerPattern.AthleteFrontController.AthleteFrontController;
-
+/**
+ * 前端控制器设计模式
+ * 运动员视图类，用于调用运动员前端控制器，实现运动员相关功能
+ * @author 王棋田
+ */
 public class AthleteView {
+    /**
+     * 运动员视图的调用接口，调用运动员前端控制器。
+     */
     public void show(){
         AthleteFrontController frontController = new AthleteFrontController();
         System.out.println("您现在的身份是运动员！");
@@ -17,7 +23,7 @@ public class AthleteView {
             System.out.println("[2] 办理入住");
             System.out.println("[3] 查看奖牌榜");
             System.out.println("[4] 更新装备");
-            if(flag){
+            if(flag){//根据业务逻辑只有一场比赛，因此第二次时不在提供接口
                 System.out.println("[5] 参加比赛");
             }
             System.out.println("[0] 退出");
@@ -37,7 +43,12 @@ public class AthleteView {
                     frontController.dispatchRequest("Equipment");
                     break;
                 case "5":
-                    frontController.dispatchRequest("Game");
+                    if(flag){
+                        frontController.dispatchRequest("Game");
+                    }
+                    else {
+                        System.out.println("比赛已结束，请选择其他活动！");
+                    }
                     break;
                 case "0":
                     System.out.println("程序已正常推出！");
