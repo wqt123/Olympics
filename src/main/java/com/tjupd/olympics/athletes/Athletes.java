@@ -9,10 +9,7 @@ import com.tjupd.olympics.State.StateDemo;
 import com.tjupd.olympics.other.Game.GetScore;
 import com.tjupd.olympics.other.Game.NameWithScore;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 /**
  * @author ShaoCHi
@@ -22,6 +19,7 @@ import java.util.Random;
 public class Athletes implements athletesInterface {
 
   private final List<Athlete> athletes;
+  public Athlete myAthlete;
   private MultipleCommand mulcmd;
 
   public List<Athlete> getAthletes() {
@@ -32,12 +30,11 @@ public class Athletes implements athletesInterface {
     return athlete;
   }
 
-
   private static final Athletes athlete = new Athletes();
 
   private Athletes() {
     this.athletes = initialization();
-        this.mulcmd=new MultipleCommand();
+    this.mulcmd=new MultipleCommand();
   }
 
   /**
@@ -153,32 +150,63 @@ public class Athletes implements athletesInterface {
 
   /**
    * 用户创建属于自己的运动员对象
-   *
-   * @param name（String）
-   * @param sex（boolean）
-   * @param country（String）
    */
   @Override
-  public String addAthlete(String name, boolean sex, String country) {
+  public void createAthlete() {
+    String name = "";
+    boolean sex = true;
+    String country = "";
+    Scanner input = new Scanner(System.in);
+    System.out.println("下面开始角色创建，请依次输入您的信息：");
+    System.out.println("姓名：");
+    name = input.nextLine();
+    System.out.println("性别：[1] 男 [2] 女");
+    String tmp1 = input.nextLine();
+    switch (tmp1){
+      case "1":
+        sex = true;
+        break;
+      case "2":
+        sex = false;
+        break;
+      default:
+        System.out.println("未识别字符，默认生成为男");
+        sex = true;
+    }
+    System.out.println("国家：[1] 中国 [2] 日本 [3] 韩国 [4] 俄国");
+    String tmp2 = input.nextLine();
+    switch (tmp2){
+      case "1":
+        country = "China";
+        break;
+      case "2":
+        country = "Japan";
+        break;
+      case "3":
+        country = "Korea";
+        break;
+      case "4":
+        country = "Russian";
+        break;
+      default:
+        System.out.println("未识别字符，默认为中国");
+        sex = true;
+    }
     String[] names = {"Aaron", "Bill", "Carl", "Dick", "Evan", "Ford", "Taylor", "Rose", "Zoe", "Mila", "Ella", "Judy"};
     String[] countries = {"China", "Japan", "Korea", "Russian"};
     for (String s : names) {
       if (s.equals(name)) {
-        return "Your name already exists!Please try again!";
+        System.out.println("您的名字已经存在，请重新输入！");
       }
     }
-    for (String s : countries) {
-      if (s.equals(country)) {
-        Athlete athlete = new Athlete();
-        athlete.setName(name);
-        athlete.setCountry(country);
-        athlete.setSex(sex);
-        athlete.setScores(new LinkedList<>());
-        athletes.add(athlete);
-        return "Hello " + name + "!";
-      }
-    }
-    return "Your Country doesn't exist!Please try again!";
+    Athlete athlete = new Athlete();
+    myAthlete = athlete;
+    athlete.setName(name);
+    athlete.setCountry(country);
+    athlete.setSex(sex);
+    athlete.setScores(new LinkedList<>());
+    athletes.add(athlete);
+    System.out.println("角色创建成功！");
   }
 
   /**
@@ -283,7 +311,7 @@ public class Athletes implements athletesInterface {
     }
 
   @Override
-  public void runEpidemicCheck(Athlete athlete) {
+  public void runEpidemicCheck(Athlete athlete) throws InterruptedException {
 
     int healthCode;
     Random r = new Random();
@@ -321,5 +349,6 @@ public class Athletes implements athletesInterface {
     System.out.println("其他运动员作为观察者更新其他运动员自己的健康码：");
     ObserverDemo observerdemo = new ObserverDemo();
     observerdemo.run(athlete,this);
+    athlete.setStatus(true);
   }
 }

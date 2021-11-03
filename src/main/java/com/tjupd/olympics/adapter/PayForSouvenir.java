@@ -10,7 +10,7 @@ import com.tjupd.olympics.audience.Audience;
 public class PayForSouvenir {
 	public boolean run(Audience audience, int price) {
 		System.out.println("类适配器模式测试：");
-		System.out.println("请选择支付方式：1. 微信支付 2. 支付宝支付");
+		System.out.println("请选择支付方式：[1] 微信支付          [2] 支付宝支付");
 		Scanner input=new Scanner(System.in);
 		int n=input.nextInt();
 		int restMoney = audience.getMoney()-price;
@@ -19,19 +19,15 @@ public class PayForSouvenir {
 			case 1: Pay target1 = new WeChatAdapter();
 		    target1.pay();
 		    audience.setMoney(audience.getMoney()-price);
-//		    input.close ();
 		    return true;
 		    case 2: Pay target2 = new AlipaytAdapter();
 		    target2.pay();
-//		   input.close ();
 		    return true;
 		    default: System.out.println("支付失败！");
-//		    input.close ();
 		    return false;
 			}
 		}
 		else System.out.println("支付失败！");
-//		input.close ();
 		return false;
 	}
 }

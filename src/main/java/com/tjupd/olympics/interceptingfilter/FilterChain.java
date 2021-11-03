@@ -12,15 +12,14 @@ public class FilterChain {
         filters.add(filter);
     }
 
-    public boolean execute(String request){
-        boolean isTrue = true;
+    public boolean execute(String request) throws InterruptedException {
         for (Filter filter : filters) {
-            isTrue &= filter.execute(request);
-            if(!isTrue){
+            if(!filter.execute(request)){
                 return false;
             }
         }
-        target.execute(request);
+//        System.out.println(request);
+        target.dispatchRequest(request);
         return true;
     }
 

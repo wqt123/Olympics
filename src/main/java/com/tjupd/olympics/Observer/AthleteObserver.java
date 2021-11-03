@@ -11,8 +11,12 @@ import java.util.List;
  */
 public class AthleteObserver implements Observer {
 
+  /**
+   * 运动员自己
+   */
   private Athlete athlete;
   
+  //将其他运动员中第i个设为观察者
   AthleteObserver(int i,List<Athlete> atlist) {
   	athlete = atlist.get(i);
   }

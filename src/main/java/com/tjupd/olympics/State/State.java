@@ -14,5 +14,5 @@ public interface State {
 	 * @param context
 	 * @param athlete
 	 */
-	public void doAction(Context context, Athlete athlete);
+	public void doAction(Context context, Athlete athlete) throws InterruptedException;
 }

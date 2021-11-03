@@ -13,7 +13,7 @@ public class FrontController {
     }
 
     private void trackRequest(String request){
-        System.out.println("Page requested: " + request);
+        //ignore
     }
 
     public void dispatchRequest(String request){
@@ -25,7 +25,7 @@ public class FrontController {
         }
     }
     public void execute(String request){
-        System.out.println("Executing request: " + request);
+//        System.out.println("Executing request: " + request);
         dispatchRequest("Athletes");
     }
 }

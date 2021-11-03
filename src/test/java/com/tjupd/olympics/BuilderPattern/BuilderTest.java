@@ -13,6 +13,5 @@ public class BuilderTest {
         FoodBuilder builder = new FoodBuilder();
         director.BuyMilk(builder);
         builder.getResult();
-
     }
 }

@@ -1,9 +1,15 @@
 package com.tjupd.olympics.interceptingfilter;
 
-public class AuthenticationFilter implements Filter {
-    public boolean execute(String request){
-        System.out.println("Authenticating request: " + request);
+import com.tjupd.olympics.athletes.Athlete;
+import com.tjupd.olympics.athletes.Athletes;
 
+public class AuthenticationFilter implements Filter {
+    private Athletes athletes;
+    public AuthenticationFilter(Athletes athletes){
+        this.athletes = athletes;
+    }
+    public boolean execute(String request) throws InterruptedException {
+        athletes.runEpidemicCheck(athletes.myAthlete);
         return true;
     }
 }

@@ -9,6 +9,7 @@ public abstract class AbstractLogger {
 
 	/**
 	 * 不同健康码级别
+	 * SAFE表示绿码，WARNING黄码，DANGEROUS红码
 	 */
 	public static int SAFE = 1;
 	public static int WARNING = 2;
@@ -27,7 +28,7 @@ public abstract class AbstractLogger {
 	}
 
 	/**
-	 * 比较责任链上不同状态的级别大小
+	 * 比较责任链上不同状态的级别大小，只用等于时采用相等级别的动作
 	 * @param level
 	 * @param message
 	 */

@@ -14,7 +14,7 @@ public class TestState {
 	private StateDemo demo = new StateDemo();
 	
 	@Test
-	public void testdoaction() {
+	public void testdoaction() throws InterruptedException {
 		athlete.setHealthCode(2);
 		demo.run(athlete);
 	}
