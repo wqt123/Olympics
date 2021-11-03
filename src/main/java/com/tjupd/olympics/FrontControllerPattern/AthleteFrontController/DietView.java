@@ -1,11 +1,16 @@
 package com.tjupd.olympics.FrontControllerPattern.AthleteFrontController;
-
 import com.tjupd.olympics.BuilderPattern.food.FoodType;
 import com.tjupd.olympics.athletes.Athletes;
-
 import java.util.Scanner;
-
+/**
+ * 前端控制器设计模式
+ * 饮食视图类，用于调用运动员购买饮食相关接口
+ * @author 王棋田
+ */
 public class DietView {
+    /**
+     * 饮食视图的调用接口，实现运动员购买饮食功能
+     */
     public void show(){
         Athletes athletes = Athletes.getAll();
         boolean stop = false;
@@ -16,7 +21,7 @@ public class DietView {
             boolean continue_to_buy = true;
 
             //食物种类
-            System.out.println("Please select the type of the food:\n [1]Milk [2]Egg [3]Bread [4]Bonbon [5]Sausage");
+            System.out.println("请选择食物种类：\n [1]牛奶 [2]鸡蛋 [3]面包 [4]Bonbon [5]香肠");
             //接受输入
             Scanner input = new Scanner(System.in);
             String str = input.next();
@@ -31,7 +36,7 @@ public class DietView {
                     throw new IllegalStateException("Unexpected value: " + str);
             }
             //数量
-            System.out.println("How many do you want?");
+            System.out.println("请键入您需要购买的数量。");
             String strfoodnum = input.next();
             foodnum = Integer.parseInt(strfoodnum);
 

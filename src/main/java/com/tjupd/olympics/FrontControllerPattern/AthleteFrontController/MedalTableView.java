@@ -5,11 +5,17 @@ import com.tjupd.olympics.MedalTable.visitor.MedalTableAll;
 import com.tjupd.olympics.MedalTable.visitor.MedalTableDisplayVisitor;
 import com.tjupd.olympics.MedalTable.visitor.MedalTableGold;
 import com.tjupd.olympics.athletes.Athletes;
-
 import java.util.Objects;
 import java.util.Scanner;
-
+/**
+ * 前端控制器设计模式
+ * 奖牌榜视图类，用于调用显示奖牌榜相关接口
+ * @author 王棋田
+ */
 public class MedalTableView {
+    /**
+     * 奖牌榜视图的调用接口，实现示奖牌榜功能
+     */
     public void show(){
         Athletes athletes = Athletes.getAll();
         Scanner input = new Scanner(System.in);

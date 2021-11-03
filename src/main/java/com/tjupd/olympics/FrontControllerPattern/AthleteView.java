@@ -14,7 +14,7 @@ public class AthleteView {
         while (true){
             System.out.println("请选择操作：");
             System.out.println("[1] 就餐");
-            System.out.println("[2] 住宿");
+            System.out.println("[2] 办理入住");
             System.out.println("[3] 查看奖牌榜");
             System.out.println("[4] 更新装备");
             if(flag){
