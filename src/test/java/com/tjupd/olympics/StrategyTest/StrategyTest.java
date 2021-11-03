@@ -5,7 +5,6 @@ import org.junit.Test;
 public class StrategyTest {
     @Test
     public void StrategyTest(){
-//        System.out.println("讲真我觉得策略模式测试应该让人输入，不然怎么体现策略？");
         System.out.println("策略设计模式测试");
         System.out.println("展示策略对身体素质得分的影响");
         StrategyContext strategyContext = null;

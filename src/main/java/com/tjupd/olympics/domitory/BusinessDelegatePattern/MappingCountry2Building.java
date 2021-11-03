@@ -15,6 +15,7 @@ public class MappingCountry2Building {
     }
 
     public int mapping(){
+        //根据Decorator设计模式得到的结果，将国家映射得到该国家代表队可以入住的楼栋
         if (country=="China"){
             arr[0]=1;arr[1]=3;
         }

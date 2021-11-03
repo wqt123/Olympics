@@ -7,7 +7,7 @@ public abstract class BuildingDecorator extends Building {
     public BuildingDecorator(Building building){
         this.building=building;
     }
-
+    //构造函数
     @Override
     public void setBuilding(){
         this.building.setBuilding();

@@ -16,23 +16,21 @@ public class Race_5000m extends Races{
     private Race_5000m() {
         RaceName = "5000m Races";
         RaceKind = 5;
-    }
-    public static Race_5000m getInstance(){
-        // 获取实例，顺便初始化
-        Athletes athletes = Athletes.getAll();
+
+        Athletes athletes = Athletes.getAthlete();
         boolean sex = true;
-        if(race_5000m.RaceKind % 2 == 0) sex=false;
+        if(RaceKind % 2 == 0) sex=false;
         List<Athlete> athletesList = athletes.getAthletes(sex);
 
         for (int i = 0;i < athletesList.size(); i++){
-            // 经典传地址问题
             MyAthletes current_athletes = new MyAthletes();
-
             current_athletes.setBodyscore((int)athletesList.get(i).getBodyScore());
             current_athletes.setName(athletesList.get(i).getName());
-            race_5000m.theAthletes.add(current_athletes);
+            theAthletes.add(current_athletes);
         }
 
+    }
+    public static Race_5000m getInstance(){
         return race_5000m;
     }
     @Override
