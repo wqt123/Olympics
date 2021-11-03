@@ -3,7 +3,7 @@ package com.tjupd.olympics.interceptingfilter;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.tjupd.olympics.FrontControllerPattern.FrontController;
+import com.tjupd.olympics.frontControllerPattern.FrontController;
 public class FilterChain {
     private List<Filter> filters = new ArrayList<Filter>();
     private FrontController target;

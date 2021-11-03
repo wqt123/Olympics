@@ -2,13 +2,10 @@ package com.tjupd.olympics.testMemento;
 
 
 
-import com.tjupd.olympics.MementoPattern.CareTaker;
-import com.tjupd.olympics.MementoPattern.Memento;
-import com.tjupd.olympics.ProxyPattern.EquipmentProxy;
+import com.tjupd.olympics.mementoPattern.CareTaker;
+import com.tjupd.olympics.mementoPattern.Memento;
+import com.tjupd.olympics.proxyPattern.EquipmentProxy;
 import org.junit.Test;
-import org.junit.runner.JUnitCore;
-import org.junit.runner.Result;
-import org.junit.runner.notification.Failure;
 
 public class TestMemento {
     private EquipmentProxy equipmentProxy= new EquipmentProxy();

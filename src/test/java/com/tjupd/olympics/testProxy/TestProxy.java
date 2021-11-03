@@ -1,8 +1,6 @@
 package com.tjupd.olympics.testProxy;
 
-import com.tjupd.olympics.EquipmentController.EquipmentController;
-import com.tjupd.olympics.ProxyPattern.EquipmentProxy;
-import com.tjupd.olympics.athletes.Athletes;
+import com.tjupd.olympics.proxyPattern.EquipmentProxy;
 import org.junit.Test;
 
 public class TestProxy {

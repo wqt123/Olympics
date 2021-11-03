@@ -1,6 +1,6 @@
 package com.tjupd.olympics.interceptingfilter;
 
-import com.tjupd.olympics.FrontControllerPattern.FrontController;
+import com.tjupd.olympics.frontControllerPattern.FrontController;
 
 public class FilterManager {
     FilterChain filterChain;

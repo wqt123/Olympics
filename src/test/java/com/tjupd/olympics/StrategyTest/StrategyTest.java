@@ -1,5 +1,5 @@
 package com.tjupd.olympics.StrategyTest;
-import com.tjupd.olympics.StrategyPattern.*;
+import com.tjupd.olympics.strategyPattern.*;
 import org.junit.Test;
 
 public class StrategyTest {

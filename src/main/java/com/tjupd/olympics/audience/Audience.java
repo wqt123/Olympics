@@ -2,7 +2,7 @@ package com.tjupd.olympics.audience;
 
 import java.util.*;
 
-import com.tjupd.olympics.MediatorPattern.Mediator;
+import com.tjupd.olympics.mediatorPattern.Mediator;
 import com.tjupd.olympics.tickets.Ticket;
 /**
  * 

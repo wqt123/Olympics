@@ -1,9 +1,6 @@
 package com.tjupd.olympics.testMediator;
 
-import com.tjupd.olympics.MediatorPattern.ConcreteMediator;
-import com.tjupd.olympics.MementoPattern.CareTaker;
-import com.tjupd.olympics.MementoPattern.Memento;
-import com.tjupd.olympics.ProxyPattern.EquipmentProxy;
+import com.tjupd.olympics.mediatorPattern.ConcreteMediator;
 import com.tjupd.olympics.audience.Audience;
 import org.junit.Test;
 

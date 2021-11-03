@@ -1,8 +1,8 @@
 package com.tjupd.olympics.SingletonAndFacadeAndTemplateTest;
 
-import com.tjupd.olympics.Singleton_Template_FacadePatterns.RaceFacade;
-import com.tjupd.olympics.Singleton_Template_FacadePatterns.Race_100m;
-import com.tjupd.olympics.Singleton_Template_FacadePatterns.Race_800m;
+import com.tjupd.olympics.singleton_Template_FacadePatterns.RaceFacade;
+import com.tjupd.olympics.singleton_Template_FacadePatterns.Race_100m;
+import com.tjupd.olympics.singleton_Template_FacadePatterns.Race_800m;
 import org.junit.Test;
 
 public class SingletonAndTemplateAndFacadeTest {

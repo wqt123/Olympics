@@ -1,6 +1,6 @@
 package com.tjupd.olympics.interceptingfilter;
 
-import com.tjupd.olympics.athletes.Athletes;
+import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athletes;
 
 public class SurveillanceFilter implements Filter {
     private Athletes athletes;

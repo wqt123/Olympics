@@ -1,13 +1,11 @@
 package com.tjupd.olympics.testMedalTable;
 
-import com.tjupd.olympics.MedalTable.visitor.MedalTable;
-import com.tjupd.olympics.MedalTable.visitor.MedalTableAll;
-import com.tjupd.olympics.MedalTable.visitor.MedalTableDisplayVisitor;
-import com.tjupd.olympics.MedalTable.visitor.MedalTableGold;
-import com.tjupd.olympics.athletes.Athletes;
+import com.tjupd.olympics.visitorPattern.MedalTable;
+import com.tjupd.olympics.visitorPattern.MedalTableAll;
+import com.tjupd.olympics.visitorPattern.MedalTableDisplayVisitor;
+import com.tjupd.olympics.visitorPattern.MedalTableGold;
+import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athletes;
 import org.junit.Test;
-
-import java.util.Scanner;
 
 public class testMedalTableDemo {
     @Test

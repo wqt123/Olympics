@@ -1,6 +1,6 @@
 package com.tjupd.olympics.InterpreterPattern;
 
-import com.tjupd.olympics.FlyWeightPattern.Equipment;
+import com.tjupd.olympics.flyWeightPattern.Equipment;
 
 /**
  * @author Mizu_long

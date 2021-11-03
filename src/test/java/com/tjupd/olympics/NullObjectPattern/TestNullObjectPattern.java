@@ -6,8 +6,8 @@ package com.tjupd.olympics.NullObjectPattern;
  */
 
 
-import com.tjupd.olympics.athletes.Athlete;
-import com.tjupd.olympics.athletes.Athletes;
+import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athlete;
+import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athletes;
 import org.junit.Test;
 
 public class TestNullObjectPattern {

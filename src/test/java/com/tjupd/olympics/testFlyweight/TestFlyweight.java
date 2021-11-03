@@ -1,7 +1,7 @@
 package com.tjupd.olympics.testFlyweight;
 
 
-import com.tjupd.olympics.FlyWeightPattern.*;
+import com.tjupd.olympics.flyWeightPattern.*;
 import org.junit.Test;
 
 public class TestFlyweight {

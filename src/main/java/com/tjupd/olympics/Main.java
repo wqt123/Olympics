@@ -1,7 +1,7 @@
 package com.tjupd.olympics;
 
-import com.tjupd.olympics.FrontControllerPattern.FrontController;
-import com.tjupd.olympics.athletes.Athletes;
+import com.tjupd.olympics.frontControllerPattern.FrontController;
+import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athletes;
 import com.tjupd.olympics.interceptingfilter.AthleteClient;
 import com.tjupd.olympics.interceptingfilter.SurveillanceFilter;
 import com.tjupd.olympics.interceptingfilter.FilterManager;

@@ -1,9 +1,9 @@
 package com.tjupd.olympics.testEquipmentController;
 
 
-import com.tjupd.olympics.athletes.Athletes;
+import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athletes;
 import org.junit.Test;
-import com.tjupd.olympics.EquipmentController.*;
+import com.tjupd.olympics.equipmentController.*;
 
 
 
