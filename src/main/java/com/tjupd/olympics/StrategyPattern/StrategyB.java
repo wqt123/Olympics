@@ -1,13 +1,13 @@
 package com.tjupd.olympics.StrategyPattern;
 
+/**
+ * @author luchengfeng
+ * 策略B类
+ */
 public class StrategyB extends Strategy {
 
     @Override
     public double StrategyInterface(int Bodyscore, int Racekind) {
-        /*
-        策略B为爆发与持续兼有型策略，同样对不同比赛加成不同
-
-         */
         if (Racekind == 1 || Racekind == 2)
             return Bodyscore * 0.95;
         else if (Racekind == 3 || Racekind == 4)

@@ -1,5 +1,9 @@
 package com.tjupd.olympics.StrategyPattern;
 
+/**
+ * @author luchengfeng
+ * 策略C类
+ */
 public class StrategyC extends Strategy {
     @Override
     public double StrategyInterface(int Bodyscore, int Racekind) {

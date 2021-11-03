@@ -24,8 +24,4 @@ public class FrontController {
             dispatcher.dispatch(request);
         }
     }
-    public void execute(String request){
-//        System.out.println("Executing request: " + request);
-        dispatchRequest("Athletes");
-    }
 }

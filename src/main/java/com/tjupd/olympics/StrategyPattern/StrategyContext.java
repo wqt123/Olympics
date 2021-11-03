@@ -1,5 +1,10 @@
 package com.tjupd.olympics.StrategyPattern;
-// 上下文类，我也不知道为什么要这么叫
+
+/**
+ * @author luchengfeng
+ * 策略类上下文类
+ * 作为策略类接口，用于调用不同策略
+ */
 public class StrategyContext {
     private Strategy strategy;
 

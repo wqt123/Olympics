@@ -2,7 +2,7 @@ package com.tjupd.olympics.EquipmentController;
 
 import com.tjupd.olympics.ProxyPattern.EquipmentProxy;
 import com.tjupd.olympics.athletes.Athletes;
-import com.tjupd.olympics.TemplatePattern.*;
+import com.tjupd.olympics.FlyWeightPattern.*;
 
 import java.util.Scanner;
 

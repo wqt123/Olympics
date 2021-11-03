@@ -15,10 +15,10 @@ public class SouvenirRepository implements Container {
 	}
 	
     public Iterator getIterator() {
-       return new NameIterator();
+       return new SouvenirIterator();
     }
-// NameIterator 实现 Iterator接口，用于返回next
-    private class NameIterator implements Iterator {
+// SouvenirIterator 实现 Iterator接口，用于返回next
+    private class SouvenirIterator implements Iterator {
     	 
         int index;
    

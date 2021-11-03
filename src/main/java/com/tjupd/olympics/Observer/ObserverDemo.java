@@ -20,21 +20,21 @@ public class ObserverDemo {
 		EpidemicSubject epidemicsubject = new EpidemicSubject(athletes);
 		
 		/**
-		 * 未更新时状态
+		 * 未更新时健康码状态
 		 */
 		System.out.println("原始数据：");
         System.out.println(athlete.getName() + "	国家：	"+athlete.getCountry()+"	健康码：	" + athlete.getHealthCode());
-        for(int i=0;i<athletes.getAthletes().size();i++) {
+        for(int i=0;i<athletes.getAthletes().size()-1;i++) {
         	System.out.println(athletes.getAthletes().get(i).getName()+"	国家：	"+athletes.getAthletes().get(i).getCountry()+"	健康码：	"+athletes.getAthletes().get(i).getHealthCode());
         }
         
         /**
-         * 更新后状态
+         * 更新后健康码状态
          */
         System.out.println("健康码更新：");
         epidemicsubject.notifyObserver(athlete.getCountry(),athlete.getHealthCode());
         System.out.println(athlete.getName() + "	国家：	"+athlete.getCountry()+"	健康码：	" + athlete.getHealthCode());
-        	for(int i=0;i<athletes.getAthletes().size();i++) {
+        	for(int i=0;i<athletes.getAthletes().size()-1;i++) {
         	System.out.println(athletes.getAthletes().get(i).getName() + "	国家：	" +athletes.getAthletes().get(i).getCountry()+ "	健康码：	" + epidemicsubject.printout(i));
         	}
         	
