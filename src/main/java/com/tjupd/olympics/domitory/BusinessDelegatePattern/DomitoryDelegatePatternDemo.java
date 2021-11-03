@@ -21,16 +21,19 @@ public class DomitoryDelegatePatternDemo {
             DomitoryDelegate domitoryDelegate=new DomitoryDelegate(country);
             domitoryDelegate.setServiceType();
             Client client=new Client(domitoryDelegate,athlete);
-            System.out.print(athlete.getName());
+            //System.out.print(athlete.getName());
             client.doTask();
             String roomNumber=domitoryDelegate.getroomNumber();
             String building=domitoryDelegate.getBuilding();
 
             //打印前后结果
+            /*
             System.out.println("国家"+" "+country);
             System.out.println("楼栋号:"+athlete.getBuilding());
             System.out.println("房间号:"+athlete.getRoomNumber());
             System.out.println();
+            */
+
         }
 
 
