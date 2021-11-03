@@ -9,11 +9,13 @@ import com.tjupd.olympics.athletes.Athlete;
  */
 public class StateDemo {
 	
+	//new对应级别的对象，初始化
 	private SafeState safestate = new SafeState();
 	private WarningState warningstate = new WarningState();
 	private DangerousState dangerousstate = new DangerousState();
 	
-	public void run(Athlete athlete) {
+	//运行状态模式
+	public void run(Athlete athlete) throws InterruptedException {
 		Context context = new Context(athlete.getHealthCode());
 		
 		if(athlete.getHealthCode()==0) {

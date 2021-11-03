@@ -1,5 +1,6 @@
 package com.tjupd.olympics.FlyWeightPattern;
 
+import com.tjupd.olympics.InterpreterPattern.Calculate;
 import com.tjupd.olympics.InterpreterPattern.StrengthInterpreter;
 import com.tjupd.olympics.InterpreterPattern.WeaknessInterpreter;
 import com.tjupd.olympics.athletes.Athletes;
@@ -19,16 +20,20 @@ public class Shoes extends  Equipment{
     @Override
     void buff(String name,Athletes athletes){
 
-         double strength = StrengthInterpreter.calculate(this);
-        System.out.println("获得鞋子增益"+strength);
+        Calculate calculate = new StrengthInterpreter();
+        double strength = calculate.calculate(this);
+        //double strength = StrengthInterpreter.calculate(this);
+        System.out.println("获得鞋子增益："+strength);
 
         athletes.updateAthletesBody(name,strength);
     }
 
     @Override
     void deBuff(String name,Athletes athletes){
-        double weakness = WeaknessInterpreter.calculate(this);
-        System.out.println("获得鞋子减益"+weakness);
+        Calculate calculate = new WeaknessInterpreter();
+        double weakness= calculate.calculate(this);
+        //double weakness = WeaknessInterpreter.calculate(this);
+        System.out.println("获得鞋子减益："+weakness);
         athletes.updateAthletesBody(name,weakness);
         System.out.println("当前身体素质："+athletes.getAthlete(name).getBodyScore());
     }

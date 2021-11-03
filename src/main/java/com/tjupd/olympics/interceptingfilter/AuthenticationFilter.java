@@ -8,7 +8,7 @@ public class AuthenticationFilter implements Filter {
     public AuthenticationFilter(Athletes athletes){
         this.athletes = athletes;
     }
-    public boolean execute(String request){
+    public boolean execute(String request) throws InterruptedException {
         athletes.runEpidemicCheck(athletes.myAthlete);
         return true;
     }

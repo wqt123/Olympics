@@ -1,8 +1,10 @@
 package com.tjupd.olympics.MedalTable.visitor;
 
 /**
- * 表示元素的接口
+ * @author Yuqi Kuang
+ * 访问者模式
+ * 元素的接口
  */
 public interface MedalTable {
-    public void accept(MedalTableVisitor medalTableVisitor);
+    void accept(MedalTableVisitor medalTableVisitor);
 }

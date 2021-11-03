@@ -5,7 +5,10 @@ public class AdmissionTimeFactory extends AbstractFactory {
  * 入场时间工厂
  */
 	@Override
-	public AdmissionTime getAdmissionTime(String time) { //获取入场时间，生成相应入场时间的类
+	public AdmissionTime getAdmissionTime(String time) {
+	/**
+	 * 获取入场时间，生成相应入场时间的类
+	 */
 		if(time == null){
 	         return null;
 	      }        

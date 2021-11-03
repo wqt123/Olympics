@@ -6,12 +6,19 @@ package com.tjupd.olympics.State;
  *
  */
 public class Context {
+	
+	/**
+ 	 * 健康码状态
+ 	 */
 	private int state;
 	 
 	public Context(int Epidemic){
 		state = Epidemic;
 	}
-	 
+	
+	/**
+ 	 * 得到运动员状态
+  	 */
 	public int getState(){
 	   return state;
 	}

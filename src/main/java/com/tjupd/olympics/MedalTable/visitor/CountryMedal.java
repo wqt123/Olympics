@@ -1,5 +1,9 @@
 package com.tjupd.olympics.MedalTable.visitor;
 
+/**
+ * @author Yuqi Kuang
+ * 奖牌榜列表类
+ */
 public class CountryMedal {
 
         private String country;

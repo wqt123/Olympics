@@ -1,7 +1,5 @@
 package com.tjupd.olympics.FrontControllerPattern;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -37,6 +35,7 @@ public class AthleteView {
                     frontController.dispatchRequest("MedalTable");
                     break;
                 case "5":
+                    frontController.dispatchRequest("Equipment");
                     break;
                 case "0":
                     System.out.println("程序已正常推出！");

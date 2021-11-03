@@ -55,18 +55,18 @@ public class Ticket {
 	
 	private void choosePurchaseMethod() {
 		/**
-		 * 选择买票方式
+		 * 选择买票方式，使用了工厂模式与抽象工厂模式
 		 */
 		AbstractFactory purchaseMethodFactory = FactoryProducer.getFactory("PurchaseMethod");
 		for(;;) {
-			System.out.println("请选择买票方式：\na:网络售票\nb:现场售票");
+			System.out.println("请选择买票方式：\n[1] 网络售票\n[2] 现场售票");
 			Scanner input=new Scanner(System.in);
 			String str=input.nextLine();
-			if(str.equals("a")==true) {
+			if(str.equals("1")==true) {
 				PurchaseMethod purchaseMethod2 = purchaseMethodFactory.getPurchaseMethod("OnlineTicket");
 				setPurchaseMethod(purchaseMethod2.purchaseTicket());
 				break;
-			} else if(str.equals("b")==true) {
+			} else if(str.equals("2")==true) {
 				PurchaseMethod purchaseMethod1 = purchaseMethodFactory.getPurchaseMethod("OnSiteTicket");
 				setPurchaseMethod(purchaseMethod1.purchaseTicket());
 				break;
@@ -86,22 +86,22 @@ public class Ticket {
 	
 	private void chooseAdmissionTime() {
 		/**
-		 * 选择入场时间
+		 * 选择入场时间，使用了工厂模式与抽象工厂模式
 		 */
 		AbstractFactory timeFactory = FactoryProducer.getFactory("AdmissionTime");
 		for(;;) {
-			System.out.println("请选择入场时间：\na:上午（9:00-13:00）\nb:下午（13:00-17:00）\nc:晚上（17:00-21:00）");
+			System.out.println("请选择入场时间：\n[1] 上午（9:00-13:00）\n[2] 下午（13:00-17:00）\n[3] 晚上（17:00-21:00）");
 			Scanner input=new Scanner(System.in);
 			String str=input.nextLine();
-			if(str.equals("a")==true) {
+			if(str.equals("1")==true) {
 				AdmissionTime time1 = timeFactory.getAdmissionTime("morning");
 				setAdmissionTime(time1.chooseAdmissionTime());
 				break;
-			} else if(str.equals("b")==true) {
+			} else if(str.equals("2")==true) {
 				AdmissionTime time2 = timeFactory.getAdmissionTime("afternoon");
 				setAdmissionTime(time2.chooseAdmissionTime());
 				break;
-			} else if(str.equals("c")==true) {
+			} else if(str.equals("3")==true) {
 				AdmissionTime time3 = timeFactory.getAdmissionTime("night");
 				setAdmissionTime(time3.chooseAdmissionTime());
 				break;
@@ -124,19 +124,19 @@ public class Ticket {
 		 * 选择分区
 		 */
 		for(;;) {
-			System.out.println("请选择座位分区：\na:A区域\nb:B区域\nc:C区域\nd:D区域");
+			System.out.println("请选择座位分区：\n[1] A区域\n[2] B区域\n[3] C区域\n[4] D区域");
 			Scanner input=new Scanner(System.in);
 			String str=input.nextLine();
-			if(str.equals("a")==true) {
+			if(str.equals("1")==true) {
 				setPartition("A");
 				break;
-			} else if(str.equals("b")==true) {
+			} else if(str.equals("2")==true) {
 				setPartition("B");
 				break;
-			} else if(str.equals("c")==true) {
+			} else if(str.equals("3")==true) {
 				setPartition("C");
 				break;
-			} else if(str.equals("d")==true) {
+			} else if(str.equals("4")==true) {
 				setPartition("D");
 				break;
 			} else {
@@ -159,16 +159,16 @@ public class Ticket {
 		 * 选择层
 		 */
 		for(;;) {
-			System.out.println("请选择座位楼层：\na:第1层\nb:第2层\nc:第3层");
+			System.out.println("请选择座位楼层：\n[1] 第1层\n[2] 第2层\n[3] 第3层");
 			Scanner input=new Scanner(System.in);
 			String str=input.nextLine();
-			if(str.equals("a")==true) {
+			if(str.equals("1")==true) {
 				setLayer(1);
 				break;
-			} else if(str.equals("b")==true) {
+			} else if(str.equals("2")==true) {
 				setLayer(2);
 				break;
-			} else if(str.equals("c")==true) {
+			} else if(str.equals("3")==true) {
 				setLayer(3);
 				break;
 			} else {
@@ -189,7 +189,7 @@ public class Ticket {
 	
 	private void calculatePrice() {
 		/**
-		 * 计算票价
+		 * 计算票价，使用了桥接模式
 		 */
 		System.out.println("票价表：\nA、C区域第1层：500元人民币\nA、C区域第2层：300元人民币\nA、C区域第3层：80元人民币\nB、D区域第1层：450元人民币\nB、D区域第2层：200元人民币\nB、D区域第3层：50元人民币");
 		this.choosePartition();
@@ -285,7 +285,7 @@ public class Ticket {
 				if(seat<1||seat>40) {
 					System.out.println("输入错误，请重新输入。");
 				} else {
-					System.out.println("您选择的排为：" + seat);
+					System.out.println("您选择的座位为：" + seat);
 					setSeat(seat);
 					break;
 				}
@@ -338,11 +338,11 @@ public class Ticket {
 			System.out.println("门票类型：现场售票");
 		}
 		if(admissionTime==0) {
-			System.out.println("入场时间：上午场（9:00-13:00，请在规定入场时间内检票！）");
+			System.out.println("入场时间：上午场（9:00-13:00，请在规定时间内入场检票！）");
 		} else if(admissionTime==1) {
-			System.out.println("入场时间：下午场（13:00-17:00，请在规定入场时间内检票！）");
+			System.out.println("入场时间：下午场（13:00-17:00，请在规定时间内入场检票！）");
 		} else if(admissionTime==2) {
-			System.out.println("入场时间：夜晚场（17:00-21:00，请在规定入场时间内检票！）");
+			System.out.println("入场时间：夜晚场（17:00-21:00，请在规定时间内入场检票！）");
 		}
 		System.out.println("座位分区："+partition+"区");
 		System.out.println("层数：第"+layer+"层");

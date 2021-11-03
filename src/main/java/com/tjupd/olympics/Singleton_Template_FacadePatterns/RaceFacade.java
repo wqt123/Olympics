@@ -1,21 +1,30 @@
 package com.tjupd.olympics.Singleton_Template_FacadePatterns;
 
 public class RaceFacade {
+    /**
+     * 所有比赛类
+     */
     private Race_100m race_100m;
     private Race_800m race_800m;
     private Race_5000m race_5000m;
-    private Race_swim race_swim;
+    private Race_Swim race_swim;
     private Race_LongJump race_longJump;
 
+    /**
+     * 构造函数
+     * 获取所有比赛实例
+     */
     public RaceFacade(){
-        // 获取比赛实例
         race_100m = Race_100m.getInstance();
         race_800m = Race_800m.getInstance();
         race_5000m = Race_5000m.getInstance();
-        race_swim = Race_swim.getInstance();
+        race_swim = Race_Swim.getInstance();
         race_longJump = Race_LongJump.getInstance();
     }
 
+    /**
+     * 开始100m比赛
+     */
     public void BeginRace_100m(){
         race_100m.RaceStart();
         race_100m.Racing();
@@ -23,6 +32,9 @@ public class RaceFacade {
         race_100m.RaceEnd();
     }
 
+    /**
+     * 开始800m比赛
+     */
     public void BeginRace_800m(){
         race_800m.RaceStart();
         race_800m.Racing();
@@ -30,6 +42,9 @@ public class RaceFacade {
         race_800m.RaceEnd();
     }
 
+    /**
+     * 开始5000m比赛
+     */
     public void BeginRace_5000m(){
         race_5000m.RaceStart();
         race_5000m.Racing();
@@ -37,6 +52,9 @@ public class RaceFacade {
         race_5000m.RaceEnd();
     }
 
+    /**
+     * 开始游泳比赛
+     */
     public void BeginRace_swim(){
         race_swim.RaceStart();
         race_swim.Racing();
@@ -44,6 +62,9 @@ public class RaceFacade {
         race_swim.RaceEnd();
     }
 
+    /**
+     * 开始跳远比赛
+     */
     public void BeginRace_LongJump(){
         race_longJump.RaceStart();
         race_longJump.Racing();
@@ -51,6 +72,9 @@ public class RaceFacade {
         race_longJump.RaceEnd();
     }
 
+    /**
+     * 进行所有比赛
+     */
     public void BeginAllRaces(){
         BeginRace_100m();
         BeginRace_800m();
@@ -59,6 +83,9 @@ public class RaceFacade {
         BeginRace_LongJump();
     }
 
+    /**
+     * 显示比赛时间表
+     */
     public void PrintSchedule(){
         System.out.println("----隆重登场的分割线!!----");
         System.out.println("以下为比赛日程表！");
@@ -68,15 +95,15 @@ public class RaceFacade {
         System.out.println("第二场: 女子100m ");
         System.out.println("第三场: 男子800m ");
         System.out.println("第四场: 女子800m");
-        System.out.println("--有--情--的--分--割--线~~");
+//        System.out.println("--有--情--的--分--割--线~~");
         System.out.println("3212年26月78日下午：");
         System.out.println("第一场: 男子5000m");
         System.out.println("第二场: 女子5000m");
-        System.out.println("!喜!欢!感!叹!号!的!分!割!线!");
+//        System.out.println("!喜!欢!感!叹!号!的!分!割!线!");
         System.out.println("3212年27月1日上午：");
-        System.out.println("第一场: 女子400m游泳");
-        System.out.println("第二场: 男子400m游泳");
-        System.out.println("~喜~欢~波~浪~号~的~分~割~线~");
+        System.out.println("第一场: 男子400m游泳");
+        System.out.println("第二场: 女子400m游泳");
+//        System.out.println("~喜~欢~波~浪~号~的~分~割~线~");
         System.out.println("3212年27月1日上午：");
         System.out.println("第一场: 男子跳远");
         System.out.println("第二场: 女子跳远");

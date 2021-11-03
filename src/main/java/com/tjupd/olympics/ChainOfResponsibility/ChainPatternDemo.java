@@ -13,6 +13,7 @@ public class ChainPatternDemo {
 	 * @return
 	 */
 	public AbstractLogger getChainOfLoggers(){
+		//分别new一个对应级别的对象并初始化
 		AbstractLogger dangerousLogger = new DangerousLogger(AbstractLogger.DANGEROUS);
 		AbstractLogger warningLogger = new WarningLogger(AbstractLogger.WARNING);
 		AbstractLogger safeLogger = new SafeLogger(AbstractLogger.SAFE);

@@ -2,8 +2,13 @@ package com.tjupd.olympics.MedalTable.tilter;
 import java.util.List;
 
 import com.tjupd.olympics.MedalTable.visitor.CountryMedal;
-import com.tjupd.olympics.athletes.*;
+
+/**
+ * @author Yuqi Kuang
+ * 过滤器模式
+ * 过滤器模式的标准类
+ */
 
 public interface Criteria {
-    public List<CountryMedal> meetCriteria(List<CountryMedal> countryMedals);
+    List<CountryMedal> meetCriteria(List<CountryMedal> countryMedals);
 }
