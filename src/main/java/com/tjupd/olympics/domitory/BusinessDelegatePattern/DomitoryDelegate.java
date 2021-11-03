@@ -18,7 +18,8 @@ public class DomitoryDelegate {
 
     public void setServiceType(){
         //确定serviceType，得到需要办理的具体业务类型
-        MappingCountry2Continent map=new MappingCountry2Continent();  //映射运动员所在的国家到大洲（分区）办理住宿业务
+        MappingCountry2Continent map=new MappingCountry2Continent();
+        //映射运动员所在的国家到大洲（分区）办理住宿业务
         this.serviceType= map.mapping(country);
     }
 
