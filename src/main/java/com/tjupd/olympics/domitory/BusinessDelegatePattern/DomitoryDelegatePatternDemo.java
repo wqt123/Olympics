@@ -10,6 +10,7 @@ import java.util.Random;
 
 
 public class DomitoryDelegatePatternDemo {
+    //业务代表模式demo
     public static void main(String args[]){
         Athletes athletes= Athletes.getAll();
         for (Athlete athlete:athletes.getAthletes()) //遍历运动员，为所有运动员分配住宿

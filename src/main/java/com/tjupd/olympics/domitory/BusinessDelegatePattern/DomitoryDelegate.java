@@ -17,11 +17,13 @@ public class DomitoryDelegate {
     }
 
     public void setServiceType(){
+        //确定serviceType，得到需要办理的具体业务类型
         MappingCountry2Continent map=new MappingCountry2Continent();  //映射运动员所在的国家到大洲（分区）办理住宿业务
         this.serviceType= map.mapping(country);
     }
 
     public void doTask(Athlete athlete){
+        //统一业务代表办理业务
         domitoryService=lookupService.getDomitoryService(country,serviceType);
         domitoryService.checkIn();
         Building=domitoryService.setBuilding();
@@ -31,10 +33,12 @@ public class DomitoryDelegate {
     }
 
     public String getroomNumber(){
+        //分配房间号
         return roomNumber;
     }
 
     public String getBuilding(){
+        //分配住宿楼栋
         return Building;
     }
 }
