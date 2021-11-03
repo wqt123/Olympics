@@ -14,13 +14,17 @@ public class AudienceView {
         audience.init();
         AudienceFrontController frontController = new AudienceFrontController(audience);
         System.out.println("您现在的身份是观众！");
+        boolean flag = true;
         while (true){
             System.out.println("请选择操作：");
             System.out.println("[1] 购票");
             System.out.println("[2] 购买纪念品");
-            System.out.println("[3] 观看比赛");
-            System.out.println("[4] 查看奖牌榜");
+            System.out.println("[3] 查看奖牌榜");
+            if(flag){
+                System.out.println("[4] 观看比赛");
+            }
             System.out.println("[0] 退出");
+            flag = false;
             String option =  input.nextLine();
             switch (Objects.requireNonNull(option)){
                 case "1":
@@ -30,10 +34,10 @@ public class AudienceView {
                     frontController.dispatchRequest("BuySouvenir");
                     break;
                 case "3":
-                    frontController.dispatchRequest("WatchGame");
+                    frontController.dispatchRequest("MedalTable");
                     break;
                 case "4":
-                    frontController.dispatchRequest("MedalTable");
+                    frontController.dispatchRequest("WatchGame");
                     break;
                 case "0":
                     System.out.println("程序已正常退出！");
