@@ -2,12 +2,14 @@ package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
 import java.util.Random;
 
-//根据decoratorpattern得到不同国家代表队入住的楼栋
+/*
+ *根据decoratorpattern得到不同国家代表队入住的楼栋
+ */
 
 public class MappingCountry2Building {
     public int[] arr;
     public int building;
-    String country;
+    public String country;
 
     public MappingCountry2Building(String country){
         this.arr=new int[10];
@@ -15,7 +17,9 @@ public class MappingCountry2Building {
     }
 
     public int mapping(){
-        //根据Decorator设计模式得到的结果，将国家映射得到该国家代表队可以入住的楼栋
+        /*
+         *根据Decorator设计模式得到的结果，将国家映射得到该国家代表队可以入住的楼栋
+         */
         if (country=="China"){
             arr[0]=1;arr[1]=3;
         }
@@ -33,8 +37,9 @@ public class MappingCountry2Building {
         Random r=new Random(1);
         int index=r.nextInt(len/10);
         int building=arr[index];
-        return building;           //随机在此国家代表队可入住的楼栋中抽取
-
+        return building;
+        /*
+         *随机在此国家代表队可入住的楼栋中抽取
+         */
     }
-
 }

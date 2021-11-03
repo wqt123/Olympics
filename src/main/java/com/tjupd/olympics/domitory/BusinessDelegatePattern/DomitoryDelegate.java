@@ -3,7 +3,9 @@ package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 import com.tjupd.olympics.athletes.Athlete;
 import com.tjupd.olympics.athletes.Athletes;
 
-//业务代表
+/*
+ *业务代表
+ */
 public class DomitoryDelegate {
     private DomitoryLookUp lookupService=new DomitoryLookUp();
     private DomitoryService domitoryService;
@@ -29,7 +31,7 @@ public class DomitoryDelegate {
 
     public void doTask(Athlete athlete){
         /*
-         *统一业务代表办理业务
+         *业务代表办理业务
          */
         domitoryService=lookupService.getDomitoryService(country,serviceType);
         System.out.print(athlete.getName());
@@ -45,12 +47,10 @@ public class DomitoryDelegate {
     }
 
     public String getroomNumber(){
-        //分配房间号
         return roomNumber;
     }
 
     public String getBuilding(){
-        //分配住宿楼栋
         return Building;
     }
 }

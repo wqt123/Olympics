@@ -2,7 +2,9 @@ package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
 import java.util.Random;
 
-//亚洲区服务主体类
+/*
+ *服务主体类 亚洲区
+ */
 public class AsianService implements DomitoryService {
     private String country;
 

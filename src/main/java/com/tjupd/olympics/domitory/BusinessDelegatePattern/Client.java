@@ -2,7 +2,9 @@ package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
 import com.tjupd.olympics.athletes.Athlete;
 
-//客户端
+/*
+ *客户端
+ */
 public class Client {
     private DomitoryDelegate domitoryDelegate;
     private Athlete athlete;

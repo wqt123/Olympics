@@ -1,5 +1,7 @@
 package com.tjupd.olympics.domitory.DecoratorPattern;
-//具体装饰角色 中国代表队
+/*
+ *具体装饰角色 中国代表队
+ */
 public class ChinaBuildingDecorator extends BuildingDecorator{
 
     public ChinaBuildingDecorator(Building building) {
@@ -11,7 +13,9 @@ public class ChinaBuildingDecorator extends BuildingDecorator{
     }
 
     public void setBuilding(){
-        //对该楼栋进行装饰，入住中国国家代表队
+        /*
+         *对该楼栋进行装饰，入住中国国家代表队
+         */
         super.setBuilding();
         this.setChinaBuilding();
     }
