@@ -1,7 +1,11 @@
 package com.tjupd.olympics;
 
 import com.tjupd.olympics.FrontControllerPattern.FrontController;
+import com.tjupd.olympics.athletes.Athletes;
 import com.tjupd.olympics.interceptingfilter.AthleteClient;
+import com.tjupd.olympics.interceptingfilter.AuthenticationFilter;
+import com.tjupd.olympics.interceptingfilter.FilterManager;
+
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -15,7 +19,12 @@ public class Main {
             String option = input.nextLine();
             switch (Objects.requireNonNull(option)){
                 case "1":
+                    Athletes athletes = Athletes.getAll();
+                    athletes.createAthlete();
+                    FilterManager filterManager = new FilterManager(new FrontController());
+                    filterManager.setFilter(new AuthenticationFilter(athletes));
                     AthleteClient athleteClient = new AthleteClient();
+                    athleteClient.setFilterManager(filterManager);
                     athleteClient.sendRequest("Athlete");
                     break;
                 case "2":

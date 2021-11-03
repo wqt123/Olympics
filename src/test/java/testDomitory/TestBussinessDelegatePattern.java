@@ -6,28 +6,31 @@ import com.tjupd.olympics.athletes.*;
 public class TestBussinessDelegatePattern {
 
     @Test
-    public void testBusinessDelegatePattern() throws CloneNotSupportedException {
+    public void testBusinessDelegatePattern(){
         Athletes athletes= Athletes.getAll();
-        Athlete athlete= athletes.getAthlete("Ford");
-        String country=athletes.getAthlete("Ford").getCountry();
-        //抽取一个运动员
+        for (Athlete athlete:athletes.getAthletes()) //遍历运动员，为所有运动员分配住宿
 
-        //办理住宿
-        DomitoryDelegate domitoryDelegate=new DomitoryDelegate(country);
-        domitoryDelegate.setServiceType();
-        Client client=new Client(domitoryDelegate,athlete);
-        client.doTask();
-        String roomNumber=domitoryDelegate.getroomNumber();
-        String building=domitoryDelegate.getBuilding();
 
-        //打印前后结果
-        System.out.println("country"+" "+country);
-        System.out.println("building:"+athletes.getAthlete("Ford").getBuilding());
-        System.out.println("roomNumber:"+athletes.getAthlete("Ford").getRoomNumber());
-        // athletes.deliverRoom("Ford",building,roomNumber);
-        System.out.println("update:");
-        System.out.println("building:"+athletes.getAthlete("Ford").getBuilding());
-        System.out.println("roomNumber:"+athletes.getAthlete("Ford").getRoomNumber());
+        {
+            String country=athlete.getCountry();
+
+
+
+            //办理住宿
+            DomitoryDelegate domitoryDelegate=new DomitoryDelegate(country);
+            domitoryDelegate.setServiceType();
+            Client client=new Client(domitoryDelegate,athlete);
+            System.out.print(athlete.getName());
+            client.doTask();
+            String roomNumber=domitoryDelegate.getroomNumber();
+            String building=domitoryDelegate.getBuilding();
+
+            //打印分配结果
+            System.out.println("国家"+" "+country);
+            System.out.println("楼栋号:"+athlete.getBuilding());
+            System.out.println("房间号:"+athlete.getRoomNumber());
+            System.out.println();
+        }
     }
 }
 
