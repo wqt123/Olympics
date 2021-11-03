@@ -2,6 +2,10 @@ package com.tjupd.olympics.MediatorPattern;
 
 import com.tjupd.olympics.audience.Audience;
 
+/**
+ * @author Mizu_long
+ * 中介者模式
+ */
 public class ConcreteMediator extends Mediator{
     private Audience audienceOne;
     private Audience audienceTwo;
@@ -14,6 +18,11 @@ public class ConcreteMediator extends Mediator{
         this.audienceTwo = audienceTwo;
     }
 
+    /**
+     * 中介者将接收到的信息转发给其他观众
+     * @param message
+     * @param audience
+     */
     @Override
     public void send(String message,Audience audience){
         if(audience ==audienceOne){
