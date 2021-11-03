@@ -1,4 +1,4 @@
-package com.tjupd.olympics.tilterPattern;
+package com.tjupd.olympics.filterPattern;
 
 import com.tjupd.olympics.visitorPattern.CountryMedal;
 import java.util.ArrayList;

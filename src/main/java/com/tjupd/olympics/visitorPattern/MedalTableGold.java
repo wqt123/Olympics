@@ -1,7 +1,7 @@
 package com.tjupd.olympics.visitorPattern;
 
-import com.tjupd.olympics.tilterPattern.Criteria;
-import com.tjupd.olympics.tilterPattern.CriteriaWithGold;
+import com.tjupd.olympics.filterPattern.Criteria;
+import com.tjupd.olympics.filterPattern.CriteriaWithGold;
 import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athlete;
 import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athletes;
 import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.GameWithScore;
