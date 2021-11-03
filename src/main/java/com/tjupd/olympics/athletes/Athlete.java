@@ -56,4 +56,9 @@ public class Athlete {
     this.setHealthCode(0);
     this.setStatus(true);
   }
+
+  public Athlete(String name,String country){
+    this.name = name;
+    this.country = country;
+  }
 }

@@ -12,7 +12,7 @@ import java.util.*;
  * 为模板模式的父类
  * 以Races为模板派生多个比赛类
  */
-public class Races {
+public abstract class Races {
     /**
      * 比赛的名称、种类
      * 以及存储比赛运动员信息与成绩的两个列表

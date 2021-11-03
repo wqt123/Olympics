@@ -16,24 +16,21 @@ public class Race_LongJump extends Races {
     private Race_LongJump() {
         RaceName = "longJump Races";
         RaceKind = 9;
+
+        Athletes athletes = Athletes.getAthlete();
+        boolean sex = true;
+        if(RaceKind % 2 == 0) sex=false;
+        List<Athlete> athletesList = athletes.getAthletes(sex);
+
+        for (int i = 0;i < athletesList.size(); i++){
+            MyAthletes current_athletes = new MyAthletes();
+            current_athletes.setBodyscore((int)athletesList.get(i).getBodyScore());
+            current_athletes.setName(athletesList.get(i).getName());
+            theAthletes.add(current_athletes);
+        }
     }
 
     public static Race_LongJump getInstance() {
-        // 获取实例，顺便初始化
-        Athletes athletes = Athletes.getAll();
-        boolean sex = true;
-        if (race_longJump.RaceKind % 2 == 0) sex = false;
-        List<Athlete> athletesList = athletes.getAthletes(sex);
-
-        for (int i = 0; i < athletesList.size(); i++) {
-            // 经典传地址问题
-            MyAthletes current_athletes = new MyAthletes();
-
-            current_athletes.setBodyscore((int) athletesList.get(i).getBodyScore());
-            current_athletes.setName(athletesList.get(i).getName());
-            race_longJump.theAthletes.add(current_athletes);
-        }
-
         return race_longJump;
     }
 

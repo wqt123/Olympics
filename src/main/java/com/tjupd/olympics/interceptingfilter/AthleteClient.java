@@ -8,7 +8,7 @@ public class AthleteClient {
         this.filterManager = filterManager;
     }
 
-    public void sendRequest(String request) throws InterruptedException {
-        filterManager.filterRequest(request);
+    public boolean sendRequest(String request) throws InterruptedException {
+        return filterManager.filterRequest(request);
     }
 }
