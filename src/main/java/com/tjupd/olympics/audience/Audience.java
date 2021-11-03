@@ -2,6 +2,7 @@ package com.tjupd.olympics.audience;
 
 import java.util.*;
 
+import com.tjupd.olympics.MediatorPattern.Mediator;
 import com.tjupd.olympics.tickets.Ticket;
 /**
  * 
@@ -15,6 +16,7 @@ public class Audience implements AudienceInterface{
 	private String audienceID;
 	private boolean ticketState;
 	private List<String> bag;
+	protected Mediator mediator;
 	public Audience() {
 	  }
 	public Audience(String name, String audienceID,  int money) {
@@ -112,5 +114,15 @@ public class Audience implements AudienceInterface{
 			System.out.println("您的买票状态："+this.getTicketState());
 			return 0;
 		}
+	}
+	public void send(String message){
+		mediator.send(message,this);
+	}
+
+	public void notify(String message){
+		System.out.println(this.getName()+"接收到消息: "+ message);
+	}
+	public void setMediator(Mediator mediator){
+		this.mediator=mediator;
 	}
 }
