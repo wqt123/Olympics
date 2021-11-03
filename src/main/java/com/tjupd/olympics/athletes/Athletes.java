@@ -200,8 +200,13 @@ public class Athletes implements athletesInterface {
       }
     }
     Athlete athlete = new Athlete();
+    double score;
+    do {
+      score = Math.random() * 100;
+    } while (!(score > 65) || !(score < 80));
     myAthlete = athlete;
     athlete.setName(name);
+    athlete.setBodyScore(score);
     athlete.setCountry(country);
     athlete.setSex(sex);
     athlete.setScores(new LinkedList<>());

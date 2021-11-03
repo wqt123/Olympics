@@ -15,24 +15,25 @@ public class Race_800m extends Races{
     private Race_800m() {
         RaceName = "800m比赛";
         RaceKind = 3;
-    }
-    public static Race_800m getInstance(){
-        Athletes athletes = Athletes.getAll();
+
+        Athletes athletes = Athletes.getAthlete();
         boolean sex = true;
-        if( race_800m.RaceKind % 2 == 0) sex=false;
+        if(RaceKind % 2 == 0) sex=false;
         List<Athlete> athletesList = athletes.getAthletes(sex);
 
         for (int i = 0;i < athletesList.size(); i++){
             // 经典传地址问题
             MyAthletes current_athletes = new MyAthletes();
-
             current_athletes.setBodyscore((int)athletesList.get(i).getBodyScore());
             current_athletes.setName(athletesList.get(i).getName());
-            race_800m.theAthletes.add(current_athletes);
+            theAthletes.add(current_athletes);
         }
+    }
 
+    public static Race_800m getInstance(){
         return race_800m;
     }
+
     @Override
     public void RaceEnd() {
         super.RaceEnd();
