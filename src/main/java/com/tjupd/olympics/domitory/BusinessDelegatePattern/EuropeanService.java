@@ -21,8 +21,9 @@ public class EuropeanService implements DomitoryService {
     public String setRoomNumber(){
         //在住宿楼栋分配入住房间
         Random r=new Random(1);
-        int floor=r.nextInt(9); //一共八层楼
-        int room=r.nextInt(9);  //一层楼八个房间
+        int floor=r.nextInt(8); //一共八层楼
+        int room=r.nextInt(8); //一层楼八个房间
+        floor=floor+1;room=room+1;
         int temp=floor*100+room;
         String roomNumber=Integer.toString(temp);
         return roomNumber;
