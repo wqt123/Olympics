@@ -1,4 +1,7 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
+/**
+ * @author ywd
+ */
 
 
 public class MappingCountry2Continent {

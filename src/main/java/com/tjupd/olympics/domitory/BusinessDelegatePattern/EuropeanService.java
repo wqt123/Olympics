@@ -1,6 +1,11 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 import java.util.Random;
 /**
+ * @author ywd
+ */
+
+
+/**
  *服务主体类 欧洲区
  */
 public class EuropeanService implements DomitoryService {

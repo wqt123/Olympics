@@ -1,6 +1,9 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
-
 import com.tjupd.olympics.athletes.Athlete;
+/**
+ * @author ywd
+ */
+
 
 /**
  *客户端

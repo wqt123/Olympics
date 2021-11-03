@@ -1,4 +1,8 @@
 package com.tjupd.olympics.domitory.DecoratorPattern;
+/**
+ * @author ywd
+ */
+
 
 /**
  *抽象装饰角色

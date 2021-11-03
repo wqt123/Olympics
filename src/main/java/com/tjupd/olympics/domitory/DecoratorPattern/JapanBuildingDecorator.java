@@ -1,4 +1,8 @@
 package com.tjupd.olympics.domitory.DecoratorPattern;
+/**
+ * @author ywd
+ */
+
 
 /**
  *具体装饰角色类 日本国家代表队

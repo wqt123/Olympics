@@ -1,4 +1,8 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
+/**
+ * @author ywd
+ */
+
 
 /**
  *业务查询服务

@@ -1,6 +1,9 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
-
 import java.util.Random;
+/**
+ * @author ywd
+ */
+
 
 /**
  *根据decoratorpattern得到不同国家代表队入住的楼栋

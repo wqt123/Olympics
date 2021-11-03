@@ -2,6 +2,10 @@ package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
 import com.tjupd.olympics.athletes.Athlete;
 import com.tjupd.olympics.athletes.Athletes;
+/**
+ * @author ywd
+ */
+
 
 /**
  *业务代表

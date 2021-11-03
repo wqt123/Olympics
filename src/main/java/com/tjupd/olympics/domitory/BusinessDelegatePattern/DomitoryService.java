@@ -1,4 +1,8 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
+/**
+ * @author ywd
+ */
+
 
 /**
  *创建DomitoryService接口
