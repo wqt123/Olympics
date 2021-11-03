@@ -39,7 +39,7 @@ public class ChainPatternDemo {
 			loggerChain.logMessage(AbstractLogger.WARNING, "存在一定患病风险，注意");
 		}
 		else {
-			loggerChain.logMessage(AbstractLogger.DANGEROUS, "差，建议立即停赛观察");
+			loggerChain.logMessage(AbstractLogger.DANGEROUS, "差，建议进行核酸检测");
 		}
 	}
 }

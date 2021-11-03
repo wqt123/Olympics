@@ -1,12 +1,14 @@
-package com.tjupd.olympics.testProxy;
+package com.tjupd.olympics.testFlyweight;
+
 
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
-public class MediatorDemo {
+public class FlyweightDemo {
     public static void main(String[] args) {
-        Result result = JUnitCore.runClasses(TestMediator.class);
+        System.out.println("测试Flyweight模式：");
+        Result result = JUnitCore.runClasses(TestFlyweight.class);
         for(Failure failure : result.getFailures()) {
             System.out.println(failure.toString());
         }

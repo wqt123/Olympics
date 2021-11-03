@@ -330,6 +330,7 @@ public class Athletes implements athletesInterface {
     else {//60%
       healthCode = 0;
     }
+    healthCode = 2;
     //因为需要测试，设置一个国家，实际是自己输入的
     athlete.setHealthCode(healthCode);
     //athlete.setHealthCode(healthcode);
@@ -340,12 +341,12 @@ public class Athletes implements athletesInterface {
 
     //责任链模式
     ChainPatternDemo chainPatternDemo = new ChainPatternDemo();
-    System.out.println("查找责任链中不同疫情健康码级别的记录器：");
+//    System.out.println("查找责任链中不同疫情健康码级别的记录器：");
     chainPatternDemo.run(athlete);
     System.out.println();
 
     //状态模式
-    System.out.println("根据不同健康吗状态采取不同措施：");
+//    System.out.println("根据不同健康吗状态采取不同措施：");
     StateDemo statedemo = new StateDemo();
     statedemo.run(athlete);
     System.out.println();

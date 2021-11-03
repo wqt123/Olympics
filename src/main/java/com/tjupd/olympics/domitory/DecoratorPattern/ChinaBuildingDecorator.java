@@ -11,6 +11,7 @@ public class ChinaBuildingDecorator extends BuildingDecorator{
     }
 
     public void setBuilding(){
+        //对该楼栋进行装饰，入住中国国家代表队
         super.setBuilding();
         this.setChinaBuilding();
     }

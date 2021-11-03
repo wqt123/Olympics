@@ -13,10 +13,11 @@ public class DangerousState implements State {
 	 * 执行对应函数
 	 */
 	public void doAction(Context context, Athlete athlete) throws InterruptedException {
-		System.out.println("危险！立即隔离进行核算检测！");
+		System.out.println("危险！立即隔离进行核酸检测！");
 		athlete.setStatus(false);
-		System.out.println("核算检测中……");
-		Thread.sleep(2000);
-		System.out.println("核算检测正常，更新");
+		System.out.println("核酸检测中……");
+		Thread.sleep(1000);
+		System.out.println("核酸检测正常，更新");
+		Thread.sleep(1000);
 	}
 }

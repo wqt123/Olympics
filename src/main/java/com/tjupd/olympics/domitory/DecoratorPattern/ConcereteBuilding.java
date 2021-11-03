@@ -5,11 +5,13 @@ public class ConcereteBuilding extends Building{
     private int buildingNo;
 
     public ConcereteBuilding(int buildingno) {
+        //实体Building构造函数
         super();
         this.buildingNo=buildingno;
     }
 
     public int getBuildingNo(){
+        //得到该楼栋号
         return buildingNo;
     }
 

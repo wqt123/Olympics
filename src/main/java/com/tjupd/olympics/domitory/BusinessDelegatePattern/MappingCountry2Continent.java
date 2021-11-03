@@ -1,8 +1,9 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
-//得到国家所在的大洲，一个大洲划分为一个业务办理区
+
 public class MappingCountry2Continent {
-    String ServiceType;
+    //得到国家所在的大洲，一个大洲划分为一个业务办理区
+    public String ServiceType;
     public String mapping(String country){
         if(country=="China"||country=="Korea"||country=="Japan"){
             return "Asian";
