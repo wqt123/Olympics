@@ -2,7 +2,7 @@ package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
 import java.util.Random;
 
-/*
+/**
  *服务主体类 亚洲区
  */
 public class AsianService implements DomitoryService {

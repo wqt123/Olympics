@@ -1,13 +1,13 @@
 package com.tjupd.olympics.domitory.DecoratorPattern;
 
-/*
+/**
  *实体类
  */
 public class ConcereteBuilding extends Building{
     private int buildingNo;
 
     public ConcereteBuilding(int buildingno) {
-        /*
+        /**
          *实体Building构造函数
          */
         super();
@@ -15,7 +15,7 @@ public class ConcereteBuilding extends Building{
     }
 
     public int getBuildingNo(){
-        /*
+        /**
          *得到该楼栋号
          */
         return buildingNo;

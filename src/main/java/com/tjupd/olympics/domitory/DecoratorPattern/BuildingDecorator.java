@@ -1,6 +1,6 @@
 package com.tjupd.olympics.domitory.DecoratorPattern;
 
-/*
+/**
  *抽象装饰角色
  */
 public abstract class BuildingDecorator extends Building {

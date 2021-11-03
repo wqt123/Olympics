@@ -1,6 +1,6 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
-/*
+/**
  *创建DomitoryService接口
  */
 public interface DomitoryService {

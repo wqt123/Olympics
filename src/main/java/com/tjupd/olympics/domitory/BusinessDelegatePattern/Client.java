@@ -2,7 +2,7 @@ package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 
 import com.tjupd.olympics.athletes.Athlete;
 
-/*
+/**
  *客户端
  */
 public class Client {
@@ -10,7 +10,7 @@ public class Client {
     private Athlete athlete;
 
     public Client(DomitoryDelegate domitoryDelegate,Athlete athlete){
-        /*
+        /**
         * Client构造函数
          */
         this.domitoryDelegate=domitoryDelegate;
@@ -18,7 +18,7 @@ public class Client {
     }
 
     public void doTask(){
-        /*
+        /**
          * Client 业务办理
          */
         domitoryDelegate.doTask(athlete);

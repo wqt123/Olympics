@@ -1,6 +1,6 @@
 package com.tjupd.olympics.domitory.DecoratorPattern;
 
-/*
+/**
  *具体装饰角色类 韩国国家代表队
  */
 public class KoreaBuildingDecorator extends BuildingDecorator{
@@ -14,7 +14,7 @@ public class KoreaBuildingDecorator extends BuildingDecorator{
     }
 
     public void setBuilding(){
-        /*
+        /**
          *对该楼栋进行装饰，入住韩国国家代表队
          */
         super.setBuilding();

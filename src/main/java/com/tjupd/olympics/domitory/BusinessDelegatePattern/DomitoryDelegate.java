@@ -3,7 +3,7 @@ package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 import com.tjupd.olympics.athletes.Athlete;
 import com.tjupd.olympics.athletes.Athletes;
 
-/*
+/**
  *业务代表
  */
 public class DomitoryDelegate {
@@ -19,18 +19,18 @@ public class DomitoryDelegate {
     }
 
     public void setServiceType(){
-        /*
+        /**
          * 确定serviceType，得到需要办理的具体业务类型
          */
         MappingCountry2Continent map=new MappingCountry2Continent();
-        /*
+        /**
          * 映射运动员所在的国家到大洲（分区）办理住宿业务
          */
         this.serviceType= map.mapping(country);
     }
 
     public void doTask(Athlete athlete){
-        /*
+        /**
          *业务代表办理业务
          */
         domitoryService=lookupService.getDomitoryService(country,serviceType);

@@ -1,6 +1,6 @@
 package com.tjupd.olympics.domitory.BusinessDelegatePattern;
 import java.util.Random;
-/*
+/**
  *服务主体类 欧洲区
  */
 public class EuropeanService implements DomitoryService {
@@ -12,7 +12,7 @@ public class EuropeanService implements DomitoryService {
 
     @Override
     public String setBuilding(){
-        /*
+        /**
          *在欧洲住宿区分配住宿楼栋
          */
         MappingCountry2Building map= new MappingCountry2Building(country);
@@ -22,7 +22,7 @@ public class EuropeanService implements DomitoryService {
 
     @Override
     public String setRoomNumber(){
-        /*
+        /**
          *在住宿楼栋分配入住房间
          */
         Random r=new Random(1);
@@ -36,7 +36,7 @@ public class EuropeanService implements DomitoryService {
 
     @Override
     public void checkIn() {
-        /*
+        /**
          *在该住宿办理区办理入住
          */
         System.out.println("在欧洲区办理入住");

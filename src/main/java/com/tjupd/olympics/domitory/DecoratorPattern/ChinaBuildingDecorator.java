@@ -1,5 +1,5 @@
 package com.tjupd.olympics.domitory.DecoratorPattern;
-/*
+/**
  *具体装饰角色 中国代表队
  */
 public class ChinaBuildingDecorator extends BuildingDecorator{
