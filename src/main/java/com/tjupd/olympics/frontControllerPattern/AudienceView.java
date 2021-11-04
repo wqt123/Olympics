@@ -21,7 +21,8 @@ public class AudienceView {
         AudienceFrontController frontController = new AudienceFrontController(audience);
         System.out.println("您现在的身份是观众！");
         boolean flag = true;
-        while (true){
+        boolean stop = false;
+        while (!stop){
             System.out.println("请选择操作：");
             System.out.println("[1] 购买门票");
             System.out.println("[2] 购买纪念品");
@@ -30,7 +31,6 @@ public class AudienceView {
                 System.out.println("[4] 观看比赛");
             }
             System.out.println("[0] 退出");
-            flag = false;
             String option =  input.nextLine();
             switch (Objects.requireNonNull(option)){
                 case "1":
@@ -51,11 +51,14 @@ public class AudienceView {
                     }
                     break;
                 case "0":
-                    System.out.println("程序已正常退出！");
-                    System.exit(0);
+                    stop = true;
+                    System.out.println("您已正常退出，即将返回主菜单！");
+                    System.out.println("请重新选择您的角色：");
+                    break;
                 default:
                     System.out.println("输入错误请重新输入！");
             }
+            flag = false;
         }
     }
 }
