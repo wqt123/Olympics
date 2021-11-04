@@ -1,6 +1,6 @@
 package com.tjupd.olympics.observer;
 
-import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athlete;
+import com.tjupd.olympics.singleton_dataaccessobject_nullobject.Athlete;
 
 import java.util.List;
 

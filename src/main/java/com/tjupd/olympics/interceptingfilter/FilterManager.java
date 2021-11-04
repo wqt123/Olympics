@@ -1,6 +1,6 @@
 package com.tjupd.olympics.interceptingfilter;
 
-import com.tjupd.olympics.frontControllerPattern.FrontController;
+import com.tjupd.olympics.frontcontroller.FrontController;
 /**
  * 拦截过滤器设计模式
  * 过滤器管理器类

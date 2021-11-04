@@ -1,6 +1,6 @@
 package com.tjupd.olympics.state;
 
-import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athlete;
+import com.tjupd.olympics.singleton_dataaccessobject_nullobject.Athlete;
 
 /**
  * 运行状态模式的Demo

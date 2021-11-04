@@ -1,8 +1,8 @@
 package com.tjupd.olympics.interceptingfilter;
 
-import com.tjupd.olympics.frontControllerPattern.FrontController;
-import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athlete;
-import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athletes;
+import com.tjupd.olympics.frontcontroller.FrontController;
+import com.tjupd.olympics.singleton_dataaccessobject_nullobject.Athlete;
+import com.tjupd.olympics.singleton_dataaccessobject_nullobject.Athletes;
 import org.junit.Test;
 
 public class TestInterceptingFilter {

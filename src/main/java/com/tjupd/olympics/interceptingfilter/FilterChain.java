@@ -2,7 +2,7 @@ package com.tjupd.olympics.interceptingfilter;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.tjupd.olympics.frontControllerPattern.FrontController;
+import com.tjupd.olympics.frontcontroller.FrontController;
 /**
  * 拦截过滤器设计模式
  * 过滤器链类，按添加顺序存储所有设置的过滤器和目标要执行的命令。

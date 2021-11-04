@@ -1,14 +1,14 @@
 package com.tjupd.olympics.equipmentController;
 
-import com.tjupd.olympics.proxyPattern.EquipmentProxy;
-import com.tjupd.olympics.singleton_DataAccessObject_NullObjectPattern.Athletes;
-import com.tjupd.olympics.flyWeightPattern.*;
+import com.tjupd.olympics.proxy.EquipmentProxy;
+import com.tjupd.olympics.singleton_dataaccessobject_nullobject.Athletes;
+import com.tjupd.olympics.flyweight.*;
 
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
-import com.tjupd.olympics.mementoPattern.CareTaker;
-import  com.tjupd.olympics.mementoPattern.Memento;
+import com.tjupd.olympics.memento.CareTaker;
+import  com.tjupd.olympics.memento.Memento;
 
 /**
  * @author Mizu_long

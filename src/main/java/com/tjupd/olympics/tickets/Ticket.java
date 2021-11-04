@@ -1,9 +1,9 @@
 package com.tjupd.olympics.tickets;
 import java.util.Scanner;
 
-import com.tjupd.olympics.abstractFactoryPattern.*;
+import com.tjupd.olympics.abstractfactory.*;
 import com.tjupd.olympics.audience.*;
-import com.tjupd.olympics.bridgePattern.*;
+import com.tjupd.olympics.bridge.*;
 public class Ticket {
 /**
  * 票
