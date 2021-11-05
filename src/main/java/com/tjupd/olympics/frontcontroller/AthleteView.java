@@ -45,6 +45,7 @@ public class AthleteView {
                 case "5":
                     if(flag){
                         frontController.dispatchRequest("Game");
+                        flag = false;
                     }
                     else {
                         System.out.println("比赛已结束，请选择其他活动！");
@@ -58,7 +59,7 @@ public class AthleteView {
                 default:
                     System.out.println("输入错误请重新输入！");
             }
-            flag = false;
+
         }
     }
 }

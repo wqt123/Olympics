@@ -45,6 +45,7 @@ public class AudienceView {
                 case "4":
                     if(flag){
                         frontController.dispatchRequest("WatchGame");
+                        flag = false;
                     }
                     else {
                         System.out.println("比赛已结束，请选择其他活动！");
@@ -58,7 +59,7 @@ public class AudienceView {
                 default:
                     System.out.println("输入错误请重新输入！");
             }
-            flag = false;
+
         }
     }
 }
