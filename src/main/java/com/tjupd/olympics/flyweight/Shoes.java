@@ -1,8 +1,8 @@
 package com.tjupd.olympics.flyweight;
 
-import com.tjupd.olympics.Interpreter.Calculate;
-import com.tjupd.olympics.Interpreter.StrengthInterpreter;
-import com.tjupd.olympics.Interpreter.WeaknessInterpreter;
+import com.tjupd.olympics.interpreter.Calculate;
+import com.tjupd.olympics.interpreter.StrengthInterpreter;
+import com.tjupd.olympics.interpreter.WeaknessInterpreter;
 import com.tjupd.olympics.singleton_dataaccessobject_nullobject.Athletes;
 
 import java.text.DecimalFormat;

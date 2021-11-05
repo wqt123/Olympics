@@ -1,4 +1,4 @@
-package com.tjupd.olympics.Interpreter;
+package com.tjupd.olympics.interpreter;
 
 import com.tjupd.olympics.flyweight.Equipment;
 

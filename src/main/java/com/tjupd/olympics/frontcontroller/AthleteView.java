@@ -23,7 +23,7 @@ public class AthleteView {
             System.out.println("[1] 就餐");
             System.out.println("[2] 办理入住");
             System.out.println("[3] 查看奖牌榜");
-            System.out.println("[4] 更新装备");
+            System.out.println("[4] 购买装备");
             if(flag){//根据业务逻辑只有一场比赛，因此第二次时不在提供接口
                 System.out.println("[5] 参加比赛");
             }
