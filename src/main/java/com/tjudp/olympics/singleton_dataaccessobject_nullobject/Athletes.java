@@ -348,8 +348,20 @@ public class Athletes implements athletesInterface {
     //athlete.setHealthCode(healthcode);
 
     //运动员当前各项状态
-    System.out.println("运动员身体状态：");
-    System.out.println(athlete.getName() + "	"+ athlete.getCountry() +"	"+ athlete.getHealthCode());
+//    System.out.println("运动员身体状态：");
+//    String myCode = "";
+//    switch (athlete.getHealthCode()){
+//      case 2:
+//        myCode = "red";
+//        break;
+//      case 1:
+//        myCode = "yellow";
+//        break;
+//      case 0:
+//        myCode="green";
+//        break;
+//    }
+//    System.out.println(athlete.getName() + "	"+ athlete.getCountry() +"	"+ myCode);
 
     //责任链模式
     ChainPatternDemo chainPatternDemo = new ChainPatternDemo();

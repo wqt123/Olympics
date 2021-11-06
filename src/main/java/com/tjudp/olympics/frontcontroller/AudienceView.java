@@ -20,7 +20,7 @@ public class AudienceView {
         audience.init();
         AudienceFrontController frontController = new AudienceFrontController(audience);
         System.out.println("您现在的身份是观众！");
-        boolean flag = true;
+        boolean flag = false;
         while (true){
             System.out.println("请选择操作：");
             System.out.println("[1] 购买门票");
@@ -40,13 +40,11 @@ public class AudienceView {
                     frontController.dispatchRequest("MedalTable");
                     break;
                 case "4":
-                    if(flag){
-                        frontController.dispatchRequest("WatchGame");
-                        flag = false;
+                    if(!flag){
+                        flag = frontController.dispatchRequest("WatchGame");
                     }
                     else {
                         System.out.println("比赛已结束，请选择其他活动！");
-                        System.exit(0);
                     }
                     break;
                 case "0":

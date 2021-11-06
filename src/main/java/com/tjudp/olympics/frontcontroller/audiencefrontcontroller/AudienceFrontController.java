@@ -40,15 +40,17 @@ public class AudienceFrontController {
      * 先进行权限检测和日志记录，而后调用调度器对传入的请求进行处理
      * @param request
      */
-    public void dispatchRequest(String request){
+    public boolean dispatchRequest(String request){
         //记录每一个请求
         trackRequest(request);
         //对用户进行身份验证
         if(isBuyTicket(request)){
             dispatcher.dispatch(request);
+            return true;
         }
         else {
             System.out.println("请先购票！");
+            return false;
         }
     }
 }
