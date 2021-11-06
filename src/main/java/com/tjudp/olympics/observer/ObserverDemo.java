@@ -35,7 +35,7 @@ public class ObserverDemo {
 				myCode="green";
 				break;
 		}
-        System.out.println(athlete.getName() + "	国家：	"+athlete.getCountry()+"	健康码：	" + myCode);
+        System.out.println(athlete.getName() + "\t\t国家：\t"+athlete.getCountry()+"\t健康码：\t" + myCode);
         for(int i=0;i<athletes.getAthletes().size()-1;i++) {
 			String athleteCode = "";
 			switch (athletes.getAthletes().get(i).getHealthCode()){
@@ -49,7 +49,7 @@ public class ObserverDemo {
 					athleteCode="green";
 					break;
 			}
-        	System.out.println(athletes.getAthletes().get(i).getName()+"	国家：	"+athletes.getAthletes().get(i).getCountry()+"	健康码：	"+athleteCode);
+        	System.out.println(athletes.getAthletes().get(i).getName()+"\t国家：\t"+athletes.getAthletes().get(i).getCountry()+"\t健康码：\t"+athleteCode);
         }
         
         /**
@@ -69,22 +69,22 @@ public class ObserverDemo {
 				_myCode="green";
 				break;
 		}
-        System.out.println(athlete.getName() + "	国家：	"+athlete.getCountry()+"	健康码：	" + _myCode);
-        	for(int i=0;i<athletes.getAthletes().size()-1;i++) {
-				String athleteCode = "";
-				switch (epidemicsubject.printout(i)){
-					case 2:
-						athleteCode = "red";
-						break;
-					case 1:
-						athleteCode="yellow";
-						break;
-					case 0:
-						athleteCode="green";
-						break;
+        System.out.println(athlete.getName() + "\t\t国家：\t"+athlete.getCountry()+"\t健康码：\t" + _myCode);
+		for(int i=0;i<athletes.getAthletes().size()-1;i++) {
+			String athleteCode = "";
+			switch (epidemicsubject.printout(i)){
+				case 2:
+					athleteCode = "red";
+					break;
+				case 1:
+					athleteCode="yellow";
+					break;
+				case 0:
+					athleteCode="green";
+					break;
 				}
-        	System.out.println(athletes.getAthletes().get(i).getName() + "	国家：	" +athletes.getAthletes().get(i).getCountry()+ "	健康码：	" + athleteCode);
-        	}
+        	System.out.println(athletes.getAthletes().get(i).getName() + "\t国家：\t" +athletes.getAthletes().get(i).getCountry()+ "\t健康码：\t" + athleteCode);
+		}
         	
         System.out.println("数据同步更新成功！");
         System.out.println();

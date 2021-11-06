@@ -8,7 +8,7 @@ import com.tjudp.olympics.audience.Audience;
  */
 public class PrintReceipt {
 	public void run(Audience audience, int total) throws CloneNotSupportedException {
-		receipt obj1 = new receipt("name","000000",1,"的购物总金额是：");
+		receipt obj1 = new receipt("name","000000",1,"购物总金额：");
 		//obj1.display();
 		receipt obj2 = (receipt) obj1.clone();
 		obj2.setName(audience.getName());

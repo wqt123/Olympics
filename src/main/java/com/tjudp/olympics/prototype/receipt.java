@@ -1,6 +1,8 @@
 package com.tjudp.olympics.prototype;
 
- /**
+import java.lang.reflect.Array;
+
+/**
 * 购物凭证类
 * 有消费者（这里是观众）的
 * 姓名、ID、购买总金额、凭证编号和相关信息
@@ -51,9 +53,11 @@ public class receipt implements Cloneable {
 	 * 打印购物凭证
 	 */
 	void display() {
-	      System.out.println("凭证编号：" + receiptNumber);
-	      System.out.println(name + audienceID + info + total);
-	  }
+		System.out.println("凭证编号：" + receiptNumber);
+		System.out.println("姓名:"+name);
+		System.out.println("用户ID" + audienceID);
+		System.out.println(info + total);
+	}
 	
 	/**
 	 * 实现深克隆
