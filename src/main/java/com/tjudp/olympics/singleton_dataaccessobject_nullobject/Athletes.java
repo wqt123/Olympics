@@ -160,38 +160,50 @@ public class Athletes implements athletesInterface {
     System.out.println("下面开始角色创建，请依次输入您的信息：");
     System.out.println("姓名：");
     name = input.nextLine();
-    System.out.println("性别：[1] 男 [2] 女");
-    String tmp1 = input.nextLine();
-    switch (tmp1){
-      case "1":
-        sex = true;
-        break;
-      case "2":
-        sex = false;
-        break;
-      default:
-        System.out.println("未识别字符，默认生成为男");
-        sex = true;
+    boolean stop = false;
+    while (!stop) {
+      System.out.println("性别：[1] 男 [2] 女");
+      String tmp1 = input.nextLine();
+      switch (tmp1){
+        case "1":
+          sex = true;
+          stop = true;
+          break;
+        case "2":
+          sex = false;
+          stop = true;
+          break;
+        default:
+          System.out.println("未识别字符，请重新输入");
+      }
     }
-    System.out.println("国家：[1] 中国 [2] 日本 [3] 韩国 [4] 俄国");
-    String tmp2 = input.nextLine();
-    switch (tmp2){
-      case "1":
-        country = "China";
-        break;
-      case "2":
-        country = "Japan";
-        break;
-      case "3":
-        country = "Korea";
-        break;
-      case "4":
-        country = "Russian";
-        break;
-      default:
-        System.out.println("未识别字符，默认为中国");
-        sex = true;
+    stop = false;
+    while (!stop) {
+      System.out.println("国家：[1] 中国 [2] 日本 [3] 韩国 [4] 俄国");
+      String tmp2 = input.nextLine();
+      switch (tmp2){
+        case "1":
+          country = "China";
+          stop = true;
+          break;
+        case "2":
+          country = "Japan";
+          stop = true;
+          break;
+        case "3":
+          country = "Korea";
+          stop = true;
+          break;
+        case "4":
+          country = "Russian";
+          stop = true;
+          break;
+        default:
+          System.out.println("未识别字符，请重新输入");
+      }
+
     }
+
     String[] names = {"Aaron", "Bill", "Carl", "Dick", "Evan", "Ford", "Taylor", "Rose", "Zoe", "Mila", "Ella", "Judy"};
     String[] countries = {"China", "Japan", "Korea", "Russian"};
     for (String s : names) {
