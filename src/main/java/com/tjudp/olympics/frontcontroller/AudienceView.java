@@ -51,6 +51,7 @@ public class AudienceView {
                     break;
                 case "0":
                     System.out.println("程序正常退出！");
+                    System.exit(0);
                     break;
                 default:
                     System.out.println("输入错误请重新输入！");
