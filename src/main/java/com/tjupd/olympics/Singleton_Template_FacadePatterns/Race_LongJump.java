@@ -44,11 +44,11 @@ public class Race_LongJump extends Races {
         boolean sex = true;
         if (RaceKind % 2 == 0) sex = false;
         if (sex == true) {
-            System.out.println("男子100m比赛马上开始！");
+            System.out.println("男子三级跳比赛马上开始！");
             TimeDelay(500);
         }
         else {
-            System.out.println("女子100m比赛马上开始!");
+            System.out.println("女子三级跳比赛马上开始!");
             TimeDelay(500);
         }
         // 调用父类比赛函数，得到身体素质得分及排名
@@ -115,7 +115,7 @@ public class Race_LongJump extends Races {
 
     // 用于男女子比赛中间调用
     public void HalfTime() {
-        System.out.println("嗯哼哼，男子100m比赛就这样结束啦，接下来经过短暂的休息，即将迎来女子100m比赛！");
+        System.out.println("嗯哼哼，男子三级跳比赛就这样结束啦，接下来经过短暂的休息，即将迎来女子三级跳比赛！");
         RaceKind = 0;
         // 选手切换为女子
         theAthletes.clear();
