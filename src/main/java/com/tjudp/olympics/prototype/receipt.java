@@ -55,7 +55,7 @@ public class receipt implements Cloneable {
 	void display() {
 		System.out.println("凭证编号：" + receiptNumber);
 		System.out.println("姓名:"+name);
-		System.out.println("用户ID" + audienceID);
+		System.out.println("用户ID:" + audienceID);
 		System.out.println(info + total);
 	}
 	
